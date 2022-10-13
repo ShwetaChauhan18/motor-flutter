@@ -14,20 +14,25 @@ import 'schema.pbenum.dart' as $5;
 class SchemaDocument extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SchemaDocument', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.sonr.schema'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'schemaDid')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
-    ..pc<SchemaDocumentValue>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: SchemaDocumentValue.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cid')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
+    ..pc<SchemaDocumentValue>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: SchemaDocumentValue.create)
     ..hasRequiredFields = false
   ;
 
   SchemaDocument._() : super();
   factory SchemaDocument({
     $core.String? schemaDid,
+    $core.String? cid,
     $core.String? label,
     $core.Iterable<SchemaDocumentValue>? fields,
   }) {
     final _result = create();
     if (schemaDid != null) {
       _result.schemaDid = schemaDid;
+    }
+    if (cid != null) {
+      _result.cid = cid;
     }
     if (label != null) {
       _result.label = label;
@@ -68,16 +73,25 @@ class SchemaDocument extends $pb.GeneratedMessage {
   void clearSchemaDid() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get label => $_getSZ(1);
+  $core.String get cid => $_getSZ(1);
   @$pb.TagNumber(2)
-  set label($core.String v) { $_setString(1, v); }
+  set cid($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasLabel() => $_has(1);
+  $core.bool hasCid() => $_has(1);
   @$pb.TagNumber(2)
-  void clearLabel() => clearField(2);
+  void clearCid() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<SchemaDocumentValue> get fields => $_getList(2);
+  $core.String get label => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set label($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLabel() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLabel() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.List<SchemaDocumentValue> get fields => $_getList(3);
 }
 
 class BoolValue extends $pb.GeneratedMessage {

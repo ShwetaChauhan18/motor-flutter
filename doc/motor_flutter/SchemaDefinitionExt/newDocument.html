@@ -59,7 +59,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>Converts a <a href="../../motor_flutter/SchemaDefinition-class.html">SchemaDefinition</a> to a base <a href="../../motor_flutter/SchemaDocument-class.html">SchemaDocument</a> with its fields being set to the associated <a href="../../motor_flutter/SchemaKind-class.html">SchemaKind</a> from the underlying definition.</p>
+  <p>Converts a <code>SchemaDefinition</code> to a base <a href="../../motor_flutter/SchemaDocument-class.html">SchemaDocument</a> with its fields being set to the associated <code>SchemaKind</code> from the underlying definition.</p>
 </section>
 
 
@@ -68,13 +68,11 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">SchemaDocument newDocument() {
   return SchemaDocument(
-    creator: creator,
-    did: did,
-    definition: this,
+    schemaDid: did,
     fields: List&lt;SchemaDocumentValue&gt;.generate(fields.length, (index) {
       return SchemaDocumentValue(
-        name: fields[index].name,
-        field_2: fields[index].field_2,
+        key: fields[index].name,
+        kind: fields[index].fieldKind.kind,
       );
     }),
   );
@@ -125,7 +123,7 @@
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.0
+      0.8.2
   </span>
 
   

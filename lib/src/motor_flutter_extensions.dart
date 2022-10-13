@@ -151,6 +151,7 @@ extension SchemaDocumentExt on SchemaDocument {
     if (resp == null) {
       return null;
     }
+    resp.document.cid = resp.cid;
     return resp.document;
   }
 

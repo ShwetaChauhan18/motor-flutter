@@ -59,7 +59,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>Returns the underlying value of the <a href="../../motor_flutter/SchemaDocumentValue-class.html">SchemaDocumentValue</a> as the provided <code>T</code> type. If the value cannot be cast to the provided type, or the provided <code>T</code> doesnt match <a href="../../motor_flutter/SchemaKind-class.html">SchemaKind</a>, then null is returned.</p>
+  <p>Returns the underlying value of the <a href="../../motor_flutter/SchemaDocumentValue-class.html">SchemaDocumentValue</a> as the provided <code>T</code> type. If the value cannot be cast to the provided type, or the provided <code>T</code> doesnt match <code>SchemaKind</code>, then null is returned.</p>
 <pre class="language-dart"><code class="language-dart">final doc = SchemaDocument();
 String? name = "";
 for (final field in doc.fields) {
@@ -79,41 +79,41 @@ if (name != null) {
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">T? getValue&lt;T&gt;() {
-  switch (field_2) {
-    case SchemaKind.BOOL:
+  switch (kind) {
+    case Kind.BOOL:
       if (T is bool) {
         return boolValue.value as T;
       }
       break;
-    case SchemaKind.INT:
+    case Kind.INT:
       if (T is int) {
         return intValue.value as T;
       }
       break;
-    case SchemaKind.FLOAT:
+    case Kind.FLOAT:
       if (T is double) {
         return floatValue.value as T;
       }
       break;
 
-    case SchemaKind.STRING:
+    case Kind.STRING:
       if (T is String) {
         return stringValue.value as T;
       }
       break;
 
-    case SchemaKind.BYTES:
+    case Kind.BYTES:
       if (T is Uint8List) {
         return bytesValue.value as T;
       }
       break;
 
-    case SchemaKind.LIST:
+    case Kind.LIST:
       if (T is List) {
-        return arrayValue.value as T;
+        return listValue.value as T;
       }
       break;
-    case SchemaKind.LINK:
+    case Kind.LINK:
       if (T is String) {
         return linkValue.value as T;
       }
@@ -172,7 +172,7 @@ if (name != null) {
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.0
+      0.8.2
   </span>
 
   

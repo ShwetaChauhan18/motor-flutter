@@ -98,7 +98,7 @@ print('Account logged in successfully: ${res.address}');
     throw Exception(&#39;No keys found for did: $address&#39;);
   }
   final resp = await MotorFlutterPlatform.instance.loginWithKeys(LoginWithKeysRequest(
-    did: address,
+    accountId: address,
     password: password,
     aesDscKey: auth?.item1 ?? dscKey,
     aesPskKey: auth?.item2 ?? pskKey,
@@ -206,7 +206,7 @@ print('Account logged in successfully: ${res.address}');
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.0
+      0.8.2
   </span>
 
   

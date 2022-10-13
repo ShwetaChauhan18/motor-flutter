@@ -89,9 +89,8 @@ if (res == null) {
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;UploadDocumentResponse&gt; uploadDocument({required SchemaDocument doc, required String label}) async {
   final res = await MotorFlutterPlatform.instance.uploadDocument(UploadDocumentRequest(
-    creator: address.value,
-    definition: doc.definition,
-    fields: doc.fields,
+    schemaDid: doc.schemaDid,
+    document: doc.writeToBuffer(),
     label: label,
   ));
   if (res == null) {
@@ -193,7 +192,7 @@ if (res == null) {
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.0
+      0.8.2
   </span>
 
   

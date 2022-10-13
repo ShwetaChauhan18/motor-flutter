@@ -51,7 +51,7 @@
     <section class="multi-line-signature">
       <span class="name ">QueryWhatIsByCreatorResponse</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-code">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">code</span>, </span></li>
 <li><span class="parameter" id="-param-whatIs"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../motor_flutter/WhatIs-class.html">WhatIs</a></span>&gt;</span>?</span> <span class="parameter-name">whatIs</span>, </span></li>
-<li><span class="parameter" id="-param-schemas"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../../motor_flutter/SchemaDefinition-class.html">SchemaDefinition</a></span>&gt;</span>?</span> <span class="parameter-name">schemas</span>, </span></li>
+<li><span class="parameter" id="-param-schemas"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../../motor_flutter/Schema-class.html">Schema</a></span>&gt;</span>?</span> <span class="parameter-name">schemas</span>, </span></li>
 <li><span class="parameter" id="-param-pagination"><span class="type-annotation">PageResponse?</span> <span class="parameter-name">pagination</span>}</span></li>
 </ol>)
     </section>
@@ -64,8 +64,8 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory QueryWhatIsByCreatorResponse({
   $core.int? code,
-  $core.Iterable&lt;$10.WhatIs&gt;? whatIs,
-  $core.Map&lt;$core.String, $5.SchemaDefinition&gt;? schemas,
+  $core.Iterable&lt;$9.WhatIs&gt;? whatIs,
+  $core.Map&lt;$core.String, $5.Schema&gt;? schemas,
   $2.PageResponse? pagination,
 }) {
   final _result = create();
@@ -216,7 +216,7 @@
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.0
+      0.8.2
   </span>
 
   

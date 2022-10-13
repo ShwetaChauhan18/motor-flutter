@@ -60,7 +60,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>Sets the value of the <a href="../../motor_flutter/SchemaDocumentValue-class.html">SchemaDocumentValue</a> to the provided <code>value</code>. If the provided <code>T</code> doesnt match <a href="../../motor_flutter/SchemaKind-class.html">SchemaKind</a>, then false is returned.</p>
+  <p>Sets the value of the <a href="../../motor_flutter/SchemaDocumentValue-class.html">SchemaDocumentValue</a> to the provided <code>value</code>. If the provided <code>T</code> doesnt match <code>SchemaKind</code>, then false is returned.</p>
 <pre class="language-dart"><code class="language-dart">// Create a new document
 final doc = SchemaDocument();
 
@@ -81,48 +81,48 @@ for (final field in doc.fields) {
   if (v == null) {
     return null;
   }
-  switch (field_2) {
-    case SchemaKind.BOOL:
+  switch (kind) {
+    case Kind.BOOL:
       if (v is bool) {
         boolValue = BoolValue(value: v);
         return v;
       }
       break;
-    case SchemaKind.INT:
+    case Kind.INT:
       if (v is int) {
         intValue = IntValue(value: v);
         return v;
       }
       break;
-    case SchemaKind.FLOAT:
+    case Kind.FLOAT:
       if (v is double) {
         floatValue = FloatValue(value: v);
         return v;
       }
       break;
 
-    case SchemaKind.STRING:
+    case Kind.STRING:
       if (v is String) {
         stringValue = StringValue(value: v);
         return v;
       }
       break;
 
-    case SchemaKind.BYTES:
+    case Kind.BYTES:
       if (v is Uint8List) {
         bytesValue = BytesValue(value: v);
         return v;
       }
       break;
 
-    case SchemaKind.LIST:
+    case Kind.LIST:
       if (v is List&lt;SchemaDocumentValue&gt;) {
-        arrayValue = ArrayValue(value: v);
+        listValue = ListValue(value: v);
         return v;
       }
       break;
-    case SchemaKind.LINK:
-      if (v is String) {
+    case Kind.LINK:
+      if (v is SchemaDocument) {
         linkValue = LinkValue(value: v);
         return v;
       }
@@ -181,7 +181,7 @@ for (final field in doc.fields) {
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.0
+      0.8.2
   </span>
 
   

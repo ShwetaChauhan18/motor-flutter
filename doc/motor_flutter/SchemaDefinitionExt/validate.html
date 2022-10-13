@@ -60,7 +60,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>Validates if all fields of the provided <code>doc</code> match the <a href="../../motor_flutter/SchemaDefinition-class.html">SchemaDefinition</a> fields.</p>
+  <p>Validates if all fields of the provided <code>doc</code> match the <code>SchemaDefinition</code> fields.</p>
 </section>
 
 
@@ -68,17 +68,17 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">bool validate(SchemaDocument doc) {
-  if (doc.definition.did != did) {
+  if (doc.schemaDid != did) {
     return false;
   }
   if (doc.fields.length != fields.length) {
     return false;
   }
   for (var i = 0; i &lt; fields.length; i++) {
-    if (fields[i].name != doc.fields[i].name) {
+    if (fields[i].name != doc.fields[i].key) {
       return false;
     }
-    if (fields[i].field_2 != doc.fields[i].field_2) {
+    if (fields[i].fieldKind.kind != doc.fields[i].kind) {
       return false;
     }
   }
@@ -130,7 +130,7 @@
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.0
+      0.8.2
   </span>
 
   

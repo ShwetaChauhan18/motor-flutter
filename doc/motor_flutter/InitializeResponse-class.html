@@ -82,7 +82,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="InitializeResponse" class="callable">
-          <span class="name"><a href="../motor_flutter/InitializeResponse/InitializeResponse.html">InitializeResponse</a></span><span class="signature">(<span class="parameter" id="-param-success">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">success</span>, </span><span class="parameter" id="-param-definitions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../motor_flutter/SchemaDefinition-class.html">SchemaDefinition</a></span>&gt;</span>?</span> <span class="parameter-name">definitions</span>}</span>)</span>
+          <span class="name"><a href="../motor_flutter/InitializeResponse/InitializeResponse.html">InitializeResponse</a></span><span class="signature">(<span class="parameter" id="-param-success">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">success</span>, </span><span class="parameter" id="-param-schemas"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../motor_flutter/Schema-class.html">Schema</a></span>&gt;</span>?</span> <span class="parameter-name">schemas</span>}</span>)</span>
         </dt>
         <dd>
           
@@ -109,17 +109,6 @@
       <h2>Properties</h2>
 
       <dl class="properties">
-        <dt id="definitions" class="property">
-  <span class="name"><a href="../motor_flutter/InitializeResponse/definitions.html">definitions</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../motor_flutter/SchemaDefinition-class.html">SchemaDefinition</a></span>&gt;</span></span> 
-
-</dt>
-<dd>
-  
-  <div class="features">@<a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/TagNumber-class.html">TagNumber</a>(2), read-only</div>
-
-</dd>
-
         <dt id="eventPlugin" class="property inherited">
   <span class="name"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/eventPlugin.html">eventPlugin</a></span>
   <span class="signature">&#8594; <a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/EventPlugin-class.html">EventPlugin</a>?</span> 
@@ -173,6 +162,17 @@ to protobuf fields.
 <dd class="inherited">
   A representation of the runtime type of the object.
   <div class="features">read-only, inherited</div>
+
+</dd>
+
+        <dt id="schemas" class="property">
+  <span class="name"><a href="../motor_flutter/InitializeResponse/schemas.html">schemas</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../motor_flutter/Schema-class.html">Schema</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+  <div class="features">@<a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/TagNumber-class.html">TagNumber</a>(2), read-only</div>
 
 </dd>
 
@@ -1122,7 +1122,6 @@ default value if it is not set.
   <li class="section-title"><a href="../motor_flutter/motor_flutter-library.html#classes">Classes</a></li>
   <li><a href="../motor_flutter/AclJwks-class.html">AclJwks</a></li>
   <li><a href="../motor_flutter/Alias-class.html">Alias</a></li>
-  <li><a href="../motor_flutter/ArrayValue-class.html">ArrayValue</a></li>
   <li><a href="../motor_flutter/AuthInfo-class.html">AuthInfo</a></li>
   <li><a href="../motor_flutter/BlockchainModule-class.html">BlockchainModule</a></li>
   <li><a href="../motor_flutter/BoolValue-class.html">BoolValue</a></li>
@@ -1133,6 +1132,7 @@ default value if it is not set.
   <li><a href="../motor_flutter/BucketRole-class.html">BucketRole</a></li>
   <li><a href="../motor_flutter/BucketVisibility-class.html">BucketVisibility</a></li>
   <li><a href="../motor_flutter/BytesValue-class.html">BytesValue</a></li>
+  <li><a href="../motor_flutter/ClientMode-class.html">ClientMode</a></li>
   <li><a href="../motor_flutter/ContinueOnSonrButton-class.html">ContinueOnSonrButton</a></li>
   <li><a href="../motor_flutter/CreateAccountRequest-class.html">CreateAccountRequest</a></li>
   <li><a href="../motor_flutter/CreateAccountResponse-class.html">CreateAccountResponse</a></li>
@@ -1152,8 +1152,9 @@ default value if it is not set.
   <li><a href="../motor_flutter/InitializeResponse-class.html">InitializeResponse</a></li>
   <li><a href="../motor_flutter/IntValue-class.html">IntValue</a></li>
   <li><a href="../motor_flutter/KeyValuePair-class.html">KeyValuePair</a></li>
-  <li><a href="../motor_flutter/LinkKind-class.html">LinkKind</a></li>
+  <li><a href="../motor_flutter/Kind-class.html">Kind</a></li>
   <li><a href="../motor_flutter/LinkValue-class.html">LinkValue</a></li>
+  <li><a href="../motor_flutter/ListValue-class.html">ListValue</a></li>
   <li><a href="../motor_flutter/LobbyMessage-class.html">LobbyMessage</a></li>
   <li><a href="../motor_flutter/Log-class.html">Log</a></li>
   <li><a href="../motor_flutter/LoginRequest-class.html">LoginRequest</a></li>
@@ -1182,7 +1183,6 @@ default value if it is not set.
   <li><a href="../motor_flutter/NebulaRadii-class.html">NebulaRadii</a></li>
   <li><a href="../motor_flutter/NebulaShadows-class.html">NebulaShadows</a></li>
   <li><a href="../motor_flutter/NebulaTextStyles-class.html">NebulaTextStyles</a></li>
-  <li><a href="../motor_flutter/ObjectReference-class.html">ObjectReference</a></li>
   <li><a href="../motor_flutter/PaymentRequest-class.html">PaymentRequest</a></li>
   <li><a href="../motor_flutter/PaymentResponse-class.html">PaymentResponse</a></li>
   <li><a href="../motor_flutter/Peer-class.html">Peer</a></li>
@@ -1200,17 +1200,17 @@ default value if it is not set.
   <li><a href="../motor_flutter/QueryWhereIsByCreatorResponse-class.html">QueryWhereIsByCreatorResponse</a></li>
   <li><a href="../motor_flutter/QueryWhereIsRequest-class.html">QueryWhereIsRequest</a></li>
   <li><a href="../motor_flutter/QueryWhereIsResponse-class.html">QueryWhereIsResponse</a></li>
+  <li><a href="../motor_flutter/QueryWhoIsByAliasRequest-class.html">QueryWhoIsByAliasRequest</a></li>
   <li><a href="../motor_flutter/QueryWhoIsRequest-class.html">QueryWhoIsRequest</a></li>
   <li><a href="../motor_flutter/QueryWhoIsResponse-class.html">QueryWhoIsResponse</a></li>
   <li><a href="../motor_flutter/RefreshEvent-class.html">RefreshEvent</a></li>
   <li><a href="../motor_flutter/RegisterWalletController-class.html">RegisterWalletController</a></li>
   <li><a href="../motor_flutter/ResourceIdentifier-class.html">ResourceIdentifier</a></li>
-  <li><a href="../motor_flutter/SchemaDefinition-class.html">SchemaDefinition</a></li>
+  <li><a href="../motor_flutter/Schema-class.html">Schema</a></li>
   <li><a href="../motor_flutter/SchemaDocument-class.html">SchemaDocument</a></li>
   <li><a href="../motor_flutter/SchemaDocumentValue-class.html">SchemaDocumentValue</a></li>
-  <li><a href="../motor_flutter/SchemaItemKindDefinition-class.html">SchemaItemKindDefinition</a></li>
-  <li><a href="../motor_flutter/SchemaKind-class.html">SchemaKind</a></li>
-  <li><a href="../motor_flutter/SchemaKindDefinition-class.html">SchemaKindDefinition</a></li>
+  <li><a href="../motor_flutter/SchemaField-class.html">SchemaField</a></li>
+  <li><a href="../motor_flutter/SchemaFieldKind-class.html">SchemaFieldKind</a></li>
   <li><a href="../motor_flutter/SeachBucketContentBySchemaRequest-class.html">SeachBucketContentBySchemaRequest</a></li>
   <li><a href="../motor_flutter/SearchBucketContentBySchemaResponse-class.html">SearchBucketContentBySchemaResponse</a></li>
   <li><a href="../motor_flutter/SearchResponse-class.html">SearchResponse</a></li>
@@ -1222,7 +1222,6 @@ default value if it is not set.
   <li><a href="../motor_flutter/UpdateBucketResponse-class.html">UpdateBucketResponse</a></li>
   <li><a href="../motor_flutter/UploadDocumentRequest-class.html">UploadDocumentRequest</a></li>
   <li><a href="../motor_flutter/UploadDocumentResponse-class.html">UploadDocumentResponse</a></li>
-  <li><a href="../motor_flutter/UploadObjectResponse-class.html">UploadObjectResponse</a></li>
   <li><a href="../motor_flutter/VerificationMethod-class.html">VerificationMethod</a></li>
   <li><a href="../motor_flutter/WhatIs-class.html">WhatIs</a></li>
   <li><a href="../motor_flutter/WhereIs-class.html">WhereIs</a></li>
@@ -1280,12 +1279,12 @@ default value if it is not set.
     <li class="section-title">
       <a href="../motor_flutter/InitializeResponse-class.html#instance-properties">Properties</a>
     </li>
-    <li><a href="../motor_flutter/InitializeResponse/definitions.html">definitions</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/eventPlugin.html">eventPlugin</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/hashCode.html">hashCode</a></li>
     <li><a href="../motor_flutter/InitializeResponse/info_.html">info_</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/isFrozen.html">isFrozen</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li><a href="../motor_flutter/InitializeResponse/schemas.html">schemas</a></li>
     <li><a href="../motor_flutter/InitializeResponse/success.html">success</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/unknownFields.html">unknownFields</a></li>
 
@@ -1373,7 +1372,7 @@ default value if it is not set.
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.0
+      0.8.2
   </span>
 
   

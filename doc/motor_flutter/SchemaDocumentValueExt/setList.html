@@ -60,7 +60,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>Sets list of values of the <a href="../../motor_flutter/SchemaDocumentValue-class.html">SchemaDocumentValue</a> to the provided <code>value</code>. If the provided <code>T</code> doesnt match <a href="../../motor_flutter/SchemaKind-class.html">SchemaKind</a>, then false is returned.</p>
+  <p>Sets list of values of the <a href="../../motor_flutter/SchemaDocumentValue-class.html">SchemaDocumentValue</a> to the provided <code>value</code>. If the provided <code>T</code> doesnt match <code>SchemaKind</code>, then false is returned.</p>
 <pre class="language-dart"><code class="language-dart">// Create a new document
 final doc = SchemaDocument();
 doc.setList&lt;String&gt;('name', ['John', 'Doe']); // sets the field 'name' to a list of strings
@@ -72,7 +72,7 @@ doc.setList&lt;String&gt;('name', ['John', 'Doe']); // sets the field 'name' to 
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">List&lt;T&gt;? setList&lt;T&gt;(List&lt;T&gt; v) {
-  if (field_2 != SchemaKind.LIST) {
+  if (kind != Kind.LIST) {
     return null;
   }
   final list = &lt;SchemaDocumentValue&gt;[];
@@ -81,7 +81,7 @@ doc.setList&lt;String&gt;('name', ['John', 'Doe']); // sets the field 'name' to 
     value.setValue&lt;T&gt;(val);
     list.add(value);
   }
-  arrayValue = ArrayValue(value: list);
+  listValue = ListValue(value: list);
   return v;
 }</code></pre>
 </section>
@@ -133,7 +133,7 @@ doc.setList&lt;String&gt;('name', ['John', 'Doe']); // sets the field 'name' to 
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.0
+      0.8.2
   </span>
 
   

@@ -604,6 +604,7 @@ class MotorFlutter extends GetxService {
     if (res == null) {
       throw UnmarshalException<UploadDocumentResponse>();
     }
+    res.document.cid = res.cid;
     return res;
   }
 

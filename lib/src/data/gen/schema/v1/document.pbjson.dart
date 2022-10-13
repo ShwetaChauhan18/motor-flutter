@@ -13,13 +13,14 @@ const SchemaDocument$json = const {
   '1': 'SchemaDocument',
   '2': const [
     const {'1': 'schema_did', '3': 1, '4': 1, '5': 9, '10': 'schemaDid'},
-    const {'1': 'label', '3': 2, '4': 1, '5': 9, '10': 'label'},
-    const {'1': 'fields', '3': 3, '4': 3, '5': 11, '6': '.sonrio.sonr.schema.SchemaDocumentValue', '10': 'fields'},
+    const {'1': 'cid', '3': 2, '4': 1, '5': 9, '10': 'cid'},
+    const {'1': 'label', '3': 3, '4': 1, '5': 9, '10': 'label'},
+    const {'1': 'fields', '3': 4, '4': 3, '5': 11, '6': '.sonrio.sonr.schema.SchemaDocumentValue', '10': 'fields'},
   ],
 };
 
 /// Descriptor for `SchemaDocument`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List schemaDocumentDescriptor = $convert.base64Decode('Cg5TY2hlbWFEb2N1bWVudBIdCgpzY2hlbWFfZGlkGAEgASgJUglzY2hlbWFEaWQSFAoFbGFiZWwYAiABKAlSBWxhYmVsEj8KBmZpZWxkcxgDIAMoCzInLnNvbnJpby5zb25yLnNjaGVtYS5TY2hlbWFEb2N1bWVudFZhbHVlUgZmaWVsZHM=');
+final $typed_data.Uint8List schemaDocumentDescriptor = $convert.base64Decode('Cg5TY2hlbWFEb2N1bWVudBIdCgpzY2hlbWFfZGlkGAEgASgJUglzY2hlbWFEaWQSEAoDY2lkGAIgASgJUgNjaWQSFAoFbGFiZWwYAyABKAlSBWxhYmVsEj8KBmZpZWxkcxgEIAMoCzInLnNvbnJpby5zb25yLnNjaGVtYS5TY2hlbWFEb2N1bWVudFZhbHVlUgZmaWVsZHM=');
 @$core.Deprecated('Use boolValueDescriptor instead')
 const BoolValue$json = const {
   '1': 'BoolValue',

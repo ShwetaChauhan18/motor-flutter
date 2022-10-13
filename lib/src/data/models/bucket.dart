@@ -37,7 +37,7 @@ class Bucket {
     if (!_isInitialized) {
       await _resolve();
     }
-    if (!doc.hasSchemaDid()) {
+    if (!doc.hasCid()) {
       final newDoc = await doc.upload(label);
       if (newDoc == null) {
         return false;
@@ -45,6 +45,7 @@ class Bucket {
       doc = newDoc;
     }
     final item = BucketItem(
+      uri: doc.cid,
       name: label,
       type: ResourceIdentifier.CID,
       schemaDid: doc.schemaDid,

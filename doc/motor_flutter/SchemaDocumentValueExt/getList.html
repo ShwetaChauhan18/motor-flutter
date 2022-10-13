@@ -59,7 +59,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>Checks if the <a href="../../motor_flutter/SchemaDocumentValue-class.html">SchemaDocumentValue</a> is of the provided <code>T</code> type. If the value cannot be cast to the provided type, or the provided <code>T</code> doesnt match <a href="../../motor_flutter/SchemaKind-class.html">SchemaKind</a>, then false is returned.</p>
+  <p>Checks if the <a href="../../motor_flutter/SchemaDocumentValue-class.html">SchemaDocumentValue</a> is of the provided <code>T</code> type. If the value cannot be cast to the provided type, or the provided <code>T</code> doesnt match <code>SchemaKind</code>, then false is returned.</p>
 <pre class="language-dart"><code class="language-dart">final doc = SchemaDocument();
 final names = doc.getList&lt;String&gt;('name'); // returns true if the field 'name' is a list of strings
 </code></pre>
@@ -70,11 +70,11 @@ final names = doc.getList&lt;String&gt;('name'); // returns true if the field 'n
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">List&lt;T&gt;? getList&lt;T&gt;() {
-  if (field_2 != SchemaKind.LIST) {
+  if (kind != Kind.LIST) {
     return null;
   }
   final list = &lt;T&gt;[];
-  for (final val in arrayValue.value) {
+  for (final val in listValue.value) {
     final v = val.getValue&lt;T&gt;();
     if (v != null) {
       list.add(v);
@@ -131,7 +131,7 @@ final names = doc.getList&lt;String&gt;('name'); // returns true if the field 'n
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.0
+      0.8.2
   </span>
 
   

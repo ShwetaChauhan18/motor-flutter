@@ -90,10 +90,9 @@ if (res != null) {
   }
 
   final resp = await MotorFlutterPlatform.instance.uploadDocument(UploadDocumentRequest(
-    creator: creator ?? MotorFlutter.to.address.value,
-    fields: fields,
+    schemaDid: schemaDid,
     label: label,
-    definition: definition,
+    document: writeToBuffer(),
   ));
   if (resp == null) {
     return null;
@@ -150,7 +149,7 @@ if (res != null) {
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.0
+      0.8.2
   </span>
 
   
