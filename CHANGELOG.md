@@ -1,3 +1,10 @@
+## 0.8.2
+* Fix Framework compilation to fit system architecture
+* Return CID from SchemaDocument
+
+## 0.8.1
+* Updated to latest framework version v0.6.2
+* Upgrade protobuf files
 ## 0.8.0
 * Introduce Webauthn for Mobile Keyprint
 * Introduce Onboarding modal with animated GIFs
