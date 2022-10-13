@@ -11,14 +11,15 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../common/v1/info.pb.dart' as $6;
+import '../../schema/v1/schema.pb.dart' as $5;
 import '../../cosmos/base/query/v1beta1/pagination.pb.dart' as $2;
 import '../../bucket/where_is.pb.dart' as $0;
-import '../../schema/v1/schema.pb.dart' as $5;
-import '../../schema/v1/document.pb.dart' as $7;
 
+import 'request.pbenum.dart';
 import '../../common/v1/info.pbenum.dart' as $6;
-import '../../schema/v1/schema.pbenum.dart' as $5;
 import '../../bucket/where_is.pbenum.dart' as $0;
+
+export 'request.pbenum.dart';
 
 class InitializeRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InitializeRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
@@ -26,13 +27,15 @@ class InitializeRequest extends $pb.GeneratedMessage {
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'homeDir')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'supportDir')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tempDir')
-    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableHost')
-    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableDiscovery')
-    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableQuery')
-    ..a<$core.double>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'discoveryLatitude', $pb.PbFieldType.OD)
-    ..a<$core.double>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'discoveryLongitude', $pb.PbFieldType.OD)
-    ..aOM<$6.AuthInfo>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authInfo', subBuilder: $6.AuthInfo.create)
-    ..aOS(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appDid')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logLevel')
+    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableHost')
+    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableDiscovery')
+    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enableQuery')
+    ..a<$core.double>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'discoveryLatitude', $pb.PbFieldType.OD)
+    ..a<$core.double>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'discoveryLongitude', $pb.PbFieldType.OD)
+    ..aOM<$6.AuthInfo>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authInfo', subBuilder: $6.AuthInfo.create)
+    ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appDid')
+    ..e<ClientMode>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'clientMode', $pb.PbFieldType.OE, defaultOrMaker: ClientMode.ENDPOINT_BETA, valueOf: ClientMode.valueOf, enumValues: ClientMode.values)
     ..hasRequiredFields = false
   ;
 
@@ -42,6 +45,7 @@ class InitializeRequest extends $pb.GeneratedMessage {
     $core.String? homeDir,
     $core.String? supportDir,
     $core.String? tempDir,
+    $core.String? logLevel,
     $core.bool? enableHost,
     $core.bool? enableDiscovery,
     $core.bool? enableQuery,
@@ -49,6 +53,7 @@ class InitializeRequest extends $pb.GeneratedMessage {
     $core.double? discoveryLongitude,
     $6.AuthInfo? authInfo,
     $core.String? appDid,
+    ClientMode? clientMode,
   }) {
     final _result = create();
     if (deviceId != null) {
@@ -62,6 +67,9 @@ class InitializeRequest extends $pb.GeneratedMessage {
     }
     if (tempDir != null) {
       _result.tempDir = tempDir;
+    }
+    if (logLevel != null) {
+      _result.logLevel = logLevel;
     }
     if (enableHost != null) {
       _result.enableHost = enableHost;
@@ -83,6 +91,9 @@ class InitializeRequest extends $pb.GeneratedMessage {
     }
     if (appDid != null) {
       _result.appDid = appDid;
+    }
+    if (clientMode != null) {
+      _result.clientMode = clientMode;
     }
     return _result;
   }
@@ -144,69 +155,87 @@ class InitializeRequest extends $pb.GeneratedMessage {
   void clearTempDir() => clearField(4);
 
   @$pb.TagNumber(5)
-  $core.bool get enableHost => $_getBF(4);
+  $core.String get logLevel => $_getSZ(4);
   @$pb.TagNumber(5)
-  set enableHost($core.bool v) { $_setBool(4, v); }
+  set logLevel($core.String v) { $_setString(4, v); }
   @$pb.TagNumber(5)
-  $core.bool hasEnableHost() => $_has(4);
+  $core.bool hasLogLevel() => $_has(4);
   @$pb.TagNumber(5)
-  void clearEnableHost() => clearField(5);
+  void clearLogLevel() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.bool get enableDiscovery => $_getBF(5);
+  $core.bool get enableHost => $_getBF(5);
   @$pb.TagNumber(6)
-  set enableDiscovery($core.bool v) { $_setBool(5, v); }
+  set enableHost($core.bool v) { $_setBool(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasEnableDiscovery() => $_has(5);
+  $core.bool hasEnableHost() => $_has(5);
   @$pb.TagNumber(6)
-  void clearEnableDiscovery() => clearField(6);
+  void clearEnableHost() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.bool get enableQuery => $_getBF(6);
+  $core.bool get enableDiscovery => $_getBF(6);
   @$pb.TagNumber(7)
-  set enableQuery($core.bool v) { $_setBool(6, v); }
+  set enableDiscovery($core.bool v) { $_setBool(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasEnableQuery() => $_has(6);
+  $core.bool hasEnableDiscovery() => $_has(6);
   @$pb.TagNumber(7)
-  void clearEnableQuery() => clearField(7);
+  void clearEnableDiscovery() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.double get discoveryLatitude => $_getN(7);
+  $core.bool get enableQuery => $_getBF(7);
   @$pb.TagNumber(8)
-  set discoveryLatitude($core.double v) { $_setDouble(7, v); }
+  set enableQuery($core.bool v) { $_setBool(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasDiscoveryLatitude() => $_has(7);
+  $core.bool hasEnableQuery() => $_has(7);
   @$pb.TagNumber(8)
-  void clearDiscoveryLatitude() => clearField(8);
+  void clearEnableQuery() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.double get discoveryLongitude => $_getN(8);
+  $core.double get discoveryLatitude => $_getN(8);
   @$pb.TagNumber(9)
-  set discoveryLongitude($core.double v) { $_setDouble(8, v); }
+  set discoveryLatitude($core.double v) { $_setDouble(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasDiscoveryLongitude() => $_has(8);
+  $core.bool hasDiscoveryLatitude() => $_has(8);
   @$pb.TagNumber(9)
-  void clearDiscoveryLongitude() => clearField(9);
+  void clearDiscoveryLatitude() => clearField(9);
 
   @$pb.TagNumber(10)
-  $6.AuthInfo get authInfo => $_getN(9);
+  $core.double get discoveryLongitude => $_getN(9);
   @$pb.TagNumber(10)
-  set authInfo($6.AuthInfo v) { setField(10, v); }
+  set discoveryLongitude($core.double v) { $_setDouble(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasAuthInfo() => $_has(9);
+  $core.bool hasDiscoveryLongitude() => $_has(9);
   @$pb.TagNumber(10)
-  void clearAuthInfo() => clearField(10);
-  @$pb.TagNumber(10)
-  $6.AuthInfo ensureAuthInfo() => $_ensure(9);
+  void clearDiscoveryLongitude() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.String get appDid => $_getSZ(10);
+  $6.AuthInfo get authInfo => $_getN(10);
   @$pb.TagNumber(11)
-  set appDid($core.String v) { $_setString(10, v); }
+  set authInfo($6.AuthInfo v) { setField(11, v); }
   @$pb.TagNumber(11)
-  $core.bool hasAppDid() => $_has(10);
+  $core.bool hasAuthInfo() => $_has(10);
   @$pb.TagNumber(11)
-  void clearAppDid() => clearField(11);
+  void clearAuthInfo() => clearField(11);
+  @$pb.TagNumber(11)
+  $6.AuthInfo ensureAuthInfo() => $_ensure(10);
+
+  @$pb.TagNumber(12)
+  $core.String get appDid => $_getSZ(11);
+  @$pb.TagNumber(12)
+  set appDid($core.String v) { $_setString(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasAppDid() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearAppDid() => clearField(12);
+
+  @$pb.TagNumber(13)
+  ClientMode get clientMode => $_getN(12);
+  @$pb.TagNumber(13)
+  set clientMode(ClientMode v) { setField(13, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasClientMode() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearClientMode() => clearField(13);
 }
 
 class CreateAccountRequest extends $pb.GeneratedMessage {
@@ -349,19 +378,19 @@ class CreateAccountWithKeysRequest extends $pb.GeneratedMessage {
 
 class LoginRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LoginRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'did')
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountId')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
     ..hasRequiredFields = false
   ;
 
   LoginRequest._() : super();
   factory LoginRequest({
-    $core.String? did,
+    $core.String? accountId,
     $core.String? password,
   }) {
     final _result = create();
-    if (did != null) {
-      _result.did = did;
+    if (accountId != null) {
+      _result.accountId = accountId;
     }
     if (password != null) {
       _result.password = password;
@@ -390,13 +419,13 @@ class LoginRequest extends $pb.GeneratedMessage {
   static LoginRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get did => $_getSZ(0);
+  $core.String get accountId => $_getSZ(0);
   @$pb.TagNumber(1)
-  set did($core.String v) { $_setString(0, v); }
+  set accountId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasDid() => $_has(0);
+  $core.bool hasAccountId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDid() => clearField(1);
+  void clearAccountId() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get password => $_getSZ(1);
@@ -410,7 +439,7 @@ class LoginRequest extends $pb.GeneratedMessage {
 
 class LoginWithKeysRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LoginWithKeysRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'did')
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountId')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
     ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'aesDscKey', $pb.PbFieldType.OY)
     ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'aesPskKey', $pb.PbFieldType.OY)
@@ -419,14 +448,14 @@ class LoginWithKeysRequest extends $pb.GeneratedMessage {
 
   LoginWithKeysRequest._() : super();
   factory LoginWithKeysRequest({
-    $core.String? did,
+    $core.String? accountId,
     $core.String? password,
     $core.List<$core.int>? aesDscKey,
     $core.List<$core.int>? aesPskKey,
   }) {
     final _result = create();
-    if (did != null) {
-      _result.did = did;
+    if (accountId != null) {
+      _result.accountId = accountId;
     }
     if (password != null) {
       _result.password = password;
@@ -461,13 +490,13 @@ class LoginWithKeysRequest extends $pb.GeneratedMessage {
   static LoginWithKeysRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get did => $_getSZ(0);
+  $core.String get accountId => $_getSZ(0);
   @$pb.TagNumber(1)
-  set did($core.String v) { $_setString(0, v); }
+  set accountId($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasDid() => $_has(0);
+  $core.bool hasAccountId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDid() => clearField(1);
+  void clearAccountId() => clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get password => $_getSZ(1);
@@ -708,10 +737,57 @@ class QueryWhoIsRequest extends $pb.GeneratedMessage {
   void clearDid() => clearField(1);
 }
 
+class QueryWhoIsByAliasRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryWhoIsByAliasRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'alias')
+    ..hasRequiredFields = false
+  ;
+
+  QueryWhoIsByAliasRequest._() : super();
+  factory QueryWhoIsByAliasRequest({
+    $core.String? alias,
+  }) {
+    final _result = create();
+    if (alias != null) {
+      _result.alias = alias;
+    }
+    return _result;
+  }
+  factory QueryWhoIsByAliasRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory QueryWhoIsByAliasRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  QueryWhoIsByAliasRequest clone() => QueryWhoIsByAliasRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  QueryWhoIsByAliasRequest copyWith(void Function(QueryWhoIsByAliasRequest) updates) => super.copyWith((message) => updates(message as QueryWhoIsByAliasRequest)) as QueryWhoIsByAliasRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static QueryWhoIsByAliasRequest create() => QueryWhoIsByAliasRequest._();
+  QueryWhoIsByAliasRequest createEmptyInstance() => create();
+  static $pb.PbList<QueryWhoIsByAliasRequest> createRepeated() => $pb.PbList<QueryWhoIsByAliasRequest>();
+  @$core.pragma('dart2js:noInline')
+  static QueryWhoIsByAliasRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryWhoIsByAliasRequest>(create);
+  static QueryWhoIsByAliasRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get alias => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set alias($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAlias() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAlias() => clearField(1);
+}
+
 class CreateSchemaRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateSchemaRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
-    ..m<$core.String, $5.SchemaKind>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fields', entryClassName: 'CreateSchemaRequest.FieldsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OE, valueOf: $5.SchemaKind.valueOf, enumValues: $5.SchemaKind.values, defaultEnumValue: $5.SchemaKind.LIST, packageName: const $pb.PackageName('sonrio.motor.api.v1'))
+    ..m<$core.String, $5.SchemaFieldKind>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fields', entryClassName: 'CreateSchemaRequest.FieldsEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $5.SchemaFieldKind.create, packageName: const $pb.PackageName('sonrio.motor.api.v1'))
     ..m<$core.String, $core.String>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', entryClassName: 'CreateSchemaRequest.MetadataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('sonrio.motor.api.v1'))
     ..hasRequiredFields = false
   ;
@@ -719,7 +795,7 @@ class CreateSchemaRequest extends $pb.GeneratedMessage {
   CreateSchemaRequest._() : super();
   factory CreateSchemaRequest({
     $core.String? label,
-    $core.Map<$core.String, $5.SchemaKind>? fields,
+    $core.Map<$core.String, $5.SchemaFieldKind>? fields,
     $core.Map<$core.String, $core.String>? metadata,
   }) {
     final _result = create();
@@ -765,7 +841,7 @@ class CreateSchemaRequest extends $pb.GeneratedMessage {
   void clearLabel() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.Map<$core.String, $5.SchemaKind> get fields => $_getMap(1);
+  $core.Map<$core.String, $5.SchemaFieldKind> get fields => $_getMap(1);
 
   @$pb.TagNumber(3)
   $core.Map<$core.String, $core.String> get metadata => $_getMap(2);
@@ -954,6 +1030,128 @@ class QuerySchemaRequest extends $pb.GeneratedMessage {
   $core.bool hasDid() => $_has(1);
   @$pb.TagNumber(2)
   void clearDid() => clearField(2);
+}
+
+class UploadDocumentRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UploadDocumentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'schemaDid')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
+    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'document', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
+  UploadDocumentRequest._() : super();
+  factory UploadDocumentRequest({
+    $core.String? schemaDid,
+    $core.String? label,
+    $core.List<$core.int>? document,
+  }) {
+    final _result = create();
+    if (schemaDid != null) {
+      _result.schemaDid = schemaDid;
+    }
+    if (label != null) {
+      _result.label = label;
+    }
+    if (document != null) {
+      _result.document = document;
+    }
+    return _result;
+  }
+  factory UploadDocumentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UploadDocumentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UploadDocumentRequest clone() => UploadDocumentRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UploadDocumentRequest copyWith(void Function(UploadDocumentRequest) updates) => super.copyWith((message) => updates(message as UploadDocumentRequest)) as UploadDocumentRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static UploadDocumentRequest create() => UploadDocumentRequest._();
+  UploadDocumentRequest createEmptyInstance() => create();
+  static $pb.PbList<UploadDocumentRequest> createRepeated() => $pb.PbList<UploadDocumentRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UploadDocumentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadDocumentRequest>(create);
+  static UploadDocumentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get schemaDid => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set schemaDid($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSchemaDid() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSchemaDid() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get label => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set label($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLabel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLabel() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get document => $_getN(2);
+  @$pb.TagNumber(3)
+  set document($core.List<$core.int> v) { $_setBytes(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDocument() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDocument() => clearField(3);
+}
+
+class GetDocumentRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetDocumentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cid')
+    ..hasRequiredFields = false
+  ;
+
+  GetDocumentRequest._() : super();
+  factory GetDocumentRequest({
+    $core.String? cid,
+  }) {
+    final _result = create();
+    if (cid != null) {
+      _result.cid = cid;
+    }
+    return _result;
+  }
+  factory GetDocumentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDocumentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDocumentRequest clone() => GetDocumentRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDocumentRequest copyWith(void Function(GetDocumentRequest) updates) => super.copyWith((message) => updates(message as GetDocumentRequest)) as GetDocumentRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetDocumentRequest create() => GetDocumentRequest._();
+  GetDocumentRequest createEmptyInstance() => create();
+  static $pb.PbList<GetDocumentRequest> createRepeated() => $pb.PbList<GetDocumentRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetDocumentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDocumentRequest>(create);
+  static GetDocumentRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get cid => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set cid($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCid() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCid() => clearField(1);
 }
 
 class QueryWhereIsRequest extends $pb.GeneratedMessage {
@@ -1390,137 +1588,5 @@ class StatRequest extends $pb.GeneratedMessage {
   @$core.pragma('dart2js:noInline')
   static StatRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StatRequest>(create);
   static StatRequest? _defaultInstance;
-}
-
-class UploadDocumentRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UploadDocumentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'creator')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
-    ..aOM<$5.SchemaDefinition>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'definition', subBuilder: $5.SchemaDefinition.create)
-    ..pc<$7.SchemaDocumentValue>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: $7.SchemaDocumentValue.create)
-    ..hasRequiredFields = false
-  ;
-
-  UploadDocumentRequest._() : super();
-  factory UploadDocumentRequest({
-    $core.String? creator,
-    $core.String? label,
-    $5.SchemaDefinition? definition,
-    $core.Iterable<$7.SchemaDocumentValue>? fields,
-  }) {
-    final _result = create();
-    if (creator != null) {
-      _result.creator = creator;
-    }
-    if (label != null) {
-      _result.label = label;
-    }
-    if (definition != null) {
-      _result.definition = definition;
-    }
-    if (fields != null) {
-      _result.fields.addAll(fields);
-    }
-    return _result;
-  }
-  factory UploadDocumentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UploadDocumentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  UploadDocumentRequest clone() => UploadDocumentRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  UploadDocumentRequest copyWith(void Function(UploadDocumentRequest) updates) => super.copyWith((message) => updates(message as UploadDocumentRequest)) as UploadDocumentRequest; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static UploadDocumentRequest create() => UploadDocumentRequest._();
-  UploadDocumentRequest createEmptyInstance() => create();
-  static $pb.PbList<UploadDocumentRequest> createRepeated() => $pb.PbList<UploadDocumentRequest>();
-  @$core.pragma('dart2js:noInline')
-  static UploadDocumentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadDocumentRequest>(create);
-  static UploadDocumentRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get creator => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set creator($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasCreator() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearCreator() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get label => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set label($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasLabel() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearLabel() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $5.SchemaDefinition get definition => $_getN(2);
-  @$pb.TagNumber(3)
-  set definition($5.SchemaDefinition v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasDefinition() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearDefinition() => clearField(3);
-  @$pb.TagNumber(3)
-  $5.SchemaDefinition ensureDefinition() => $_ensure(2);
-
-  @$pb.TagNumber(4)
-  $core.List<$7.SchemaDocumentValue> get fields => $_getList(3);
-}
-
-class GetDocumentRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetDocumentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cid')
-    ..hasRequiredFields = false
-  ;
-
-  GetDocumentRequest._() : super();
-  factory GetDocumentRequest({
-    $core.String? cid,
-  }) {
-    final _result = create();
-    if (cid != null) {
-      _result.cid = cid;
-    }
-    return _result;
-  }
-  factory GetDocumentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetDocumentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  GetDocumentRequest clone() => GetDocumentRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetDocumentRequest copyWith(void Function(GetDocumentRequest) updates) => super.copyWith((message) => updates(message as GetDocumentRequest)) as GetDocumentRequest; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static GetDocumentRequest create() => GetDocumentRequest._();
-  GetDocumentRequest createEmptyInstance() => create();
-  static $pb.PbList<GetDocumentRequest> createRepeated() => $pb.PbList<GetDocumentRequest>();
-  @$core.pragma('dart2js:noInline')
-  static GetDocumentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDocumentRequest>(create);
-  static GetDocumentRequest? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get cid => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set cid($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasCid() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearCid() => clearField(1);
 }
 

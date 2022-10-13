@@ -9,7 +9,7 @@ import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
 import '../../base/v1beta1/coin.pbjson.dart' as $11;
-import 'distribution.pbjson.dart' as $35;
+import 'distribution.pbjson.dart' as $36;
 
 @$core.Deprecated('Use msgSetWithdrawAddressDescriptor instead')
 const MsgSetWithdrawAddress$json = const {
@@ -156,7 +156,7 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> MsgService
   '.cosmos.distribution.v1beta1.MsgFundCommunityPool': MsgFundCommunityPool$json,
   '.cosmos.distribution.v1beta1.MsgFundCommunityPoolResponse': MsgFundCommunityPoolResponse$json,
   '.cosmos.distribution.v1beta1.MsgUpdateParams': MsgUpdateParams$json,
-  '.cosmos.distribution.v1beta1.Params': $35.Params$json,
+  '.cosmos.distribution.v1beta1.Params': $36.Params$json,
   '.cosmos.distribution.v1beta1.MsgUpdateParamsResponse': MsgUpdateParamsResponse$json,
   '.cosmos.distribution.v1beta1.MsgCommunityPoolSpend': MsgCommunityPoolSpend$json,
   '.cosmos.distribution.v1beta1.MsgCommunityPoolSpendResponse': MsgCommunityPoolSpendResponse$json,

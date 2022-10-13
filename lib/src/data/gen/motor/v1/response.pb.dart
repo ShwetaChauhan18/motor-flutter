@@ -10,34 +10,34 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../schema/v1/schema.pb.dart' as $5;
-import '../../registry/who_is.pb.dart' as $9;
-import '../../schema/v1/what_is.pb.dart' as $10;
+import '../../registry/who_is.pb.dart' as $8;
+import '../../schema/v1/what_is.pb.dart' as $9;
 import '../../bucket/where_is.pb.dart' as $0;
 import '../../cosmos/base/query/v1beta1/pagination.pb.dart' as $2;
-import '../../bucket/bucket.pb.dart' as $11;
-import '../../registry/did.pb.dart' as $8;
-import '../../schema/v1/document.pb.dart' as $7;
+import '../../bucket/bucket.pb.dart' as $10;
+import '../../registry/did.pb.dart' as $7;
+import '../../schema/v1/document.pb.dart' as $11;
 
 import '../../common/v1/info.pbenum.dart' as $6;
 
 class InitializeResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InitializeResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
     ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'success')
-    ..pc<$5.SchemaDefinition>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'definitions', $pb.PbFieldType.PM, subBuilder: $5.SchemaDefinition.create)
+    ..pc<$5.Schema>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'schemas', $pb.PbFieldType.PM, subBuilder: $5.Schema.create)
     ..hasRequiredFields = false
   ;
 
   InitializeResponse._() : super();
   factory InitializeResponse({
     $core.bool? success,
-    $core.Iterable<$5.SchemaDefinition>? definitions,
+    $core.Iterable<$5.Schema>? schemas,
   }) {
     final _result = create();
     if (success != null) {
       _result.success = success;
     }
-    if (definitions != null) {
-      _result.definitions.addAll(definitions);
+    if (schemas != null) {
+      _result.schemas.addAll(schemas);
     }
     return _result;
   }
@@ -72,20 +72,20 @@ class InitializeResponse extends $pb.GeneratedMessage {
   void clearSuccess() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$5.SchemaDefinition> get definitions => $_getList(1);
+  $core.List<$5.Schema> get schemas => $_getList(1);
 }
 
 class CreateAccountResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateAccountResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'address')
-    ..aOM<$9.WhoIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whoIs', subBuilder: $9.WhoIs.create)
+    ..aOM<$8.WhoIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whoIs', subBuilder: $8.WhoIs.create)
     ..hasRequiredFields = false
   ;
 
   CreateAccountResponse._() : super();
   factory CreateAccountResponse({
     $core.String? address,
-    $9.WhoIs? whoIs,
+    $8.WhoIs? whoIs,
   }) {
     final _result = create();
     if (address != null) {
@@ -127,22 +127,22 @@ class CreateAccountResponse extends $pb.GeneratedMessage {
   void clearAddress() => clearField(1);
 
   @$pb.TagNumber(2)
-  $9.WhoIs get whoIs => $_getN(1);
+  $8.WhoIs get whoIs => $_getN(1);
   @$pb.TagNumber(2)
-  set whoIs($9.WhoIs v) { setField(2, v); }
+  set whoIs($8.WhoIs v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasWhoIs() => $_has(1);
   @$pb.TagNumber(2)
   void clearWhoIs() => clearField(2);
   @$pb.TagNumber(2)
-  $9.WhoIs ensureWhoIs() => $_ensure(1);
+  $8.WhoIs ensureWhoIs() => $_ensure(1);
 }
 
 class CreateAccountWithKeysResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateAccountWithKeysResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'address')
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'aesPskKey', $pb.PbFieldType.OY)
-    ..aOM<$9.WhoIs>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whoIs', subBuilder: $9.WhoIs.create)
+    ..aOM<$8.WhoIs>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whoIs', subBuilder: $8.WhoIs.create)
     ..hasRequiredFields = false
   ;
 
@@ -150,7 +150,7 @@ class CreateAccountWithKeysResponse extends $pb.GeneratedMessage {
   factory CreateAccountWithKeysResponse({
     $core.String? address,
     $core.List<$core.int>? aesPskKey,
-    $9.WhoIs? whoIs,
+    $8.WhoIs? whoIs,
   }) {
     final _result = create();
     if (address != null) {
@@ -204,28 +204,28 @@ class CreateAccountWithKeysResponse extends $pb.GeneratedMessage {
   void clearAesPskKey() => clearField(2);
 
   @$pb.TagNumber(3)
-  $9.WhoIs get whoIs => $_getN(2);
+  $8.WhoIs get whoIs => $_getN(2);
   @$pb.TagNumber(3)
-  set whoIs($9.WhoIs v) { setField(3, v); }
+  set whoIs($8.WhoIs v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasWhoIs() => $_has(2);
   @$pb.TagNumber(3)
   void clearWhoIs() => clearField(3);
   @$pb.TagNumber(3)
-  $9.WhoIs ensureWhoIs() => $_ensure(2);
+  $8.WhoIs ensureWhoIs() => $_ensure(2);
 }
 
 class LoginResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LoginResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
     ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'success')
-    ..aOM<$9.WhoIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whoIs', subBuilder: $9.WhoIs.create)
+    ..aOM<$8.WhoIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whoIs', subBuilder: $8.WhoIs.create)
     ..hasRequiredFields = false
   ;
 
   LoginResponse._() : super();
   factory LoginResponse({
     $core.bool? success,
-    $9.WhoIs? whoIs,
+    $8.WhoIs? whoIs,
   }) {
     final _result = create();
     if (success != null) {
@@ -267,30 +267,30 @@ class LoginResponse extends $pb.GeneratedMessage {
   void clearSuccess() => clearField(1);
 
   @$pb.TagNumber(2)
-  $9.WhoIs get whoIs => $_getN(1);
+  $8.WhoIs get whoIs => $_getN(1);
   @$pb.TagNumber(2)
-  set whoIs($9.WhoIs v) { setField(2, v); }
+  set whoIs($8.WhoIs v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasWhoIs() => $_has(1);
   @$pb.TagNumber(2)
   void clearWhoIs() => clearField(2);
   @$pb.TagNumber(2)
-  $9.WhoIs ensureWhoIs() => $_ensure(1);
+  $8.WhoIs ensureWhoIs() => $_ensure(1);
 }
 
 class CreateSchemaResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateSchemaResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.O3)
-    ..aOM<$10.WhatIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whatIs', subBuilder: $10.WhatIs.create)
-    ..aOM<$5.SchemaDefinition>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'schemaDefinition', subBuilder: $5.SchemaDefinition.create)
+    ..aOM<$9.WhatIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whatIs', subBuilder: $9.WhatIs.create)
+    ..aOM<$5.Schema>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'schema', subBuilder: $5.Schema.create)
     ..hasRequiredFields = false
   ;
 
   CreateSchemaResponse._() : super();
   factory CreateSchemaResponse({
     $core.int? status,
-    $10.WhatIs? whatIs,
-    $5.SchemaDefinition? schemaDefinition,
+    $9.WhatIs? whatIs,
+    $5.Schema? schema,
   }) {
     final _result = create();
     if (status != null) {
@@ -299,8 +299,8 @@ class CreateSchemaResponse extends $pb.GeneratedMessage {
     if (whatIs != null) {
       _result.whatIs = whatIs;
     }
-    if (schemaDefinition != null) {
-      _result.schemaDefinition = schemaDefinition;
+    if (schema != null) {
+      _result.schema = schema;
     }
     return _result;
   }
@@ -335,26 +335,26 @@ class CreateSchemaResponse extends $pb.GeneratedMessage {
   void clearStatus() => clearField(1);
 
   @$pb.TagNumber(2)
-  $10.WhatIs get whatIs => $_getN(1);
+  $9.WhatIs get whatIs => $_getN(1);
   @$pb.TagNumber(2)
-  set whatIs($10.WhatIs v) { setField(2, v); }
+  set whatIs($9.WhatIs v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasWhatIs() => $_has(1);
   @$pb.TagNumber(2)
   void clearWhatIs() => clearField(2);
   @$pb.TagNumber(2)
-  $10.WhatIs ensureWhatIs() => $_ensure(1);
+  $9.WhatIs ensureWhatIs() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $5.SchemaDefinition get schemaDefinition => $_getN(2);
+  $5.Schema get schema => $_getN(2);
   @$pb.TagNumber(3)
-  set schemaDefinition($5.SchemaDefinition v) { setField(3, v); }
+  set schema($5.Schema v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasSchemaDefinition() => $_has(2);
+  $core.bool hasSchema() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSchemaDefinition() => clearField(3);
+  void clearSchema() => clearField(3);
   @$pb.TagNumber(3)
-  $5.SchemaDefinition ensureSchemaDefinition() => $_ensure(2);
+  $5.Schema ensureSchema() => $_ensure(2);
 }
 
 class QueryResponse extends $pb.GeneratedMessage {
@@ -444,9 +444,9 @@ class QueryResultItem extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryResultItem', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'did')
     ..e<$6.EntityKind>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'kind', $pb.PbFieldType.OE, defaultOrMaker: $6.EntityKind.ADDRESS, valueOf: $6.EntityKind.valueOf, enumValues: $6.EntityKind.values)
-    ..aOM<$9.WhoIs>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whoIs', subBuilder: $9.WhoIs.create)
-    ..aOM<$10.WhatIs>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whatIs', subBuilder: $10.WhatIs.create)
-    ..aOM<$5.SchemaDefinition>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'schemaDefinition', subBuilder: $5.SchemaDefinition.create)
+    ..aOM<$8.WhoIs>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whoIs', subBuilder: $8.WhoIs.create)
+    ..aOM<$9.WhatIs>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whatIs', subBuilder: $9.WhatIs.create)
+    ..aOM<$5.Schema>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'schema', subBuilder: $5.Schema.create)
     ..aOM<$0.WhereIs>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whereIs', subBuilder: $0.WhereIs.create)
     ..pc<$0.WhereIs>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whereIsList', $pb.PbFieldType.PM, subBuilder: $0.WhereIs.create)
     ..hasRequiredFields = false
@@ -456,9 +456,9 @@ class QueryResultItem extends $pb.GeneratedMessage {
   factory QueryResultItem({
     $core.String? did,
     $6.EntityKind? kind,
-    $9.WhoIs? whoIs,
-    $10.WhatIs? whatIs,
-    $5.SchemaDefinition? schemaDefinition,
+    $8.WhoIs? whoIs,
+    $9.WhatIs? whatIs,
+    $5.Schema? schema,
     $0.WhereIs? whereIs,
     $core.Iterable<$0.WhereIs>? whereIsList,
   }) {
@@ -475,8 +475,8 @@ class QueryResultItem extends $pb.GeneratedMessage {
     if (whatIs != null) {
       _result.whatIs = whatIs;
     }
-    if (schemaDefinition != null) {
-      _result.schemaDefinition = schemaDefinition;
+    if (schema != null) {
+      _result.schema = schema;
     }
     if (whereIs != null) {
       _result.whereIs = whereIs;
@@ -526,37 +526,37 @@ class QueryResultItem extends $pb.GeneratedMessage {
   void clearKind() => clearField(2);
 
   @$pb.TagNumber(3)
-  $9.WhoIs get whoIs => $_getN(2);
+  $8.WhoIs get whoIs => $_getN(2);
   @$pb.TagNumber(3)
-  set whoIs($9.WhoIs v) { setField(3, v); }
+  set whoIs($8.WhoIs v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasWhoIs() => $_has(2);
   @$pb.TagNumber(3)
   void clearWhoIs() => clearField(3);
   @$pb.TagNumber(3)
-  $9.WhoIs ensureWhoIs() => $_ensure(2);
+  $8.WhoIs ensureWhoIs() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $10.WhatIs get whatIs => $_getN(3);
+  $9.WhatIs get whatIs => $_getN(3);
   @$pb.TagNumber(4)
-  set whatIs($10.WhatIs v) { setField(4, v); }
+  set whatIs($9.WhatIs v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasWhatIs() => $_has(3);
   @$pb.TagNumber(4)
   void clearWhatIs() => clearField(4);
   @$pb.TagNumber(4)
-  $10.WhatIs ensureWhatIs() => $_ensure(3);
+  $9.WhatIs ensureWhatIs() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $5.SchemaDefinition get schemaDefinition => $_getN(4);
+  $5.Schema get schema => $_getN(4);
   @$pb.TagNumber(5)
-  set schemaDefinition($5.SchemaDefinition v) { setField(5, v); }
+  set schema($5.Schema v) { setField(5, v); }
   @$pb.TagNumber(5)
-  $core.bool hasSchemaDefinition() => $_has(4);
+  $core.bool hasSchema() => $_has(4);
   @$pb.TagNumber(5)
-  void clearSchemaDefinition() => clearField(5);
+  void clearSchema() => clearField(5);
   @$pb.TagNumber(5)
-  $5.SchemaDefinition ensureSchemaDefinition() => $_ensure(4);
+  $5.Schema ensureSchema() => $_ensure(4);
 
   @$pb.TagNumber(6)
   $0.WhereIs get whereIs => $_getN(5);
@@ -576,14 +576,14 @@ class QueryResultItem extends $pb.GeneratedMessage {
 class QueryWhoIsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryWhoIsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'code', $pb.PbFieldType.O3)
-    ..aOM<$9.WhoIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whoIs', subBuilder: $9.WhoIs.create)
+    ..aOM<$8.WhoIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whoIs', subBuilder: $8.WhoIs.create)
     ..hasRequiredFields = false
   ;
 
   QueryWhoIsResponse._() : super();
   factory QueryWhoIsResponse({
     $core.int? code,
-    $9.WhoIs? whoIs,
+    $8.WhoIs? whoIs,
   }) {
     final _result = create();
     if (code != null) {
@@ -625,30 +625,30 @@ class QueryWhoIsResponse extends $pb.GeneratedMessage {
   void clearCode() => clearField(1);
 
   @$pb.TagNumber(2)
-  $9.WhoIs get whoIs => $_getN(1);
+  $8.WhoIs get whoIs => $_getN(1);
   @$pb.TagNumber(2)
-  set whoIs($9.WhoIs v) { setField(2, v); }
+  set whoIs($8.WhoIs v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasWhoIs() => $_has(1);
   @$pb.TagNumber(2)
   void clearWhoIs() => clearField(2);
   @$pb.TagNumber(2)
-  $9.WhoIs ensureWhoIs() => $_ensure(1);
+  $8.WhoIs ensureWhoIs() => $_ensure(1);
 }
 
 class QueryWhatIsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryWhatIsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'code', $pb.PbFieldType.O3)
-    ..aOM<$10.WhatIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whatIs', subBuilder: $10.WhatIs.create)
-    ..aOM<$5.SchemaDefinition>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'schema', subBuilder: $5.SchemaDefinition.create)
+    ..aOM<$9.WhatIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whatIs', subBuilder: $9.WhatIs.create)
+    ..aOM<$5.Schema>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'schema', subBuilder: $5.Schema.create)
     ..hasRequiredFields = false
   ;
 
   QueryWhatIsResponse._() : super();
   factory QueryWhatIsResponse({
     $core.int? code,
-    $10.WhatIs? whatIs,
-    $5.SchemaDefinition? schema,
+    $9.WhatIs? whatIs,
+    $5.Schema? schema,
   }) {
     final _result = create();
     if (code != null) {
@@ -693,33 +693,33 @@ class QueryWhatIsResponse extends $pb.GeneratedMessage {
   void clearCode() => clearField(1);
 
   @$pb.TagNumber(2)
-  $10.WhatIs get whatIs => $_getN(1);
+  $9.WhatIs get whatIs => $_getN(1);
   @$pb.TagNumber(2)
-  set whatIs($10.WhatIs v) { setField(2, v); }
+  set whatIs($9.WhatIs v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasWhatIs() => $_has(1);
   @$pb.TagNumber(2)
   void clearWhatIs() => clearField(2);
   @$pb.TagNumber(2)
-  $10.WhatIs ensureWhatIs() => $_ensure(1);
+  $9.WhatIs ensureWhatIs() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $5.SchemaDefinition get schema => $_getN(2);
+  $5.Schema get schema => $_getN(2);
   @$pb.TagNumber(3)
-  set schema($5.SchemaDefinition v) { setField(3, v); }
+  set schema($5.Schema v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasSchema() => $_has(2);
   @$pb.TagNumber(3)
   void clearSchema() => clearField(3);
   @$pb.TagNumber(3)
-  $5.SchemaDefinition ensureSchema() => $_ensure(2);
+  $5.Schema ensureSchema() => $_ensure(2);
 }
 
 class QueryWhatIsByCreatorResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryWhatIsByCreatorResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'code', $pb.PbFieldType.O3)
-    ..pc<$10.WhatIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whatIs', $pb.PbFieldType.PM, subBuilder: $10.WhatIs.create)
-    ..m<$core.String, $5.SchemaDefinition>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'schemas', entryClassName: 'QueryWhatIsByCreatorResponse.SchemasEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $5.SchemaDefinition.create, packageName: const $pb.PackageName('sonrio.motor.api.v1'))
+    ..pc<$9.WhatIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whatIs', $pb.PbFieldType.PM, subBuilder: $9.WhatIs.create)
+    ..m<$core.String, $5.Schema>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'schemas', entryClassName: 'QueryWhatIsByCreatorResponse.SchemasEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: $5.Schema.create, packageName: const $pb.PackageName('sonrio.motor.api.v1'))
     ..aOM<$2.PageResponse>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $2.PageResponse.create)
     ..hasRequiredFields = false
   ;
@@ -727,8 +727,8 @@ class QueryWhatIsByCreatorResponse extends $pb.GeneratedMessage {
   QueryWhatIsByCreatorResponse._() : super();
   factory QueryWhatIsByCreatorResponse({
     $core.int? code,
-    $core.Iterable<$10.WhatIs>? whatIs,
-    $core.Map<$core.String, $5.SchemaDefinition>? schemas,
+    $core.Iterable<$9.WhatIs>? whatIs,
+    $core.Map<$core.String, $5.Schema>? schemas,
     $2.PageResponse? pagination,
   }) {
     final _result = create();
@@ -777,10 +777,10 @@ class QueryWhatIsByCreatorResponse extends $pb.GeneratedMessage {
   void clearCode() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$10.WhatIs> get whatIs => $_getList(1);
+  $core.List<$9.WhatIs> get whatIs => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.Map<$core.String, $5.SchemaDefinition> get schemas => $_getMap(2);
+  $core.Map<$core.String, $5.Schema> get schemas => $_getMap(2);
 
   @$pb.TagNumber(4)
   $2.PageResponse get pagination => $_getN(3);
@@ -863,158 +863,6 @@ class QueryWhereIsByCreatorResponse extends $pb.GeneratedMessage {
   void clearPagination() => clearField(3);
   @$pb.TagNumber(3)
   $2.PageResponse ensurePagination() => $_ensure(2);
-}
-
-class ObjectReference extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ObjectReference', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'did')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cid')
-    ..hasRequiredFields = false
-  ;
-
-  ObjectReference._() : super();
-  factory ObjectReference({
-    $core.String? did,
-    $core.String? label,
-    $core.String? cid,
-  }) {
-    final _result = create();
-    if (did != null) {
-      _result.did = did;
-    }
-    if (label != null) {
-      _result.label = label;
-    }
-    if (cid != null) {
-      _result.cid = cid;
-    }
-    return _result;
-  }
-  factory ObjectReference.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ObjectReference.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ObjectReference clone() => ObjectReference()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ObjectReference copyWith(void Function(ObjectReference) updates) => super.copyWith((message) => updates(message as ObjectReference)) as ObjectReference; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static ObjectReference create() => ObjectReference._();
-  ObjectReference createEmptyInstance() => create();
-  static $pb.PbList<ObjectReference> createRepeated() => $pb.PbList<ObjectReference>();
-  @$core.pragma('dart2js:noInline')
-  static ObjectReference getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ObjectReference>(create);
-  static ObjectReference? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.String get did => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set did($core.String v) { $_setString(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasDid() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearDid() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get label => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set label($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasLabel() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearLabel() => clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get cid => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set cid($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasCid() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearCid() => clearField(3);
-}
-
-class UploadObjectResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UploadObjectResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'code', $pb.PbFieldType.O3)
-    ..aOM<ObjectReference>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'reference', subBuilder: ObjectReference.create)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message')
-    ..hasRequiredFields = false
-  ;
-
-  UploadObjectResponse._() : super();
-  factory UploadObjectResponse({
-    $core.int? code,
-    ObjectReference? reference,
-    $core.String? message,
-  }) {
-    final _result = create();
-    if (code != null) {
-      _result.code = code;
-    }
-    if (reference != null) {
-      _result.reference = reference;
-    }
-    if (message != null) {
-      _result.message = message;
-    }
-    return _result;
-  }
-  factory UploadObjectResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UploadObjectResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  UploadObjectResponse clone() => UploadObjectResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  UploadObjectResponse copyWith(void Function(UploadObjectResponse) updates) => super.copyWith((message) => updates(message as UploadObjectResponse)) as UploadObjectResponse; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static UploadObjectResponse create() => UploadObjectResponse._();
-  UploadObjectResponse createEmptyInstance() => create();
-  static $pb.PbList<UploadObjectResponse> createRepeated() => $pb.PbList<UploadObjectResponse>();
-  @$core.pragma('dart2js:noInline')
-  static UploadObjectResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadObjectResponse>(create);
-  static UploadObjectResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.int get code => $_getIZ(0);
-  @$pb.TagNumber(1)
-  set code($core.int v) { $_setSignedInt32(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasCode() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearCode() => clearField(1);
-
-  @$pb.TagNumber(2)
-  ObjectReference get reference => $_getN(1);
-  @$pb.TagNumber(2)
-  set reference(ObjectReference v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasReference() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearReference() => clearField(2);
-  @$pb.TagNumber(2)
-  ObjectReference ensureReference() => $_ensure(1);
-
-  @$pb.TagNumber(3)
-  $core.String get message => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set message($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasMessage() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearMessage() => clearField(3);
 }
 
 class CreateBucketResponse extends $pb.GeneratedMessage {
@@ -1208,13 +1056,13 @@ class QueryWhereIsResponse extends $pb.GeneratedMessage {
 
 class BucketContentList extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BucketContentList', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
-    ..pc<$11.BucketContent>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'buckets', $pb.PbFieldType.PM, subBuilder: $11.BucketContent.create)
+    ..pc<$10.BucketContent>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'buckets', $pb.PbFieldType.PM, subBuilder: $10.BucketContent.create)
     ..hasRequiredFields = false
   ;
 
   BucketContentList._() : super();
   factory BucketContentList({
-    $core.Iterable<$11.BucketContent>? buckets,
+    $core.Iterable<$10.BucketContent>? buckets,
   }) {
     final _result = create();
     if (buckets != null) {
@@ -1244,13 +1092,13 @@ class BucketContentList extends $pb.GeneratedMessage {
   static BucketContentList? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$11.BucketContent> get buckets => $_getList(0);
+  $core.List<$10.BucketContent> get buckets => $_getList(0);
 }
 
 class StatResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'StatResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'address')
-    ..aOM<$8.DIDDocument>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'didDocument', subBuilder: $8.DIDDocument.create)
+    ..aOM<$7.DIDDocument>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'didDocument', subBuilder: $7.DIDDocument.create)
     ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'balance', $pb.PbFieldType.O3)
     ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stake', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
@@ -1259,7 +1107,7 @@ class StatResponse extends $pb.GeneratedMessage {
   StatResponse._() : super();
   factory StatResponse({
     $core.String? address,
-    $8.DIDDocument? didDocument,
+    $7.DIDDocument? didDocument,
     $core.int? balance,
     $core.int? stake,
   }) {
@@ -1309,15 +1157,15 @@ class StatResponse extends $pb.GeneratedMessage {
   void clearAddress() => clearField(1);
 
   @$pb.TagNumber(2)
-  $8.DIDDocument get didDocument => $_getN(1);
+  $7.DIDDocument get didDocument => $_getN(1);
   @$pb.TagNumber(2)
-  set didDocument($8.DIDDocument v) { setField(2, v); }
+  set didDocument($7.DIDDocument v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDidDocument() => $_has(1);
   @$pb.TagNumber(2)
   void clearDidDocument() => clearField(2);
   @$pb.TagNumber(2)
-  $8.DIDDocument ensureDidDocument() => $_ensure(1);
+  $7.DIDDocument ensureDidDocument() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.int get balance => $_getIZ(2);
@@ -1596,25 +1444,20 @@ class SearchResponse extends $pb.GeneratedMessage {
 class UploadDocumentResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UploadDocumentResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.O3)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'did')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cid')
-    ..aOM<$7.SchemaDocument>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'document', subBuilder: $7.SchemaDocument.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cid')
+    ..aOM<$11.SchemaDocument>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'document', subBuilder: $11.SchemaDocument.create)
     ..hasRequiredFields = false
   ;
 
   UploadDocumentResponse._() : super();
   factory UploadDocumentResponse({
     $core.int? status,
-    $core.String? did,
     $core.String? cid,
-    $7.SchemaDocument? document,
+    $11.SchemaDocument? document,
   }) {
     final _result = create();
     if (status != null) {
       _result.status = status;
-    }
-    if (did != null) {
-      _result.did = did;
     }
     if (cid != null) {
       _result.cid = cid;
@@ -1655,57 +1498,43 @@ class UploadDocumentResponse extends $pb.GeneratedMessage {
   void clearStatus() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get did => $_getSZ(1);
+  $core.String get cid => $_getSZ(1);
   @$pb.TagNumber(2)
-  set did($core.String v) { $_setString(1, v); }
+  set cid($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasDid() => $_has(1);
+  $core.bool hasCid() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDid() => clearField(2);
+  void clearCid() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get cid => $_getSZ(2);
+  $11.SchemaDocument get document => $_getN(2);
   @$pb.TagNumber(3)
-  set cid($core.String v) { $_setString(2, v); }
+  set document($11.SchemaDocument v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasCid() => $_has(2);
+  $core.bool hasDocument() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCid() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $7.SchemaDocument get document => $_getN(3);
-  @$pb.TagNumber(4)
-  set document($7.SchemaDocument v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasDocument() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearDocument() => clearField(4);
-  @$pb.TagNumber(4)
-  $7.SchemaDocument ensureDocument() => $_ensure(3);
+  void clearDocument() => clearField(3);
+  @$pb.TagNumber(3)
+  $11.SchemaDocument ensureDocument() => $_ensure(2);
 }
 
 class GetDocumentResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetDocumentResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.motor.api.v1'), createEmptyInstance: create)
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.O3)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'did')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cid')
-    ..aOM<$7.SchemaDocument>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'document', subBuilder: $7.SchemaDocument.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cid')
+    ..aOM<$11.SchemaDocument>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'document', subBuilder: $11.SchemaDocument.create)
     ..hasRequiredFields = false
   ;
 
   GetDocumentResponse._() : super();
   factory GetDocumentResponse({
     $core.int? status,
-    $core.String? did,
     $core.String? cid,
-    $7.SchemaDocument? document,
+    $11.SchemaDocument? document,
   }) {
     final _result = create();
     if (status != null) {
       _result.status = status;
-    }
-    if (did != null) {
-      _result.did = did;
     }
     if (cid != null) {
       _result.cid = cid;
@@ -1746,32 +1575,23 @@ class GetDocumentResponse extends $pb.GeneratedMessage {
   void clearStatus() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get did => $_getSZ(1);
+  $core.String get cid => $_getSZ(1);
   @$pb.TagNumber(2)
-  set did($core.String v) { $_setString(1, v); }
+  set cid($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasDid() => $_has(1);
+  $core.bool hasCid() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDid() => clearField(2);
+  void clearCid() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get cid => $_getSZ(2);
+  $11.SchemaDocument get document => $_getN(2);
   @$pb.TagNumber(3)
-  set cid($core.String v) { $_setString(2, v); }
+  set document($11.SchemaDocument v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasCid() => $_has(2);
+  $core.bool hasDocument() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCid() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $7.SchemaDocument get document => $_getN(3);
-  @$pb.TagNumber(4)
-  set document($7.SchemaDocument v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasDocument() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearDocument() => clearField(4);
-  @$pb.TagNumber(4)
-  $7.SchemaDocument ensureDocument() => $_ensure(3);
+  void clearDocument() => clearField(3);
+  @$pb.TagNumber(3)
+  $11.SchemaDocument ensureDocument() => $_ensure(2);
 }
 

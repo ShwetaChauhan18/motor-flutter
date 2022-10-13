@@ -8,22 +8,9 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
-@$core.Deprecated('Use linkKindDescriptor instead')
-const LinkKind$json = const {
-  '1': 'LinkKind',
-  '2': const [
-    const {'1': 'UNKNOWN', '2': 0},
-    const {'1': 'OBJECT', '2': 1},
-    const {'1': 'SCHEMA', '2': 2},
-    const {'1': 'BUCKET', '2': 3},
-  ],
-};
-
-/// Descriptor for `LinkKind`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List linkKindDescriptor = $convert.base64Decode('CghMaW5rS2luZBILCgdVTktOT1dOEAASCgoGT0JKRUNUEAESCgoGU0NIRU1BEAISCgoGQlVDS0VUEAM=');
-@$core.Deprecated('Use schemaKindDescriptor instead')
-const SchemaKind$json = const {
-  '1': 'SchemaKind',
+@$core.Deprecated('Use kindDescriptor instead')
+const Kind$json = const {
+  '1': 'Kind',
   '2': const [
     const {'1': 'LIST', '2': 0},
     const {'1': 'BOOL', '2': 1},
@@ -32,12 +19,11 @@ const SchemaKind$json = const {
     const {'1': 'STRING', '2': 4},
     const {'1': 'BYTES', '2': 5},
     const {'1': 'LINK', '2': 6},
-    const {'1': 'ANY', '2': 7},
   ],
 };
 
-/// Descriptor for `SchemaKind`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List schemaKindDescriptor = $convert.base64Decode('CgpTY2hlbWFLaW5kEggKBExJU1QQABIICgRCT09MEAESBwoDSU5UEAISCQoFRkxPQVQQAxIKCgZTVFJJTkcQBBIJCgVCWVRFUxAFEggKBExJTksQBhIHCgNBTlkQBw==');
+/// Descriptor for `Kind`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List kindDescriptor = $convert.base64Decode('CgRLaW5kEggKBExJU1QQABIICgRCT09MEAESBwoDSU5UEAISCQoFRkxPQVQQAxIKCgZTVFJJTkcQBBIJCgVCWVRFUxAFEggKBExJTksQBg==');
 @$core.Deprecated('Use metadataDefintionDescriptor instead')
 const MetadataDefintion$json = const {
   '1': 'MetadataDefintion',
@@ -49,43 +35,40 @@ const MetadataDefintion$json = const {
 
 /// Descriptor for `MetadataDefintion`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List metadataDefintionDescriptor = $convert.base64Decode('ChFNZXRhZGF0YURlZmludGlvbhIQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU=');
-@$core.Deprecated('Use schemaItemKindDefinitionDescriptor instead')
-const SchemaItemKindDefinition$json = const {
-  '1': 'SchemaItemKindDefinition',
-  '2': const [
-    const {'1': 'field', '3': 1, '4': 1, '5': 14, '6': '.sonrio.sonr.schema.SchemaKind', '10': 'field'},
-    const {'1': 'item', '3': 2, '4': 1, '5': 11, '6': '.sonrio.sonr.schema.SchemaItemKindDefinition', '10': 'item'},
-    const {'1': 'link_kind', '3': 3, '4': 1, '5': 14, '6': '.sonrio.sonr.schema.LinkKind', '10': 'linkKind'},
-    const {'1': 'link', '3': 4, '4': 1, '5': 9, '10': 'link'},
-  ],
-};
-
-/// Descriptor for `SchemaItemKindDefinition`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List schemaItemKindDefinitionDescriptor = $convert.base64Decode('ChhTY2hlbWFJdGVtS2luZERlZmluaXRpb24SNAoFZmllbGQYASABKA4yHi5zb25yaW8uc29uci5zY2hlbWEuU2NoZW1hS2luZFIFZmllbGQSQAoEaXRlbRgCIAEoCzIsLnNvbnJpby5zb25yLnNjaGVtYS5TY2hlbWFJdGVtS2luZERlZmluaXRpb25SBGl0ZW0SOQoJbGlua19raW5kGAMgASgOMhwuc29ucmlvLnNvbnIuc2NoZW1hLkxpbmtLaW5kUghsaW5rS2luZBISCgRsaW5rGAQgASgJUgRsaW5r');
-@$core.Deprecated('Use schemaKindDefinitionDescriptor instead')
-const SchemaKindDefinition$json = const {
-  '1': 'SchemaKindDefinition',
-  '2': const [
-    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'field', '3': 2, '4': 1, '5': 14, '6': '.sonrio.sonr.schema.SchemaKind', '10': 'field'},
-    const {'1': 'link_kind', '3': 3, '4': 1, '5': 14, '6': '.sonrio.sonr.schema.LinkKind', '10': 'linkKind'},
-    const {'1': 'link', '3': 4, '4': 1, '5': 9, '10': 'link'},
-    const {'1': 'item', '3': 5, '4': 1, '5': 11, '6': '.sonrio.sonr.schema.SchemaItemKindDefinition', '10': 'item'},
-  ],
-};
-
-/// Descriptor for `SchemaKindDefinition`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List schemaKindDefinitionDescriptor = $convert.base64Decode('ChRTY2hlbWFLaW5kRGVmaW5pdGlvbhISCgRuYW1lGAEgASgJUgRuYW1lEjQKBWZpZWxkGAIgASgOMh4uc29ucmlvLnNvbnIuc2NoZW1hLlNjaGVtYUtpbmRSBWZpZWxkEjkKCWxpbmtfa2luZBgDIAEoDjIcLnNvbnJpby5zb25yLnNjaGVtYS5MaW5rS2luZFIIbGlua0tpbmQSEgoEbGluaxgEIAEoCVIEbGluaxJACgRpdGVtGAUgASgLMiwuc29ucmlvLnNvbnIuc2NoZW1hLlNjaGVtYUl0ZW1LaW5kRGVmaW5pdGlvblIEaXRlbQ==');
-@$core.Deprecated('Use schemaDefinitionDescriptor instead')
-const SchemaDefinition$json = const {
-  '1': 'SchemaDefinition',
+@$core.Deprecated('Use schemaDescriptor instead')
+const Schema$json = const {
+  '1': 'Schema',
   '2': const [
     const {'1': 'did', '3': 1, '4': 1, '5': 9, '10': 'did'},
-    const {'1': 'creator', '3': 2, '4': 1, '5': 9, '10': 'creator'},
+    const {'1': 'owner', '3': 2, '4': 1, '5': 9, '10': 'owner'},
     const {'1': 'label', '3': 3, '4': 1, '5': 9, '10': 'label'},
-    const {'1': 'fields', '3': 4, '4': 3, '5': 11, '6': '.sonrio.sonr.schema.SchemaKindDefinition', '10': 'fields'},
+    const {'1': 'fields', '3': 4, '4': 3, '5': 11, '6': '.sonrio.sonr.schema.SchemaField', '10': 'fields'},
+    const {'1': 'metadata', '3': 5, '4': 3, '5': 11, '6': '.sonrio.sonr.schema.MetadataDefintion', '10': 'metadata'},
   ],
 };
 
-/// Descriptor for `SchemaDefinition`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List schemaDefinitionDescriptor = $convert.base64Decode('ChBTY2hlbWFEZWZpbml0aW9uEhAKA2RpZBgBIAEoCVIDZGlkEhgKB2NyZWF0b3IYAiABKAlSB2NyZWF0b3ISFAoFbGFiZWwYAyABKAlSBWxhYmVsEkAKBmZpZWxkcxgEIAMoCzIoLnNvbnJpby5zb25yLnNjaGVtYS5TY2hlbWFLaW5kRGVmaW5pdGlvblIGZmllbGRz');
+/// Descriptor for `Schema`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List schemaDescriptor = $convert.base64Decode('CgZTY2hlbWESEAoDZGlkGAEgASgJUgNkaWQSFAoFb3duZXIYAiABKAlSBW93bmVyEhQKBWxhYmVsGAMgASgJUgVsYWJlbBI3CgZmaWVsZHMYBCADKAsyHy5zb25yaW8uc29uci5zY2hlbWEuU2NoZW1hRmllbGRSBmZpZWxkcxJBCghtZXRhZGF0YRgFIAMoCzIlLnNvbnJpby5zb25yLnNjaGVtYS5NZXRhZGF0YURlZmludGlvblIIbWV0YWRhdGE=');
+@$core.Deprecated('Use schemaFieldDescriptor instead')
+const SchemaField$json = const {
+  '1': 'SchemaField',
+  '2': const [
+    const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'field_kind', '3': 2, '4': 1, '5': 11, '6': '.sonrio.sonr.schema.SchemaFieldKind', '10': 'fieldKind'},
+  ],
+};
+
+/// Descriptor for `SchemaField`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List schemaFieldDescriptor = $convert.base64Decode('CgtTY2hlbWFGaWVsZBISCgRuYW1lGAEgASgJUgRuYW1lEkIKCmZpZWxkX2tpbmQYAiABKAsyIy5zb25yaW8uc29uci5zY2hlbWEuU2NoZW1hRmllbGRLaW5kUglmaWVsZEtpbmQ=');
+@$core.Deprecated('Use schemaFieldKindDescriptor instead')
+const SchemaFieldKind$json = const {
+  '1': 'SchemaFieldKind',
+  '2': const [
+    const {'1': 'kind', '3': 1, '4': 1, '5': 14, '6': '.sonrio.sonr.schema.Kind', '10': 'kind'},
+    const {'1': 'list_kind', '3': 2, '4': 1, '5': 11, '6': '.sonrio.sonr.schema.SchemaFieldKind', '10': 'listKind'},
+    const {'1': 'link_did', '3': 3, '4': 1, '5': 9, '10': 'linkDid'},
+  ],
+};
+
+/// Descriptor for `SchemaFieldKind`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List schemaFieldKindDescriptor = $convert.base64Decode('Cg9TY2hlbWFGaWVsZEtpbmQSLAoEa2luZBgBIAEoDjIYLnNvbnJpby5zb25yLnNjaGVtYS5LaW5kUgRraW5kEkAKCWxpc3Rfa2luZBgCIAEoCzIjLnNvbnJpby5zb25yLnNjaGVtYS5TY2hlbWFGaWVsZEtpbmRSCGxpc3RLaW5kEhkKCGxpbmtfZGlkGAMgASgJUgdsaW5rRGlk');

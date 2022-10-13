@@ -21,7 +21,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late final WhoIs? whoIs;
-  late final SchemaDefinition? testSchema;
+  late final Schema? testSchema;
   late final SchemaDocument? testDocument;
   late final List<int>? dscKey;
   late final List<int>? pskKey;
@@ -101,12 +101,11 @@ class _MyAppState extends State<MyApp> {
                 // associated primitive type.
                 final res = await MotorFlutter.to.publishSchema(
                     "Profile",
-                    Map<String, SchemaKind>.from({
-                      "name": SchemaKind.STRING,
-                      "age": SchemaKind.INT,
-                      "height": SchemaKind.FLOAT,
+                    Map<String, SchemaFieldKind>.from({
+                      "name": Kind.STRING,
+                      "age": Kind.INT,
+                      "height": Kind.FLOAT,
                     }));
-                testSchema = res.schemaDefinition;
                 if (kDebugMode) {
                   print(res.toString());
                 }
@@ -151,6 +150,7 @@ class _MyAppState extends State<MyApp> {
                   return;
                 }
 
+
                 final doc = await testDocument?.upload("hello-flutter");
                 if (doc == null) {
                   Get.snackbar(
@@ -161,7 +161,7 @@ class _MyAppState extends State<MyApp> {
                   );
                   return;
                 }
-                Get.snackbar("Success", "Uploaded document to user encrypted IPFS Store. CID: ${doc.cid}");
+                Get.snackbar("Success", "Uploaded document to user encrypted IPFS Store. CID: ${doc.label}");
               },
             ),
           ],

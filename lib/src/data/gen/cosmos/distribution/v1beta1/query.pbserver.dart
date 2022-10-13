@@ -10,51 +10,51 @@ import 'dart:async' as $async;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'dart:core' as $core;
-import 'query.pb.dart' as $36;
+import 'query.pb.dart' as $37;
 import 'query.pbjson.dart';
 
 export 'query.pb.dart';
 
 abstract class QueryServiceBase extends $pb.GeneratedService {
-  $async.Future<$36.QueryParamsResponse> params($pb.ServerContext ctx, $36.QueryParamsRequest request);
-  $async.Future<$36.QueryValidatorDistributionInfoResponse> validatorDistributionInfo($pb.ServerContext ctx, $36.QueryValidatorDistributionInfoRequest request);
-  $async.Future<$36.QueryValidatorOutstandingRewardsResponse> validatorOutstandingRewards($pb.ServerContext ctx, $36.QueryValidatorOutstandingRewardsRequest request);
-  $async.Future<$36.QueryValidatorCommissionResponse> validatorCommission($pb.ServerContext ctx, $36.QueryValidatorCommissionRequest request);
-  $async.Future<$36.QueryValidatorSlashesResponse> validatorSlashes($pb.ServerContext ctx, $36.QueryValidatorSlashesRequest request);
-  $async.Future<$36.QueryDelegationRewardsResponse> delegationRewards($pb.ServerContext ctx, $36.QueryDelegationRewardsRequest request);
-  $async.Future<$36.QueryDelegationTotalRewardsResponse> delegationTotalRewards($pb.ServerContext ctx, $36.QueryDelegationTotalRewardsRequest request);
-  $async.Future<$36.QueryDelegatorValidatorsResponse> delegatorValidators($pb.ServerContext ctx, $36.QueryDelegatorValidatorsRequest request);
-  $async.Future<$36.QueryDelegatorWithdrawAddressResponse> delegatorWithdrawAddress($pb.ServerContext ctx, $36.QueryDelegatorWithdrawAddressRequest request);
-  $async.Future<$36.QueryCommunityPoolResponse> communityPool($pb.ServerContext ctx, $36.QueryCommunityPoolRequest request);
+  $async.Future<$37.QueryParamsResponse> params($pb.ServerContext ctx, $37.QueryParamsRequest request);
+  $async.Future<$37.QueryValidatorDistributionInfoResponse> validatorDistributionInfo($pb.ServerContext ctx, $37.QueryValidatorDistributionInfoRequest request);
+  $async.Future<$37.QueryValidatorOutstandingRewardsResponse> validatorOutstandingRewards($pb.ServerContext ctx, $37.QueryValidatorOutstandingRewardsRequest request);
+  $async.Future<$37.QueryValidatorCommissionResponse> validatorCommission($pb.ServerContext ctx, $37.QueryValidatorCommissionRequest request);
+  $async.Future<$37.QueryValidatorSlashesResponse> validatorSlashes($pb.ServerContext ctx, $37.QueryValidatorSlashesRequest request);
+  $async.Future<$37.QueryDelegationRewardsResponse> delegationRewards($pb.ServerContext ctx, $37.QueryDelegationRewardsRequest request);
+  $async.Future<$37.QueryDelegationTotalRewardsResponse> delegationTotalRewards($pb.ServerContext ctx, $37.QueryDelegationTotalRewardsRequest request);
+  $async.Future<$37.QueryDelegatorValidatorsResponse> delegatorValidators($pb.ServerContext ctx, $37.QueryDelegatorValidatorsRequest request);
+  $async.Future<$37.QueryDelegatorWithdrawAddressResponse> delegatorWithdrawAddress($pb.ServerContext ctx, $37.QueryDelegatorWithdrawAddressRequest request);
+  $async.Future<$37.QueryCommunityPoolResponse> communityPool($pb.ServerContext ctx, $37.QueryCommunityPoolRequest request);
 
   $pb.GeneratedMessage createRequest($core.String method) {
     switch (method) {
-      case 'Params': return $36.QueryParamsRequest();
-      case 'ValidatorDistributionInfo': return $36.QueryValidatorDistributionInfoRequest();
-      case 'ValidatorOutstandingRewards': return $36.QueryValidatorOutstandingRewardsRequest();
-      case 'ValidatorCommission': return $36.QueryValidatorCommissionRequest();
-      case 'ValidatorSlashes': return $36.QueryValidatorSlashesRequest();
-      case 'DelegationRewards': return $36.QueryDelegationRewardsRequest();
-      case 'DelegationTotalRewards': return $36.QueryDelegationTotalRewardsRequest();
-      case 'DelegatorValidators': return $36.QueryDelegatorValidatorsRequest();
-      case 'DelegatorWithdrawAddress': return $36.QueryDelegatorWithdrawAddressRequest();
-      case 'CommunityPool': return $36.QueryCommunityPoolRequest();
+      case 'Params': return $37.QueryParamsRequest();
+      case 'ValidatorDistributionInfo': return $37.QueryValidatorDistributionInfoRequest();
+      case 'ValidatorOutstandingRewards': return $37.QueryValidatorOutstandingRewardsRequest();
+      case 'ValidatorCommission': return $37.QueryValidatorCommissionRequest();
+      case 'ValidatorSlashes': return $37.QueryValidatorSlashesRequest();
+      case 'DelegationRewards': return $37.QueryDelegationRewardsRequest();
+      case 'DelegationTotalRewards': return $37.QueryDelegationTotalRewardsRequest();
+      case 'DelegatorValidators': return $37.QueryDelegatorValidatorsRequest();
+      case 'DelegatorWithdrawAddress': return $37.QueryDelegatorWithdrawAddressRequest();
+      case 'CommunityPool': return $37.QueryCommunityPoolRequest();
       default: throw $core.ArgumentError('Unknown method: $method');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String method, $pb.GeneratedMessage request) {
     switch (method) {
-      case 'Params': return this.params(ctx, request as $36.QueryParamsRequest);
-      case 'ValidatorDistributionInfo': return this.validatorDistributionInfo(ctx, request as $36.QueryValidatorDistributionInfoRequest);
-      case 'ValidatorOutstandingRewards': return this.validatorOutstandingRewards(ctx, request as $36.QueryValidatorOutstandingRewardsRequest);
-      case 'ValidatorCommission': return this.validatorCommission(ctx, request as $36.QueryValidatorCommissionRequest);
-      case 'ValidatorSlashes': return this.validatorSlashes(ctx, request as $36.QueryValidatorSlashesRequest);
-      case 'DelegationRewards': return this.delegationRewards(ctx, request as $36.QueryDelegationRewardsRequest);
-      case 'DelegationTotalRewards': return this.delegationTotalRewards(ctx, request as $36.QueryDelegationTotalRewardsRequest);
-      case 'DelegatorValidators': return this.delegatorValidators(ctx, request as $36.QueryDelegatorValidatorsRequest);
-      case 'DelegatorWithdrawAddress': return this.delegatorWithdrawAddress(ctx, request as $36.QueryDelegatorWithdrawAddressRequest);
-      case 'CommunityPool': return this.communityPool(ctx, request as $36.QueryCommunityPoolRequest);
+      case 'Params': return this.params(ctx, request as $37.QueryParamsRequest);
+      case 'ValidatorDistributionInfo': return this.validatorDistributionInfo(ctx, request as $37.QueryValidatorDistributionInfoRequest);
+      case 'ValidatorOutstandingRewards': return this.validatorOutstandingRewards(ctx, request as $37.QueryValidatorOutstandingRewardsRequest);
+      case 'ValidatorCommission': return this.validatorCommission(ctx, request as $37.QueryValidatorCommissionRequest);
+      case 'ValidatorSlashes': return this.validatorSlashes(ctx, request as $37.QueryValidatorSlashesRequest);
+      case 'DelegationRewards': return this.delegationRewards(ctx, request as $37.QueryDelegationRewardsRequest);
+      case 'DelegationTotalRewards': return this.delegationTotalRewards(ctx, request as $37.QueryDelegationTotalRewardsRequest);
+      case 'DelegatorValidators': return this.delegatorValidators(ctx, request as $37.QueryDelegatorValidatorsRequest);
+      case 'DelegatorWithdrawAddress': return this.delegatorWithdrawAddress(ctx, request as $37.QueryDelegatorWithdrawAddressRequest);
+      case 'CommunityPool': return this.communityPool(ctx, request as $37.QueryCommunityPoolRequest);
       default: throw $core.ArgumentError('Unknown method: $method');
     }
   }

@@ -11,7 +11,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'distribution.pb.dart' as $35;
+import 'distribution.pb.dart' as $36;
 import '../../base/v1beta1/coin.pb.dart' as $11;
 import '../../base/query/v1beta1/pagination.pb.dart' as $4;
 
@@ -46,13 +46,13 @@ class QueryParamsRequest extends $pb.GeneratedMessage {
 
 class QueryParamsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryParamsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.distribution.v1beta1'), createEmptyInstance: create)
-    ..aOM<$35.Params>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', subBuilder: $35.Params.create)
+    ..aOM<$36.Params>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', subBuilder: $36.Params.create)
     ..hasRequiredFields = false
   ;
 
   QueryParamsResponse._() : super();
   factory QueryParamsResponse({
-    $35.Params? params,
+    $36.Params? params,
   }) {
     final _result = create();
     if (params != null) {
@@ -82,15 +82,15 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
   static QueryParamsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $35.Params get params => $_getN(0);
+  $36.Params get params => $_getN(0);
   @$pb.TagNumber(1)
-  set params($35.Params v) { setField(1, v); }
+  set params($36.Params v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasParams() => $_has(0);
   @$pb.TagNumber(1)
   void clearParams() => clearField(1);
   @$pb.TagNumber(1)
-  $35.Params ensureParams() => $_ensure(0);
+  $36.Params ensureParams() => $_ensure(0);
 }
 
 class QueryValidatorDistributionInfoRequest extends $pb.GeneratedMessage {
@@ -252,13 +252,13 @@ class QueryValidatorOutstandingRewardsRequest extends $pb.GeneratedMessage {
 
 class QueryValidatorOutstandingRewardsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryValidatorOutstandingRewardsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.distribution.v1beta1'), createEmptyInstance: create)
-    ..aOM<$35.ValidatorOutstandingRewards>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rewards', subBuilder: $35.ValidatorOutstandingRewards.create)
+    ..aOM<$36.ValidatorOutstandingRewards>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rewards', subBuilder: $36.ValidatorOutstandingRewards.create)
     ..hasRequiredFields = false
   ;
 
   QueryValidatorOutstandingRewardsResponse._() : super();
   factory QueryValidatorOutstandingRewardsResponse({
-    $35.ValidatorOutstandingRewards? rewards,
+    $36.ValidatorOutstandingRewards? rewards,
   }) {
     final _result = create();
     if (rewards != null) {
@@ -288,15 +288,15 @@ class QueryValidatorOutstandingRewardsResponse extends $pb.GeneratedMessage {
   static QueryValidatorOutstandingRewardsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $35.ValidatorOutstandingRewards get rewards => $_getN(0);
+  $36.ValidatorOutstandingRewards get rewards => $_getN(0);
   @$pb.TagNumber(1)
-  set rewards($35.ValidatorOutstandingRewards v) { setField(1, v); }
+  set rewards($36.ValidatorOutstandingRewards v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasRewards() => $_has(0);
   @$pb.TagNumber(1)
   void clearRewards() => clearField(1);
   @$pb.TagNumber(1)
-  $35.ValidatorOutstandingRewards ensureRewards() => $_ensure(0);
+  $36.ValidatorOutstandingRewards ensureRewards() => $_ensure(0);
 }
 
 class QueryValidatorCommissionRequest extends $pb.GeneratedMessage {
@@ -348,13 +348,13 @@ class QueryValidatorCommissionRequest extends $pb.GeneratedMessage {
 
 class QueryValidatorCommissionResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryValidatorCommissionResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.distribution.v1beta1'), createEmptyInstance: create)
-    ..aOM<$35.ValidatorAccumulatedCommission>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'commission', subBuilder: $35.ValidatorAccumulatedCommission.create)
+    ..aOM<$36.ValidatorAccumulatedCommission>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'commission', subBuilder: $36.ValidatorAccumulatedCommission.create)
     ..hasRequiredFields = false
   ;
 
   QueryValidatorCommissionResponse._() : super();
   factory QueryValidatorCommissionResponse({
-    $35.ValidatorAccumulatedCommission? commission,
+    $36.ValidatorAccumulatedCommission? commission,
   }) {
     final _result = create();
     if (commission != null) {
@@ -384,15 +384,15 @@ class QueryValidatorCommissionResponse extends $pb.GeneratedMessage {
   static QueryValidatorCommissionResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $35.ValidatorAccumulatedCommission get commission => $_getN(0);
+  $36.ValidatorAccumulatedCommission get commission => $_getN(0);
   @$pb.TagNumber(1)
-  set commission($35.ValidatorAccumulatedCommission v) { setField(1, v); }
+  set commission($36.ValidatorAccumulatedCommission v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasCommission() => $_has(0);
   @$pb.TagNumber(1)
   void clearCommission() => clearField(1);
   @$pb.TagNumber(1)
-  $35.ValidatorAccumulatedCommission ensureCommission() => $_ensure(0);
+  $36.ValidatorAccumulatedCommission ensureCommission() => $_ensure(0);
 }
 
 class QueryValidatorSlashesRequest extends $pb.GeneratedMessage {
@@ -488,14 +488,14 @@ class QueryValidatorSlashesRequest extends $pb.GeneratedMessage {
 
 class QueryValidatorSlashesResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryValidatorSlashesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.distribution.v1beta1'), createEmptyInstance: create)
-    ..pc<$35.ValidatorSlashEvent>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'slashes', $pb.PbFieldType.PM, subBuilder: $35.ValidatorSlashEvent.create)
+    ..pc<$36.ValidatorSlashEvent>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'slashes', $pb.PbFieldType.PM, subBuilder: $36.ValidatorSlashEvent.create)
     ..aOM<$4.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $4.PageResponse.create)
     ..hasRequiredFields = false
   ;
 
   QueryValidatorSlashesResponse._() : super();
   factory QueryValidatorSlashesResponse({
-    $core.Iterable<$35.ValidatorSlashEvent>? slashes,
+    $core.Iterable<$36.ValidatorSlashEvent>? slashes,
     $4.PageResponse? pagination,
   }) {
     final _result = create();
@@ -529,7 +529,7 @@ class QueryValidatorSlashesResponse extends $pb.GeneratedMessage {
   static QueryValidatorSlashesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$35.ValidatorSlashEvent> get slashes => $_getList(0);
+  $core.List<$36.ValidatorSlashEvent> get slashes => $_getList(0);
 
   @$pb.TagNumber(2)
   $4.PageResponse get pagination => $_getN(1);
@@ -694,14 +694,14 @@ class QueryDelegationTotalRewardsRequest extends $pb.GeneratedMessage {
 
 class QueryDelegationTotalRewardsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryDelegationTotalRewardsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.distribution.v1beta1'), createEmptyInstance: create)
-    ..pc<$35.DelegationDelegatorReward>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rewards', $pb.PbFieldType.PM, subBuilder: $35.DelegationDelegatorReward.create)
+    ..pc<$36.DelegationDelegatorReward>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rewards', $pb.PbFieldType.PM, subBuilder: $36.DelegationDelegatorReward.create)
     ..pc<$11.DecCoin>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'total', $pb.PbFieldType.PM, subBuilder: $11.DecCoin.create)
     ..hasRequiredFields = false
   ;
 
   QueryDelegationTotalRewardsResponse._() : super();
   factory QueryDelegationTotalRewardsResponse({
-    $core.Iterable<$35.DelegationDelegatorReward>? rewards,
+    $core.Iterable<$36.DelegationDelegatorReward>? rewards,
     $core.Iterable<$11.DecCoin>? total,
   }) {
     final _result = create();
@@ -735,7 +735,7 @@ class QueryDelegationTotalRewardsResponse extends $pb.GeneratedMessage {
   static QueryDelegationTotalRewardsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$35.DelegationDelegatorReward> get rewards => $_getList(0);
+  $core.List<$36.DelegationDelegatorReward> get rewards => $_getList(0);
 
   @$pb.TagNumber(2)
   $core.List<$11.DecCoin> get total => $_getList(1);

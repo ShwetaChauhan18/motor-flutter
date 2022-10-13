@@ -252,7 +252,7 @@ class MotorFlutter extends GetxService {
       throw Exception('No keys found for did: $address');
     }
     final resp = await MotorFlutterPlatform.instance.loginWithKeys(LoginWithKeysRequest(
-      did: address,
+      accountId: address,
       password: password,
       aesDscKey: auth?.item1 ?? dscKey,
       aesPskKey: auth?.item2 ?? pskKey,
@@ -427,7 +427,7 @@ class MotorFlutter extends GetxService {
   /// **Next Steps**
   /// - Build a SchemaDocument from a Definition with [SchemaDefinitionExt]
   /// - [ADR-3](https://github.com/sonr-io/sonr/blob/dev/docs/architecture/3.md)
-  Future<CreateSchemaResponse> publishSchema(String label, Map<String, SchemaKind> fields, {Map<String, String>? metadata}) async {
+  Future<CreateSchemaResponse> publishSchema(String label, Map<String, SchemaFieldKind> fields, {Map<String, String>? metadata}) async {
     final resp = await MotorFlutterPlatform.instance.createSchema(CreateSchemaRequest(
       label: label,
       fields: fields,
@@ -455,7 +455,7 @@ class MotorFlutter extends GetxService {
   /// **Next Steps**
   /// - Build a SchemaDocument from a Definition with [SchemaDefinitionExt]
   /// - [ADR-3](https://github.com/sonr-io/sonr/blob/dev/docs/architecture/3.md)
-  Future<SchemaDefinition?> getSchema(String did) async {
+  Future<Schema?> getSchema(String did) async {
     final res = await MotorFlutterPlatform.instance.querySchema(QueryWhatIsRequest(did: did));
     if (res == null) {
       Log.warn("Failed to query blockchain for provided schema: $did");
@@ -479,14 +479,14 @@ class MotorFlutter extends GetxService {
   /// **Next Steps**
   /// - Build a SchemaDocument from a Definition with [SchemaDefinitionExt]
   /// - [ADR-3](https://github.com/sonr-io/sonr/blob/dev/docs/architecture/3.md)
-  Future<List<SchemaDefinition>> findSchemas({String? creator}) async {
+  Future<List<Schema>> findSchemas({String? creator}) async {
     final res = await MotorFlutterPlatform.instance.querySchemaByCreator(QueryWhatIsByCreatorRequest(creator: creator ?? address.value));
     if (res == null) {
       Log.error("Failed to find any schemas made by the provided DID ${creator ?? address.value}");
       return [];
     }
     final schemaMap = res.schemas;
-    return schemaMap.entries.map<SchemaDefinition>((e) => e.value).toList();
+    return schemaMap.entries.map<Schema>((e) => e.value).toList();
   }
 
   /// ### Find a Schema Definition
@@ -597,9 +597,8 @@ class MotorFlutter extends GetxService {
   /// - Get a document to IPFS with [MotorFlutter.getDocument]
   Future<UploadDocumentResponse> uploadDocument({required SchemaDocument doc, required String label}) async {
     final res = await MotorFlutterPlatform.instance.uploadDocument(UploadDocumentRequest(
-      creator: address.value,
-      definition: doc.definition,
-      fields: doc.fields,
+      schemaDid: doc.schemaDid,
+      document: doc.writeToBuffer(),
       label: label,
     ));
     if (res == null) {

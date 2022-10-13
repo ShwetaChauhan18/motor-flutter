@@ -11,7 +11,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../base/v1beta1/coin.pb.dart' as $11;
-import 'distribution.pb.dart' as $35;
+import 'distribution.pb.dart' as $36;
 
 class MsgSetWithdrawAddress extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MsgSetWithdrawAddress', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.distribution.v1beta1'), createEmptyInstance: create)
@@ -380,14 +380,14 @@ class MsgFundCommunityPoolResponse extends $pb.GeneratedMessage {
 class MsgUpdateParams extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MsgUpdateParams', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.distribution.v1beta1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authority')
-    ..aOM<$35.Params>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', subBuilder: $35.Params.create)
+    ..aOM<$36.Params>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', subBuilder: $36.Params.create)
     ..hasRequiredFields = false
   ;
 
   MsgUpdateParams._() : super();
   factory MsgUpdateParams({
     $core.String? authority,
-    $35.Params? params,
+    $36.Params? params,
   }) {
     final _result = create();
     if (authority != null) {
@@ -429,15 +429,15 @@ class MsgUpdateParams extends $pb.GeneratedMessage {
   void clearAuthority() => clearField(1);
 
   @$pb.TagNumber(2)
-  $35.Params get params => $_getN(1);
+  $36.Params get params => $_getN(1);
   @$pb.TagNumber(2)
-  set params($35.Params v) { setField(2, v); }
+  set params($36.Params v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasParams() => $_has(1);
   @$pb.TagNumber(2)
   void clearParams() => clearField(2);
   @$pb.TagNumber(2)
-  $35.Params ensureParams() => $_ensure(1);
+  $36.Params ensureParams() => $_ensure(1);
 }
 
 class MsgUpdateParamsResponse extends $pb.GeneratedMessage {

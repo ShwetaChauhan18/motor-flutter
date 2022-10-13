@@ -9,36 +9,16 @@
 import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class LinkKind extends $pb.ProtobufEnum {
-  static const LinkKind UNKNOWN = LinkKind._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'UNKNOWN');
-  static const LinkKind OBJECT = LinkKind._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'OBJECT');
-  static const LinkKind SCHEMA = LinkKind._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'SCHEMA');
-  static const LinkKind BUCKET = LinkKind._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BUCKET');
+class Kind extends $pb.ProtobufEnum {
+  static const Kind LIST = Kind._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LIST');
+  static const Kind BOOL = Kind._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BOOL');
+  static const Kind INT = Kind._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'INT');
+  static const Kind FLOAT = Kind._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FLOAT');
+  static const Kind STRING = Kind._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'STRING');
+  static const Kind BYTES = Kind._(5, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BYTES');
+  static const Kind LINK = Kind._(6, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LINK');
 
-  static const $core.List<LinkKind> values = <LinkKind> [
-    UNKNOWN,
-    OBJECT,
-    SCHEMA,
-    BUCKET,
-  ];
-
-  static final $core.Map<$core.int, LinkKind> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static LinkKind? valueOf($core.int value) => _byValue[value];
-
-  const LinkKind._($core.int v, $core.String n) : super(v, n);
-}
-
-class SchemaKind extends $pb.ProtobufEnum {
-  static const SchemaKind LIST = SchemaKind._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LIST');
-  static const SchemaKind BOOL = SchemaKind._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BOOL');
-  static const SchemaKind INT = SchemaKind._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'INT');
-  static const SchemaKind FLOAT = SchemaKind._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'FLOAT');
-  static const SchemaKind STRING = SchemaKind._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'STRING');
-  static const SchemaKind BYTES = SchemaKind._(5, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BYTES');
-  static const SchemaKind LINK = SchemaKind._(6, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LINK');
-  static const SchemaKind ANY = SchemaKind._(7, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ANY');
-
-  static const $core.List<SchemaKind> values = <SchemaKind> [
+  static const $core.List<Kind> values = <Kind> [
     LIST,
     BOOL,
     INT,
@@ -46,12 +26,11 @@ class SchemaKind extends $pb.ProtobufEnum {
     STRING,
     BYTES,
     LINK,
-    ANY,
   ];
 
-  static final $core.Map<$core.int, SchemaKind> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static SchemaKind? valueOf($core.int value) => _byValue[value];
+  static final $core.Map<$core.int, Kind> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static Kind? valueOf($core.int value) => _byValue[value];
 
-  const SchemaKind._($core.int v, $core.String n) : super(v, n);
+  const Kind._($core.int v, $core.String n) : super(v, n);
 }
 

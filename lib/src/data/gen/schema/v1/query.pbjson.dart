@@ -10,7 +10,7 @@ import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
 import 'params.pbjson.dart' as $16;
 import 'schema.pbjson.dart' as $5;
-import 'what_is.pbjson.dart' as $10;
+import 'what_is.pbjson.dart' as $9;
 import '../../cosmos/base/query/v1beta1/pagination.pbjson.dart' as $2;
 
 @$core.Deprecated('Use queryParamsRequestDescriptor instead')
@@ -88,12 +88,12 @@ final $typed_data.Uint8List queryWhatIsCreatorRequestDescriptor = $convert.base6
 const QuerySchemaResponse$json = const {
   '1': 'QuerySchemaResponse',
   '2': const [
-    const {'1': 'definition', '3': 2, '4': 1, '5': 11, '6': '.sonrio.sonr.schema.SchemaDefinition', '10': 'definition'},
+    const {'1': 'schema', '3': 2, '4': 1, '5': 11, '6': '.sonrio.sonr.schema.Schema', '10': 'schema'},
   ],
 };
 
 /// Descriptor for `QuerySchemaResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List querySchemaResponseDescriptor = $convert.base64Decode('ChNRdWVyeVNjaGVtYVJlc3BvbnNlEkQKCmRlZmluaXRpb24YAiABKAsyJC5zb25yaW8uc29uci5zY2hlbWEuU2NoZW1hRGVmaW5pdGlvblIKZGVmaW5pdGlvbg==');
+final $typed_data.Uint8List querySchemaResponseDescriptor = $convert.base64Decode('ChNRdWVyeVNjaGVtYVJlc3BvbnNlEjIKBnNjaGVtYRgCIAEoCzIaLnNvbnJpby5zb25yLnNjaGVtYS5TY2hlbWFSBnNjaGVtYQ==');
 @$core.Deprecated('Use queryWhatIsByDidRequestDescriptor instead')
 const QueryWhatIsByDidRequest$json = const {
   '1': 'QueryWhatIsByDidRequest',
@@ -154,13 +154,14 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> QueryServi
   '.sonrio.sonr.schema.Params': $16.Params$json,
   '.sonrio.sonr.schema.QuerySchemaRequest': QuerySchemaRequest$json,
   '.sonrio.sonr.schema.QuerySchemaResponse': QuerySchemaResponse$json,
-  '.sonrio.sonr.schema.SchemaDefinition': $5.SchemaDefinition$json,
-  '.sonrio.sonr.schema.SchemaKindDefinition': $5.SchemaKindDefinition$json,
-  '.sonrio.sonr.schema.SchemaItemKindDefinition': $5.SchemaItemKindDefinition$json,
+  '.sonrio.sonr.schema.Schema': $5.Schema$json,
+  '.sonrio.sonr.schema.SchemaField': $5.SchemaField$json,
+  '.sonrio.sonr.schema.SchemaFieldKind': $5.SchemaFieldKind$json,
+  '.sonrio.sonr.schema.MetadataDefintion': $5.MetadataDefintion$json,
   '.sonrio.sonr.schema.QueryWhatIsRequest': QueryWhatIsRequest$json,
   '.sonrio.sonr.schema.QueryWhatIsResponse': QueryWhatIsResponse$json,
-  '.sonrio.sonr.schema.WhatIs': $10.WhatIs$json,
-  '.sonrio.sonr.schema.WhatIs.MetadataEntry': $10.WhatIs_MetadataEntry$json,
+  '.sonrio.sonr.schema.WhatIs': $9.WhatIs$json,
+  '.sonrio.sonr.schema.WhatIs.MetadataEntry': $9.WhatIs_MetadataEntry$json,
   '.sonrio.sonr.schema.QueryWhatIsCreatorRequest': QueryWhatIsCreatorRequest$json,
   '.cosmos.base.query.v1beta1.PageRequest': $2.PageRequest$json,
   '.sonrio.sonr.schema.QueryWhatIsCreatorResponse': QueryWhatIsCreatorResponse$json,

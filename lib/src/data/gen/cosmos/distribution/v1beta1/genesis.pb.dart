@@ -11,7 +11,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../base/v1beta1/coin.pb.dart' as $11;
-import 'distribution.pb.dart' as $35;
+import 'distribution.pb.dart' as $36;
 
 class DelegatorWithdrawInfo extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DelegatorWithdrawInfo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.distribution.v1beta1'), createEmptyInstance: create)
@@ -132,14 +132,14 @@ class ValidatorOutstandingRewardsRecord extends $pb.GeneratedMessage {
 class ValidatorAccumulatedCommissionRecord extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ValidatorAccumulatedCommissionRecord', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.distribution.v1beta1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatorAddress')
-    ..aOM<$35.ValidatorAccumulatedCommission>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accumulated', subBuilder: $35.ValidatorAccumulatedCommission.create)
+    ..aOM<$36.ValidatorAccumulatedCommission>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accumulated', subBuilder: $36.ValidatorAccumulatedCommission.create)
     ..hasRequiredFields = false
   ;
 
   ValidatorAccumulatedCommissionRecord._() : super();
   factory ValidatorAccumulatedCommissionRecord({
     $core.String? validatorAddress,
-    $35.ValidatorAccumulatedCommission? accumulated,
+    $36.ValidatorAccumulatedCommission? accumulated,
   }) {
     final _result = create();
     if (validatorAddress != null) {
@@ -181,22 +181,22 @@ class ValidatorAccumulatedCommissionRecord extends $pb.GeneratedMessage {
   void clearValidatorAddress() => clearField(1);
 
   @$pb.TagNumber(2)
-  $35.ValidatorAccumulatedCommission get accumulated => $_getN(1);
+  $36.ValidatorAccumulatedCommission get accumulated => $_getN(1);
   @$pb.TagNumber(2)
-  set accumulated($35.ValidatorAccumulatedCommission v) { setField(2, v); }
+  set accumulated($36.ValidatorAccumulatedCommission v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAccumulated() => $_has(1);
   @$pb.TagNumber(2)
   void clearAccumulated() => clearField(2);
   @$pb.TagNumber(2)
-  $35.ValidatorAccumulatedCommission ensureAccumulated() => $_ensure(1);
+  $36.ValidatorAccumulatedCommission ensureAccumulated() => $_ensure(1);
 }
 
 class ValidatorHistoricalRewardsRecord extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ValidatorHistoricalRewardsRecord', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.distribution.v1beta1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatorAddress')
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'period', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$35.ValidatorHistoricalRewards>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rewards', subBuilder: $35.ValidatorHistoricalRewards.create)
+    ..aOM<$36.ValidatorHistoricalRewards>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rewards', subBuilder: $36.ValidatorHistoricalRewards.create)
     ..hasRequiredFields = false
   ;
 
@@ -204,7 +204,7 @@ class ValidatorHistoricalRewardsRecord extends $pb.GeneratedMessage {
   factory ValidatorHistoricalRewardsRecord({
     $core.String? validatorAddress,
     $fixnum.Int64? period,
-    $35.ValidatorHistoricalRewards? rewards,
+    $36.ValidatorHistoricalRewards? rewards,
   }) {
     final _result = create();
     if (validatorAddress != null) {
@@ -258,28 +258,28 @@ class ValidatorHistoricalRewardsRecord extends $pb.GeneratedMessage {
   void clearPeriod() => clearField(2);
 
   @$pb.TagNumber(3)
-  $35.ValidatorHistoricalRewards get rewards => $_getN(2);
+  $36.ValidatorHistoricalRewards get rewards => $_getN(2);
   @$pb.TagNumber(3)
-  set rewards($35.ValidatorHistoricalRewards v) { setField(3, v); }
+  set rewards($36.ValidatorHistoricalRewards v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasRewards() => $_has(2);
   @$pb.TagNumber(3)
   void clearRewards() => clearField(3);
   @$pb.TagNumber(3)
-  $35.ValidatorHistoricalRewards ensureRewards() => $_ensure(2);
+  $36.ValidatorHistoricalRewards ensureRewards() => $_ensure(2);
 }
 
 class ValidatorCurrentRewardsRecord extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ValidatorCurrentRewardsRecord', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.distribution.v1beta1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatorAddress')
-    ..aOM<$35.ValidatorCurrentRewards>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rewards', subBuilder: $35.ValidatorCurrentRewards.create)
+    ..aOM<$36.ValidatorCurrentRewards>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rewards', subBuilder: $36.ValidatorCurrentRewards.create)
     ..hasRequiredFields = false
   ;
 
   ValidatorCurrentRewardsRecord._() : super();
   factory ValidatorCurrentRewardsRecord({
     $core.String? validatorAddress,
-    $35.ValidatorCurrentRewards? rewards,
+    $36.ValidatorCurrentRewards? rewards,
   }) {
     final _result = create();
     if (validatorAddress != null) {
@@ -321,22 +321,22 @@ class ValidatorCurrentRewardsRecord extends $pb.GeneratedMessage {
   void clearValidatorAddress() => clearField(1);
 
   @$pb.TagNumber(2)
-  $35.ValidatorCurrentRewards get rewards => $_getN(1);
+  $36.ValidatorCurrentRewards get rewards => $_getN(1);
   @$pb.TagNumber(2)
-  set rewards($35.ValidatorCurrentRewards v) { setField(2, v); }
+  set rewards($36.ValidatorCurrentRewards v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasRewards() => $_has(1);
   @$pb.TagNumber(2)
   void clearRewards() => clearField(2);
   @$pb.TagNumber(2)
-  $35.ValidatorCurrentRewards ensureRewards() => $_ensure(1);
+  $36.ValidatorCurrentRewards ensureRewards() => $_ensure(1);
 }
 
 class DelegatorStartingInfoRecord extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DelegatorStartingInfoRecord', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.distribution.v1beta1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delegatorAddress')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatorAddress')
-    ..aOM<$35.DelegatorStartingInfo>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'startingInfo', subBuilder: $35.DelegatorStartingInfo.create)
+    ..aOM<$36.DelegatorStartingInfo>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'startingInfo', subBuilder: $36.DelegatorStartingInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -344,7 +344,7 @@ class DelegatorStartingInfoRecord extends $pb.GeneratedMessage {
   factory DelegatorStartingInfoRecord({
     $core.String? delegatorAddress,
     $core.String? validatorAddress,
-    $35.DelegatorStartingInfo? startingInfo,
+    $36.DelegatorStartingInfo? startingInfo,
   }) {
     final _result = create();
     if (delegatorAddress != null) {
@@ -398,15 +398,15 @@ class DelegatorStartingInfoRecord extends $pb.GeneratedMessage {
   void clearValidatorAddress() => clearField(2);
 
   @$pb.TagNumber(3)
-  $35.DelegatorStartingInfo get startingInfo => $_getN(2);
+  $36.DelegatorStartingInfo get startingInfo => $_getN(2);
   @$pb.TagNumber(3)
-  set startingInfo($35.DelegatorStartingInfo v) { setField(3, v); }
+  set startingInfo($36.DelegatorStartingInfo v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasStartingInfo() => $_has(2);
   @$pb.TagNumber(3)
   void clearStartingInfo() => clearField(3);
   @$pb.TagNumber(3)
-  $35.DelegatorStartingInfo ensureStartingInfo() => $_ensure(2);
+  $36.DelegatorStartingInfo ensureStartingInfo() => $_ensure(2);
 }
 
 class ValidatorSlashEventRecord extends $pb.GeneratedMessage {
@@ -414,7 +414,7 @@ class ValidatorSlashEventRecord extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatorAddress')
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'height', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'period', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$35.ValidatorSlashEvent>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatorSlashEvent', subBuilder: $35.ValidatorSlashEvent.create)
+    ..aOM<$36.ValidatorSlashEvent>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatorSlashEvent', subBuilder: $36.ValidatorSlashEvent.create)
     ..hasRequiredFields = false
   ;
 
@@ -423,7 +423,7 @@ class ValidatorSlashEventRecord extends $pb.GeneratedMessage {
     $core.String? validatorAddress,
     $fixnum.Int64? height,
     $fixnum.Int64? period,
-    $35.ValidatorSlashEvent? validatorSlashEvent,
+    $36.ValidatorSlashEvent? validatorSlashEvent,
   }) {
     final _result = create();
     if (validatorAddress != null) {
@@ -489,21 +489,21 @@ class ValidatorSlashEventRecord extends $pb.GeneratedMessage {
   void clearPeriod() => clearField(3);
 
   @$pb.TagNumber(4)
-  $35.ValidatorSlashEvent get validatorSlashEvent => $_getN(3);
+  $36.ValidatorSlashEvent get validatorSlashEvent => $_getN(3);
   @$pb.TagNumber(4)
-  set validatorSlashEvent($35.ValidatorSlashEvent v) { setField(4, v); }
+  set validatorSlashEvent($36.ValidatorSlashEvent v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasValidatorSlashEvent() => $_has(3);
   @$pb.TagNumber(4)
   void clearValidatorSlashEvent() => clearField(4);
   @$pb.TagNumber(4)
-  $35.ValidatorSlashEvent ensureValidatorSlashEvent() => $_ensure(3);
+  $36.ValidatorSlashEvent ensureValidatorSlashEvent() => $_ensure(3);
 }
 
 class GenesisState extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GenesisState', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.distribution.v1beta1'), createEmptyInstance: create)
-    ..aOM<$35.Params>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', subBuilder: $35.Params.create)
-    ..aOM<$35.FeePool>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feePool', subBuilder: $35.FeePool.create)
+    ..aOM<$36.Params>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', subBuilder: $36.Params.create)
+    ..aOM<$36.FeePool>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'feePool', subBuilder: $36.FeePool.create)
     ..pc<DelegatorWithdrawInfo>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delegatorWithdrawInfos', $pb.PbFieldType.PM, subBuilder: DelegatorWithdrawInfo.create)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'previousProposer')
     ..pc<ValidatorOutstandingRewardsRecord>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'outstandingRewards', $pb.PbFieldType.PM, subBuilder: ValidatorOutstandingRewardsRecord.create)
@@ -517,8 +517,8 @@ class GenesisState extends $pb.GeneratedMessage {
 
   GenesisState._() : super();
   factory GenesisState({
-    $35.Params? params,
-    $35.FeePool? feePool,
+    $36.Params? params,
+    $36.FeePool? feePool,
     $core.Iterable<DelegatorWithdrawInfo>? delegatorWithdrawInfos,
     $core.String? previousProposer,
     $core.Iterable<ValidatorOutstandingRewardsRecord>? outstandingRewards,
@@ -583,26 +583,26 @@ class GenesisState extends $pb.GeneratedMessage {
   static GenesisState? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $35.Params get params => $_getN(0);
+  $36.Params get params => $_getN(0);
   @$pb.TagNumber(1)
-  set params($35.Params v) { setField(1, v); }
+  set params($36.Params v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasParams() => $_has(0);
   @$pb.TagNumber(1)
   void clearParams() => clearField(1);
   @$pb.TagNumber(1)
-  $35.Params ensureParams() => $_ensure(0);
+  $36.Params ensureParams() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $35.FeePool get feePool => $_getN(1);
+  $36.FeePool get feePool => $_getN(1);
   @$pb.TagNumber(2)
-  set feePool($35.FeePool v) { setField(2, v); }
+  set feePool($36.FeePool v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasFeePool() => $_has(1);
   @$pb.TagNumber(2)
   void clearFeePool() => clearField(2);
   @$pb.TagNumber(2)
-  $35.FeePool ensureFeePool() => $_ensure(1);
+  $36.FeePool ensureFeePool() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.List<DelegatorWithdrawInfo> get delegatorWithdrawInfos => $_getList(2);

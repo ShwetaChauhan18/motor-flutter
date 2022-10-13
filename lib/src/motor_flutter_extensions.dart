@@ -16,17 +16,15 @@ extension CreateAccountWithKeysResponseExt on CreateAccountWithKeysResponse {
 /// {@category Extensions}
 /// Extension on the [SchemaDefinition] class which provides a useful suite of methods
 /// to work with the [SchemaDefinition] class.
-extension SchemaDefinitionExt on SchemaDefinition {
+extension SchemaDefinitionExt on Schema {
   /// Converts a [SchemaDefinition] to a base [SchemaDocument] with its fields being set to the associated [SchemaKind] from the underlying definition.
   SchemaDocument newDocument() {
     return SchemaDocument(
-      creator: creator,
-      did: did,
-      definition: this,
+      schemaDid: did,
       fields: List<SchemaDocumentValue>.generate(fields.length, (index) {
         return SchemaDocumentValue(
-          name: fields[index].name,
-          field_2: fields[index].field_2,
+          key: fields[index].name,
+          kind: fields[index].fieldKind.kind,
         );
       }),
     );
@@ -34,17 +32,17 @@ extension SchemaDefinitionExt on SchemaDefinition {
 
   /// Validates if all fields of the provided [doc] match the [SchemaDefinition] fields.
   bool validate(SchemaDocument doc) {
-    if (doc.definition.did != did) {
+    if (doc.schemaDid != did) {
       return false;
     }
     if (doc.fields.length != fields.length) {
       return false;
     }
     for (var i = 0; i < fields.length; i++) {
-      if (fields[i].name != doc.fields[i].name) {
+      if (fields[i].name != doc.fields[i].key) {
         return false;
       }
-      if (fields[i].field_2 != doc.fields[i].field_2) {
+      if (fields[i].fieldKind.kind != doc.fields[i].kind) {
         return false;
       }
     }
@@ -67,7 +65,7 @@ extension SchemaDocumentExt on SchemaDocument {
   /// throw Exception('Field not found'); // The field with the key 'name' was not found
   /// ```
   T? get<T>(String name) {
-    final field = fields.firstWhereOrNull((e) => e.name == name);
+    final field = fields.firstWhereOrNull((e) => e.key == name);
     if (field == null) {
       return null;
     }
@@ -85,7 +83,7 @@ extension SchemaDocumentExt on SchemaDocument {
   /// throw Exception('Field not found'); // The field with the key 'names' was not found
   /// ```
   List<T>? getList<T>(String name) {
-    final field = fields.firstWhereOrNull((e) => e.name == name);
+    final field = fields.firstWhereOrNull((e) => e.key == name);
     if (field == null) {
       return [];
     }
@@ -99,7 +97,7 @@ extension SchemaDocumentExt on SchemaDocument {
   /// final res = doc.set<String>('name', 'John Doe'); // sets the value of the field 'name' to 'John Doe'
   /// ```
   T? set<T>(String name, T value) {
-    final field = fields.firstWhereOrNull((e) => e.name == name);
+    final field = fields.firstWhereOrNull((e) => e.key == name);
     if (field == null) {
       return null;
     }
@@ -114,7 +112,7 @@ extension SchemaDocumentExt on SchemaDocument {
   /// final res = doc.setList<String>('names', ['John Doe', 'Jane Doe']); // sets the value of the field 'names' to ['John Doe', 'Jane Doe']
   /// ```
   List<T>? setList<T>(String name, List<T> value) {
-    final field = fields.firstWhereOrNull((e) => e.name == name);
+    final field = fields.firstWhereOrNull((e) => e.key == name);
     if (field == null) {
       return null;
     }
@@ -146,10 +144,9 @@ extension SchemaDocumentExt on SchemaDocument {
     }
 
     final resp = await MotorFlutterPlatform.instance.uploadDocument(UploadDocumentRequest(
-      creator: creator ?? MotorFlutter.to.address.value,
-      fields: fields,
+      schemaDid: schemaDid,
       label: label,
-      definition: definition,
+      document: writeToBuffer(),
     ));
     if (resp == null) {
       return null;
@@ -211,41 +208,41 @@ extension SchemaDocumentValueExt on SchemaDocumentValue {
   /// }
   /// ```
   T? getValue<T>() {
-    switch (field_2) {
-      case SchemaKind.BOOL:
+    switch (kind) {
+      case Kind.BOOL:
         if (T is bool) {
           return boolValue.value as T;
         }
         break;
-      case SchemaKind.INT:
+      case Kind.INT:
         if (T is int) {
           return intValue.value as T;
         }
         break;
-      case SchemaKind.FLOAT:
+      case Kind.FLOAT:
         if (T is double) {
           return floatValue.value as T;
         }
         break;
 
-      case SchemaKind.STRING:
+      case Kind.STRING:
         if (T is String) {
           return stringValue.value as T;
         }
         break;
 
-      case SchemaKind.BYTES:
+      case Kind.BYTES:
         if (T is Uint8List) {
           return bytesValue.value as T;
         }
         break;
 
-      case SchemaKind.LIST:
+      case Kind.LIST:
         if (T is List) {
-          return arrayValue.value as T;
+          return listValue.value as T;
         }
         break;
-      case SchemaKind.LINK:
+      case Kind.LINK:
         if (T is String) {
           return linkValue.value as T;
         }
@@ -263,11 +260,11 @@ extension SchemaDocumentValueExt on SchemaDocumentValue {
   /// final names = doc.getList<String>('name'); // returns true if the field 'name' is a list of strings
   /// ```
   List<T>? getList<T>() {
-    if (field_2 != SchemaKind.LIST) {
+    if (kind != Kind.LIST) {
       return null;
     }
     final list = <T>[];
-    for (final val in arrayValue.value) {
+    for (final val in listValue.value) {
       final v = val.getValue<T>();
       if (v != null) {
         list.add(v);
@@ -313,48 +310,48 @@ extension SchemaDocumentValueExt on SchemaDocumentValue {
     if (v == null) {
       return null;
     }
-    switch (field_2) {
-      case SchemaKind.BOOL:
+    switch (kind) {
+      case Kind.BOOL:
         if (v is bool) {
           boolValue = BoolValue(value: v);
           return v;
         }
         break;
-      case SchemaKind.INT:
+      case Kind.INT:
         if (v is int) {
           intValue = IntValue(value: v);
           return v;
         }
         break;
-      case SchemaKind.FLOAT:
+      case Kind.FLOAT:
         if (v is double) {
           floatValue = FloatValue(value: v);
           return v;
         }
         break;
 
-      case SchemaKind.STRING:
+      case Kind.STRING:
         if (v is String) {
           stringValue = StringValue(value: v);
           return v;
         }
         break;
 
-      case SchemaKind.BYTES:
+      case Kind.BYTES:
         if (v is Uint8List) {
           bytesValue = BytesValue(value: v);
           return v;
         }
         break;
 
-      case SchemaKind.LIST:
+      case Kind.LIST:
         if (v is List<SchemaDocumentValue>) {
-          arrayValue = ArrayValue(value: v);
+          listValue = ListValue(value: v);
           return v;
         }
         break;
-      case SchemaKind.LINK:
-        if (v is String) {
+      case Kind.LINK:
+        if (v is SchemaDocument) {
           linkValue = LinkValue(value: v);
           return v;
         }
@@ -373,7 +370,7 @@ extension SchemaDocumentValueExt on SchemaDocumentValue {
   /// doc.setList<String>('name', ['John', 'Doe']); // sets the field 'name' to a list of strings
   /// ```
   List<T>? setList<T>(List<T> v) {
-    if (field_2 != SchemaKind.LIST) {
+    if (kind != Kind.LIST) {
       return null;
     }
     final list = <SchemaDocumentValue>[];
@@ -382,7 +379,7 @@ extension SchemaDocumentValueExt on SchemaDocumentValue {
       value.setValue<T>(val);
       list.add(value);
     }
-    arrayValue = ArrayValue(value: list);
+    listValue = ListValue(value: list);
     return v;
   }
 }

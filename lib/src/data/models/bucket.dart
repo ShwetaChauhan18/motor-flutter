@@ -37,7 +37,7 @@ class Bucket {
     if (!_isInitialized) {
       await _resolve();
     }
-    if (!doc.hasCid()) {
+    if (!doc.hasSchemaDid()) {
       final newDoc = await doc.upload(label);
       if (newDoc == null) {
         return false;
@@ -47,7 +47,7 @@ class Bucket {
     final item = BucketItem(
       name: label,
       type: ResourceIdentifier.CID,
-      schemaDid: doc.definition.did,
+      schemaDid: doc.schemaDid,
     );
     return await MotorFlutterPlatform.instance.addBucketObject(did, item);
   }

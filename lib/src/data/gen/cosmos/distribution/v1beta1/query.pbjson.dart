@@ -8,7 +8,7 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
-import 'distribution.pbjson.dart' as $35;
+import 'distribution.pbjson.dart' as $36;
 import '../../base/v1beta1/coin.pbjson.dart' as $11;
 import '../../base/query/v1beta1/pagination.pbjson.dart' as $4;
 
@@ -241,26 +241,26 @@ const $core.Map<$core.String, $core.dynamic> QueryServiceBase$json = const {
 const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> QueryServiceBase$messageJson = const {
   '.cosmos.distribution.v1beta1.QueryParamsRequest': QueryParamsRequest$json,
   '.cosmos.distribution.v1beta1.QueryParamsResponse': QueryParamsResponse$json,
-  '.cosmos.distribution.v1beta1.Params': $35.Params$json,
+  '.cosmos.distribution.v1beta1.Params': $36.Params$json,
   '.cosmos.distribution.v1beta1.QueryValidatorDistributionInfoRequest': QueryValidatorDistributionInfoRequest$json,
   '.cosmos.distribution.v1beta1.QueryValidatorDistributionInfoResponse': QueryValidatorDistributionInfoResponse$json,
   '.cosmos.base.v1beta1.DecCoin': $11.DecCoin$json,
   '.cosmos.distribution.v1beta1.QueryValidatorOutstandingRewardsRequest': QueryValidatorOutstandingRewardsRequest$json,
   '.cosmos.distribution.v1beta1.QueryValidatorOutstandingRewardsResponse': QueryValidatorOutstandingRewardsResponse$json,
-  '.cosmos.distribution.v1beta1.ValidatorOutstandingRewards': $35.ValidatorOutstandingRewards$json,
+  '.cosmos.distribution.v1beta1.ValidatorOutstandingRewards': $36.ValidatorOutstandingRewards$json,
   '.cosmos.distribution.v1beta1.QueryValidatorCommissionRequest': QueryValidatorCommissionRequest$json,
   '.cosmos.distribution.v1beta1.QueryValidatorCommissionResponse': QueryValidatorCommissionResponse$json,
-  '.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission': $35.ValidatorAccumulatedCommission$json,
+  '.cosmos.distribution.v1beta1.ValidatorAccumulatedCommission': $36.ValidatorAccumulatedCommission$json,
   '.cosmos.distribution.v1beta1.QueryValidatorSlashesRequest': QueryValidatorSlashesRequest$json,
   '.cosmos.base.query.v1beta1.PageRequest': $4.PageRequest$json,
   '.cosmos.distribution.v1beta1.QueryValidatorSlashesResponse': QueryValidatorSlashesResponse$json,
-  '.cosmos.distribution.v1beta1.ValidatorSlashEvent': $35.ValidatorSlashEvent$json,
+  '.cosmos.distribution.v1beta1.ValidatorSlashEvent': $36.ValidatorSlashEvent$json,
   '.cosmos.base.query.v1beta1.PageResponse': $4.PageResponse$json,
   '.cosmos.distribution.v1beta1.QueryDelegationRewardsRequest': QueryDelegationRewardsRequest$json,
   '.cosmos.distribution.v1beta1.QueryDelegationRewardsResponse': QueryDelegationRewardsResponse$json,
   '.cosmos.distribution.v1beta1.QueryDelegationTotalRewardsRequest': QueryDelegationTotalRewardsRequest$json,
   '.cosmos.distribution.v1beta1.QueryDelegationTotalRewardsResponse': QueryDelegationTotalRewardsResponse$json,
-  '.cosmos.distribution.v1beta1.DelegationDelegatorReward': $35.DelegationDelegatorReward$json,
+  '.cosmos.distribution.v1beta1.DelegationDelegatorReward': $36.DelegationDelegatorReward$json,
   '.cosmos.distribution.v1beta1.QueryDelegatorValidatorsRequest': QueryDelegatorValidatorsRequest$json,
   '.cosmos.distribution.v1beta1.QueryDelegatorValidatorsResponse': QueryDelegatorValidatorsResponse$json,
   '.cosmos.distribution.v1beta1.QueryDelegatorWithdrawAddressRequest': QueryDelegatorWithdrawAddressRequest$json,

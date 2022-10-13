@@ -10,39 +10,39 @@ import 'dart:async' as $async;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'dart:core' as $core;
-import 'tx.pb.dart' as $37;
+import 'tx.pb.dart' as $38;
 import 'tx.pbjson.dart';
 
 export 'tx.pb.dart';
 
 abstract class MsgServiceBase extends $pb.GeneratedService {
-  $async.Future<$37.MsgSetWithdrawAddressResponse> setWithdrawAddress($pb.ServerContext ctx, $37.MsgSetWithdrawAddress request);
-  $async.Future<$37.MsgWithdrawDelegatorRewardResponse> withdrawDelegatorReward($pb.ServerContext ctx, $37.MsgWithdrawDelegatorReward request);
-  $async.Future<$37.MsgWithdrawValidatorCommissionResponse> withdrawValidatorCommission($pb.ServerContext ctx, $37.MsgWithdrawValidatorCommission request);
-  $async.Future<$37.MsgFundCommunityPoolResponse> fundCommunityPool($pb.ServerContext ctx, $37.MsgFundCommunityPool request);
-  $async.Future<$37.MsgUpdateParamsResponse> updateParams($pb.ServerContext ctx, $37.MsgUpdateParams request);
-  $async.Future<$37.MsgCommunityPoolSpendResponse> communityPoolSpend($pb.ServerContext ctx, $37.MsgCommunityPoolSpend request);
+  $async.Future<$38.MsgSetWithdrawAddressResponse> setWithdrawAddress($pb.ServerContext ctx, $38.MsgSetWithdrawAddress request);
+  $async.Future<$38.MsgWithdrawDelegatorRewardResponse> withdrawDelegatorReward($pb.ServerContext ctx, $38.MsgWithdrawDelegatorReward request);
+  $async.Future<$38.MsgWithdrawValidatorCommissionResponse> withdrawValidatorCommission($pb.ServerContext ctx, $38.MsgWithdrawValidatorCommission request);
+  $async.Future<$38.MsgFundCommunityPoolResponse> fundCommunityPool($pb.ServerContext ctx, $38.MsgFundCommunityPool request);
+  $async.Future<$38.MsgUpdateParamsResponse> updateParams($pb.ServerContext ctx, $38.MsgUpdateParams request);
+  $async.Future<$38.MsgCommunityPoolSpendResponse> communityPoolSpend($pb.ServerContext ctx, $38.MsgCommunityPoolSpend request);
 
   $pb.GeneratedMessage createRequest($core.String method) {
     switch (method) {
-      case 'SetWithdrawAddress': return $37.MsgSetWithdrawAddress();
-      case 'WithdrawDelegatorReward': return $37.MsgWithdrawDelegatorReward();
-      case 'WithdrawValidatorCommission': return $37.MsgWithdrawValidatorCommission();
-      case 'FundCommunityPool': return $37.MsgFundCommunityPool();
-      case 'UpdateParams': return $37.MsgUpdateParams();
-      case 'CommunityPoolSpend': return $37.MsgCommunityPoolSpend();
+      case 'SetWithdrawAddress': return $38.MsgSetWithdrawAddress();
+      case 'WithdrawDelegatorReward': return $38.MsgWithdrawDelegatorReward();
+      case 'WithdrawValidatorCommission': return $38.MsgWithdrawValidatorCommission();
+      case 'FundCommunityPool': return $38.MsgFundCommunityPool();
+      case 'UpdateParams': return $38.MsgUpdateParams();
+      case 'CommunityPoolSpend': return $38.MsgCommunityPoolSpend();
       default: throw $core.ArgumentError('Unknown method: $method');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String method, $pb.GeneratedMessage request) {
     switch (method) {
-      case 'SetWithdrawAddress': return this.setWithdrawAddress(ctx, request as $37.MsgSetWithdrawAddress);
-      case 'WithdrawDelegatorReward': return this.withdrawDelegatorReward(ctx, request as $37.MsgWithdrawDelegatorReward);
-      case 'WithdrawValidatorCommission': return this.withdrawValidatorCommission(ctx, request as $37.MsgWithdrawValidatorCommission);
-      case 'FundCommunityPool': return this.fundCommunityPool(ctx, request as $37.MsgFundCommunityPool);
-      case 'UpdateParams': return this.updateParams(ctx, request as $37.MsgUpdateParams);
-      case 'CommunityPoolSpend': return this.communityPoolSpend(ctx, request as $37.MsgCommunityPoolSpend);
+      case 'SetWithdrawAddress': return this.setWithdrawAddress(ctx, request as $38.MsgSetWithdrawAddress);
+      case 'WithdrawDelegatorReward': return this.withdrawDelegatorReward(ctx, request as $38.MsgWithdrawDelegatorReward);
+      case 'WithdrawValidatorCommission': return this.withdrawValidatorCommission(ctx, request as $38.MsgWithdrawValidatorCommission);
+      case 'FundCommunityPool': return this.fundCommunityPool(ctx, request as $38.MsgFundCommunityPool);
+      case 'UpdateParams': return this.updateParams(ctx, request as $38.MsgUpdateParams);
+      case 'CommunityPoolSpend': return this.communityPoolSpend(ctx, request as $38.MsgCommunityPoolSpend);
       default: throw $core.ArgumentError('Unknown method: $method');
     }
   }

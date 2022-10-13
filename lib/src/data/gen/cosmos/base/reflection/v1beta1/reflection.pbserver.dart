@@ -10,27 +10,27 @@ import 'dart:async' as $async;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'dart:core' as $core;
-import 'reflection.pb.dart' as $23;
+import 'reflection.pb.dart' as $24;
 import 'reflection.pbjson.dart';
 
 export 'reflection.pb.dart';
 
 abstract class ReflectionServiceBase extends $pb.GeneratedService {
-  $async.Future<$23.ListAllInterfacesResponse> listAllInterfaces($pb.ServerContext ctx, $23.ListAllInterfacesRequest request);
-  $async.Future<$23.ListImplementationsResponse> listImplementations($pb.ServerContext ctx, $23.ListImplementationsRequest request);
+  $async.Future<$24.ListAllInterfacesResponse> listAllInterfaces($pb.ServerContext ctx, $24.ListAllInterfacesRequest request);
+  $async.Future<$24.ListImplementationsResponse> listImplementations($pb.ServerContext ctx, $24.ListImplementationsRequest request);
 
   $pb.GeneratedMessage createRequest($core.String method) {
     switch (method) {
-      case 'ListAllInterfaces': return $23.ListAllInterfacesRequest();
-      case 'ListImplementations': return $23.ListImplementationsRequest();
+      case 'ListAllInterfaces': return $24.ListAllInterfacesRequest();
+      case 'ListImplementations': return $24.ListImplementationsRequest();
       default: throw $core.ArgumentError('Unknown method: $method');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String method, $pb.GeneratedMessage request) {
     switch (method) {
-      case 'ListAllInterfaces': return this.listAllInterfaces(ctx, request as $23.ListAllInterfacesRequest);
-      case 'ListImplementations': return this.listImplementations(ctx, request as $23.ListImplementationsRequest);
+      case 'ListAllInterfaces': return this.listAllInterfaces(ctx, request as $24.ListAllInterfacesRequest);
+      case 'ListImplementations': return this.listImplementations(ctx, request as $24.ListImplementationsRequest);
       default: throw $core.ArgumentError('Unknown method: $method');
     }
   }

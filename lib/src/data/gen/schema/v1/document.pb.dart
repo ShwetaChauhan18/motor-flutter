@@ -9,40 +9,28 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'schema.pb.dart' as $5;
-
 import 'schema.pbenum.dart' as $5;
 
 class SchemaDocument extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SchemaDocument', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.sonr.schema'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'did')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cid')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'creator')
-    ..aOM<$5.SchemaDefinition>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'definition', subBuilder: $5.SchemaDefinition.create)
-    ..pc<SchemaDocumentValue>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: SchemaDocumentValue.create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'schemaDid')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
+    ..pc<SchemaDocumentValue>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fields', $pb.PbFieldType.PM, subBuilder: SchemaDocumentValue.create)
     ..hasRequiredFields = false
   ;
 
   SchemaDocument._() : super();
   factory SchemaDocument({
-    $core.String? did,
-    $core.String? cid,
-    $core.String? creator,
-    $5.SchemaDefinition? definition,
+    $core.String? schemaDid,
+    $core.String? label,
     $core.Iterable<SchemaDocumentValue>? fields,
   }) {
     final _result = create();
-    if (did != null) {
-      _result.did = did;
+    if (schemaDid != null) {
+      _result.schemaDid = schemaDid;
     }
-    if (cid != null) {
-      _result.cid = cid;
-    }
-    if (creator != null) {
-      _result.creator = creator;
-    }
-    if (definition != null) {
-      _result.definition = definition;
+    if (label != null) {
+      _result.label = label;
     }
     if (fields != null) {
       _result.fields.addAll(fields);
@@ -71,45 +59,25 @@ class SchemaDocument extends $pb.GeneratedMessage {
   static SchemaDocument? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get did => $_getSZ(0);
+  $core.String get schemaDid => $_getSZ(0);
   @$pb.TagNumber(1)
-  set did($core.String v) { $_setString(0, v); }
+  set schemaDid($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasDid() => $_has(0);
+  $core.bool hasSchemaDid() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDid() => clearField(1);
+  void clearSchemaDid() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get cid => $_getSZ(1);
+  $core.String get label => $_getSZ(1);
   @$pb.TagNumber(2)
-  set cid($core.String v) { $_setString(1, v); }
+  set label($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasCid() => $_has(1);
+  $core.bool hasLabel() => $_has(1);
   @$pb.TagNumber(2)
-  void clearCid() => clearField(2);
+  void clearLabel() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get creator => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set creator($core.String v) { $_setString(2, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasCreator() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearCreator() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $5.SchemaDefinition get definition => $_getN(3);
-  @$pb.TagNumber(4)
-  set definition($5.SchemaDefinition v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasDefinition() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearDefinition() => clearField(4);
-  @$pb.TagNumber(4)
-  $5.SchemaDefinition ensureDefinition() => $_ensure(3);
-
-  @$pb.TagNumber(5)
-  $core.List<SchemaDocumentValue> get fields => $_getList(4);
+  $core.List<SchemaDocumentValue> get fields => $_getList(2);
 }
 
 class BoolValue extends $pb.GeneratedMessage {
@@ -349,20 +317,15 @@ class BytesValue extends $pb.GeneratedMessage {
 
 class LinkValue extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LinkValue', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.sonr.schema'), createEmptyInstance: create)
-    ..e<$5.LinkKind>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'link', $pb.PbFieldType.OE, defaultOrMaker: $5.LinkKind.UNKNOWN, valueOf: $5.LinkKind.valueOf, enumValues: $5.LinkKind.values)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value')
+    ..aOM<SchemaDocument>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value', subBuilder: SchemaDocument.create)
     ..hasRequiredFields = false
   ;
 
   LinkValue._() : super();
   factory LinkValue({
-    $5.LinkKind? link,
-    $core.String? value,
+    SchemaDocument? value,
   }) {
     final _result = create();
-    if (link != null) {
-      _result.link = link;
-    }
     if (value != null) {
       _result.value = value;
     }
@@ -390,32 +353,25 @@ class LinkValue extends $pb.GeneratedMessage {
   static LinkValue? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $5.LinkKind get link => $_getN(0);
+  SchemaDocument get value => $_getN(0);
   @$pb.TagNumber(1)
-  set link($5.LinkKind v) { setField(1, v); }
+  set value(SchemaDocument v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasLink() => $_has(0);
+  $core.bool hasValue() => $_has(0);
   @$pb.TagNumber(1)
-  void clearLink() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get value => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set value($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasValue() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearValue() => clearField(2);
+  void clearValue() => clearField(1);
+  @$pb.TagNumber(1)
+  SchemaDocument ensureValue() => $_ensure(0);
 }
 
-class ArrayValue extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ArrayValue', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.sonr.schema'), createEmptyInstance: create)
+class ListValue extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListValue', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.sonr.schema'), createEmptyInstance: create)
     ..pc<SchemaDocumentValue>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value', $pb.PbFieldType.PM, subBuilder: SchemaDocumentValue.create)
     ..hasRequiredFields = false
   ;
 
-  ArrayValue._() : super();
-  factory ArrayValue({
+  ListValue._() : super();
+  factory ListValue({
     $core.Iterable<SchemaDocumentValue>? value,
   }) {
     final _result = create();
@@ -424,26 +380,26 @@ class ArrayValue extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory ArrayValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ArrayValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory ListValue.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListValue.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  ArrayValue clone() => ArrayValue()..mergeFromMessage(this);
+  ListValue clone() => ListValue()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ArrayValue copyWith(void Function(ArrayValue) updates) => super.copyWith((message) => updates(message as ArrayValue)) as ArrayValue; // ignore: deprecated_member_use
+  ListValue copyWith(void Function(ListValue) updates) => super.copyWith((message) => updates(message as ListValue)) as ListValue; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static ArrayValue create() => ArrayValue._();
-  ArrayValue createEmptyInstance() => create();
-  static $pb.PbList<ArrayValue> createRepeated() => $pb.PbList<ArrayValue>();
+  static ListValue create() => ListValue._();
+  ListValue createEmptyInstance() => create();
+  static $pb.PbList<ListValue> createRepeated() => $pb.PbList<ListValue>();
   @$core.pragma('dart2js:noInline')
-  static ArrayValue getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ArrayValue>(create);
-  static ArrayValue? _defaultInstance;
+  static ListValue getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListValue>(create);
+  static ListValue? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<SchemaDocumentValue> get value => $_getList(0);
@@ -451,36 +407,36 @@ class ArrayValue extends $pb.GeneratedMessage {
 
 class SchemaDocumentValue extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SchemaDocumentValue', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.sonr.schema'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..e<$5.SchemaKind>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'field', $pb.PbFieldType.OE, defaultOrMaker: $5.SchemaKind.LIST, valueOf: $5.SchemaKind.valueOf, enumValues: $5.SchemaKind.values)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'key')
+    ..e<$5.Kind>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'kind', $pb.PbFieldType.OE, defaultOrMaker: $5.Kind.LIST, valueOf: $5.Kind.valueOf, enumValues: $5.Kind.values)
     ..aOM<BoolValue>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'boolValue', subBuilder: BoolValue.create)
     ..aOM<StringValue>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'stringValue', subBuilder: StringValue.create)
     ..aOM<IntValue>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'intValue', subBuilder: IntValue.create)
     ..aOM<FloatValue>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'floatValue', subBuilder: FloatValue.create)
     ..aOM<BytesValue>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bytesValue', subBuilder: BytesValue.create)
     ..aOM<LinkValue>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'linkValue', subBuilder: LinkValue.create)
-    ..aOM<ArrayValue>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'arrayValue', subBuilder: ArrayValue.create)
+    ..aOM<ListValue>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'listValue', subBuilder: ListValue.create)
     ..hasRequiredFields = false
   ;
 
   SchemaDocumentValue._() : super();
   factory SchemaDocumentValue({
-    $core.String? name,
-    $5.SchemaKind? field_2,
+    $core.String? key,
+    $5.Kind? kind,
     BoolValue? boolValue,
     StringValue? stringValue,
     IntValue? intValue,
     FloatValue? floatValue,
     BytesValue? bytesValue,
     LinkValue? linkValue,
-    ArrayValue? arrayValue,
+    ListValue? listValue,
   }) {
     final _result = create();
-    if (name != null) {
-      _result.name = name;
+    if (key != null) {
+      _result.key = key;
     }
-    if (field_2 != null) {
-      _result.field_2 = field_2;
+    if (kind != null) {
+      _result.kind = kind;
     }
     if (boolValue != null) {
       _result.boolValue = boolValue;
@@ -500,8 +456,8 @@ class SchemaDocumentValue extends $pb.GeneratedMessage {
     if (linkValue != null) {
       _result.linkValue = linkValue;
     }
-    if (arrayValue != null) {
-      _result.arrayValue = arrayValue;
+    if (listValue != null) {
+      _result.listValue = listValue;
     }
     return _result;
   }
@@ -527,22 +483,22 @@ class SchemaDocumentValue extends $pb.GeneratedMessage {
   static SchemaDocumentValue? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get name => $_getSZ(0);
+  $core.String get key => $_getSZ(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set key($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasName() => $_has(0);
+  $core.bool hasKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearKey() => clearField(1);
 
   @$pb.TagNumber(2)
-  $5.SchemaKind get field_2 => $_getN(1);
+  $5.Kind get kind => $_getN(1);
   @$pb.TagNumber(2)
-  set field_2($5.SchemaKind v) { setField(2, v); }
+  set kind($5.Kind v) { setField(2, v); }
   @$pb.TagNumber(2)
-  $core.bool hasField_2() => $_has(1);
+  $core.bool hasKind() => $_has(1);
   @$pb.TagNumber(2)
-  void clearField_2() => clearField(2);
+  void clearKind() => clearField(2);
 
   @$pb.TagNumber(3)
   BoolValue get boolValue => $_getN(2);
@@ -611,14 +567,14 @@ class SchemaDocumentValue extends $pb.GeneratedMessage {
   LinkValue ensureLinkValue() => $_ensure(7);
 
   @$pb.TagNumber(9)
-  ArrayValue get arrayValue => $_getN(8);
+  ListValue get listValue => $_getN(8);
   @$pb.TagNumber(9)
-  set arrayValue(ArrayValue v) { setField(9, v); }
+  set listValue(ListValue v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasArrayValue() => $_has(8);
+  $core.bool hasListValue() => $_has(8);
   @$pb.TagNumber(9)
-  void clearArrayValue() => clearField(9);
+  void clearListValue() => clearField(9);
   @$pb.TagNumber(9)
-  ArrayValue ensureArrayValue() => $_ensure(8);
+  ListValue ensureListValue() => $_ensure(8);
 }
 

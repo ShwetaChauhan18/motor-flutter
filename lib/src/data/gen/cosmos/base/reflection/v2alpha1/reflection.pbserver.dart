@@ -10,39 +10,39 @@ import 'dart:async' as $async;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'dart:core' as $core;
-import 'reflection.pb.dart' as $24;
+import 'reflection.pb.dart' as $25;
 import 'reflection.pbjson.dart';
 
 export 'reflection.pb.dart';
 
 abstract class ReflectionServiceBase extends $pb.GeneratedService {
-  $async.Future<$24.GetAuthnDescriptorResponse> getAuthnDescriptor($pb.ServerContext ctx, $24.GetAuthnDescriptorRequest request);
-  $async.Future<$24.GetChainDescriptorResponse> getChainDescriptor($pb.ServerContext ctx, $24.GetChainDescriptorRequest request);
-  $async.Future<$24.GetCodecDescriptorResponse> getCodecDescriptor($pb.ServerContext ctx, $24.GetCodecDescriptorRequest request);
-  $async.Future<$24.GetConfigurationDescriptorResponse> getConfigurationDescriptor($pb.ServerContext ctx, $24.GetConfigurationDescriptorRequest request);
-  $async.Future<$24.GetQueryServicesDescriptorResponse> getQueryServicesDescriptor($pb.ServerContext ctx, $24.GetQueryServicesDescriptorRequest request);
-  $async.Future<$24.GetTxDescriptorResponse> getTxDescriptor($pb.ServerContext ctx, $24.GetTxDescriptorRequest request);
+  $async.Future<$25.GetAuthnDescriptorResponse> getAuthnDescriptor($pb.ServerContext ctx, $25.GetAuthnDescriptorRequest request);
+  $async.Future<$25.GetChainDescriptorResponse> getChainDescriptor($pb.ServerContext ctx, $25.GetChainDescriptorRequest request);
+  $async.Future<$25.GetCodecDescriptorResponse> getCodecDescriptor($pb.ServerContext ctx, $25.GetCodecDescriptorRequest request);
+  $async.Future<$25.GetConfigurationDescriptorResponse> getConfigurationDescriptor($pb.ServerContext ctx, $25.GetConfigurationDescriptorRequest request);
+  $async.Future<$25.GetQueryServicesDescriptorResponse> getQueryServicesDescriptor($pb.ServerContext ctx, $25.GetQueryServicesDescriptorRequest request);
+  $async.Future<$25.GetTxDescriptorResponse> getTxDescriptor($pb.ServerContext ctx, $25.GetTxDescriptorRequest request);
 
   $pb.GeneratedMessage createRequest($core.String method) {
     switch (method) {
-      case 'GetAuthnDescriptor': return $24.GetAuthnDescriptorRequest();
-      case 'GetChainDescriptor': return $24.GetChainDescriptorRequest();
-      case 'GetCodecDescriptor': return $24.GetCodecDescriptorRequest();
-      case 'GetConfigurationDescriptor': return $24.GetConfigurationDescriptorRequest();
-      case 'GetQueryServicesDescriptor': return $24.GetQueryServicesDescriptorRequest();
-      case 'GetTxDescriptor': return $24.GetTxDescriptorRequest();
+      case 'GetAuthnDescriptor': return $25.GetAuthnDescriptorRequest();
+      case 'GetChainDescriptor': return $25.GetChainDescriptorRequest();
+      case 'GetCodecDescriptor': return $25.GetCodecDescriptorRequest();
+      case 'GetConfigurationDescriptor': return $25.GetConfigurationDescriptorRequest();
+      case 'GetQueryServicesDescriptor': return $25.GetQueryServicesDescriptorRequest();
+      case 'GetTxDescriptor': return $25.GetTxDescriptorRequest();
       default: throw $core.ArgumentError('Unknown method: $method');
     }
   }
 
   $async.Future<$pb.GeneratedMessage> handleCall($pb.ServerContext ctx, $core.String method, $pb.GeneratedMessage request) {
     switch (method) {
-      case 'GetAuthnDescriptor': return this.getAuthnDescriptor(ctx, request as $24.GetAuthnDescriptorRequest);
-      case 'GetChainDescriptor': return this.getChainDescriptor(ctx, request as $24.GetChainDescriptorRequest);
-      case 'GetCodecDescriptor': return this.getCodecDescriptor(ctx, request as $24.GetCodecDescriptorRequest);
-      case 'GetConfigurationDescriptor': return this.getConfigurationDescriptor(ctx, request as $24.GetConfigurationDescriptorRequest);
-      case 'GetQueryServicesDescriptor': return this.getQueryServicesDescriptor(ctx, request as $24.GetQueryServicesDescriptorRequest);
-      case 'GetTxDescriptor': return this.getTxDescriptor(ctx, request as $24.GetTxDescriptorRequest);
+      case 'GetAuthnDescriptor': return this.getAuthnDescriptor(ctx, request as $25.GetAuthnDescriptorRequest);
+      case 'GetChainDescriptor': return this.getChainDescriptor(ctx, request as $25.GetChainDescriptorRequest);
+      case 'GetCodecDescriptor': return this.getCodecDescriptor(ctx, request as $25.GetCodecDescriptorRequest);
+      case 'GetConfigurationDescriptor': return this.getConfigurationDescriptor(ctx, request as $25.GetConfigurationDescriptorRequest);
+      case 'GetQueryServicesDescriptor': return this.getQueryServicesDescriptor(ctx, request as $25.GetQueryServicesDescriptorRequest);
+      case 'GetTxDescriptor': return this.getTxDescriptor(ctx, request as $25.GetTxDescriptorRequest);
       default: throw $core.ArgumentError('Unknown method: $method');
     }
   }
