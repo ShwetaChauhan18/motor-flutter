@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'motor_flutter'
-  s.version          = '0.8.2'
+  s.version          = '0.8.3'
   s.summary          = 'A new Flutter plugin project.'
   s.description      = <<-DESC
 A new Flutter plugin project.
@@ -15,7 +15,7 @@ A new Flutter plugin project.
   s.source           = { :path => '.' }
   s.source_files     = 'Classes/**/*'
   s.dependency 'FlutterMacOS'
-  s.dependency 'motor_mac_pod', '~> 9.0.0'
+  s.dependency 'motor_mac_pod', '~> 10.0.0'
   s.platform = :osx, '12.0'
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   s.swift_version = '5.0'

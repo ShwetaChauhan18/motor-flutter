@@ -36,7 +36,7 @@ class Bucket {
   }
 
   /// Adds a [SchemaDocument] into the Bucket and returns [bool] indicating success
-  Future<bool> addDocument(String label, SchemaDocument doc) async {
+  Future<bool> addItem(String label, SchemaDocument doc) async {
     await refresh();
 
     final newDoc = await doc.upload();
