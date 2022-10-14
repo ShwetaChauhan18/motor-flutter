@@ -1,3 +1,5 @@
+## 0.8.4
+* Push framework from CI/CD to production
 ## 0.8.3
 * Upgrade ios/mac frameworks to v0.6.4
 * Bump cocoapods to 19.0 (iOS) and 9.0 (macOS)
