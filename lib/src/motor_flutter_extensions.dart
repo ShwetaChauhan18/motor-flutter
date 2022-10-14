@@ -285,7 +285,7 @@ extension SchemaDocumentValueExt on SchemaDocumentValue {
     return list;
   }
 
-  /// Checks if the provided [T] type matches the [SchemaKind] of the [SchemaDocumentValue]. If the provided [T] doesnt match [SchemaKind], then false is returned.
+  /// Checks if the provided [T] type matches the [Kind] of the [SchemaDocumentValue]. If the provided [T] doesnt match [SchemaKind], then false is returned.
   ///
   /// ```dart
   /// // Create a new document

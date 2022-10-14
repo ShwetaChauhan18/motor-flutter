@@ -52,7 +52,8 @@
       
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../motor_flutter/BucketItem-class.html">BucketItem</a>?</span>&gt;</span></span>
-<span class="name ">add</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="add-param-doc"><span class="type-annotation"><a href="../../motor_flutter/SchemaDocument-class.html">SchemaDocument</a></span> <span class="parameter-name">doc</span></span></li>
+<span class="name ">add</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="add-param-doc"><span class="type-annotation"><a href="../../motor_flutter/SchemaDocument-class.html">SchemaDocument</a></span> <span class="parameter-name">doc</span>, </span></li>
+<li><span class="parameter" id="add-param-whatIs">{<span class="type-annotation"><a href="../../motor_flutter/WhatIs-class.html">WhatIs</a>?</span> <span class="parameter-name">whatIs</span>}</span></li>
 </ol>)
 
       
@@ -67,13 +68,14 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;BucketItem?&gt; add(SchemaDocument doc) async {
+  <pre class="language-dart"><code class="language-dart">Future&lt;BucketItem?&gt; add(SchemaDocument doc, {WhatIs? whatIs}) async {
   await refresh();
   final label = doc.label;
   final req = UploadDocumentRequest(
     schemaDid: doc.schemaDid,
     label: label,
     document: doc.writeToJson().codeUnits,
+    whatIsReference: whatIs,
   );
   if (isDebugMode) {
     print(&#39;Adding document to bucket: ${req.toString()}&#39;);
@@ -162,7 +164,7 @@
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.4
+      0.9.0
   </span>
 
   

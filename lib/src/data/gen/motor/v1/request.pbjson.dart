@@ -230,11 +230,12 @@ const UploadDocumentRequest$json = const {
     const {'1': 'schema_did', '3': 1, '4': 1, '5': 9, '10': 'schemaDid'},
     const {'1': 'label', '3': 2, '4': 1, '5': 9, '10': 'label'},
     const {'1': 'document', '3': 3, '4': 1, '5': 12, '10': 'document'},
+    const {'1': 'what_is_reference', '3': 4, '4': 1, '5': 11, '6': '.sonrio.sonr.schema.WhatIs', '10': 'whatIsReference'},
   ],
 };
 
 /// Descriptor for `UploadDocumentRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List uploadDocumentRequestDescriptor = $convert.base64Decode('ChVVcGxvYWREb2N1bWVudFJlcXVlc3QSHQoKc2NoZW1hX2RpZBgBIAEoCVIJc2NoZW1hRGlkEhQKBWxhYmVsGAIgASgJUgVsYWJlbBIaCghkb2N1bWVudBgDIAEoDFIIZG9jdW1lbnQ=');
+final $typed_data.Uint8List uploadDocumentRequestDescriptor = $convert.base64Decode('ChVVcGxvYWREb2N1bWVudFJlcXVlc3QSHQoKc2NoZW1hX2RpZBgBIAEoCVIJc2NoZW1hRGlkEhQKBWxhYmVsGAIgASgJUgVsYWJlbBIaCghkb2N1bWVudBgDIAEoDFIIZG9jdW1lbnQSRgoRd2hhdF9pc19yZWZlcmVuY2UYBCABKAsyGi5zb25yaW8uc29uci5zY2hlbWEuV2hhdElzUg93aGF0SXNSZWZlcmVuY2U=');
 @$core.Deprecated('Use getDocumentRequestDescriptor instead')
 const GetDocumentRequest$json = const {
   '1': 'GetDocumentRequest',

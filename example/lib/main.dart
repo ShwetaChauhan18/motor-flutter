@@ -21,6 +21,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late final WhoIs? whoIs;
+  WhatIs? testWhatIs;
   Schema? testSchema;
   String? testSchemaDid;
   SchemaDocument? testDocument;
@@ -113,6 +114,7 @@ class _MyAppState extends State<MyApp> {
                   print(res.toString());
                 }
                 setState(() {
+                  testWhatIs = res.whatIs;
                   testSchema = res.whatIs.schema;
                   testSchemaDid = res.whatIs.did;
                 });
@@ -156,7 +158,7 @@ class _MyAppState extends State<MyApp> {
               child: const Text("Create Bucket"),
               onPressed: () async {
                 testBucket = await MotorFlutter.to.createBucket("Test Bucket");
-                final item = await testBucket!.add(testDocument!);
+                final item = await testBucket!.add(testDocument!, whatIs: testWhatIs);
                 if (item == null) {
                   Get.snackbar(
                     "Error",

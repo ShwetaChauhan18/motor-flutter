@@ -36,13 +36,14 @@ class Bucket {
   }
 
   /// Adds a [SchemaDocument] into the Bucket and returns [bool] indicating success
-  Future<BucketItem?> add(SchemaDocument doc) async {
+  Future<BucketItem?> add(SchemaDocument doc, {WhatIs? whatIs}) async {
     await refresh();
     final label = doc.label;
     final req = UploadDocumentRequest(
       schemaDid: doc.schemaDid,
       label: label,
       document: doc.writeToJson().codeUnits,
+      whatIsReference: whatIs,
     );
     if (isDebugMode) {
       print('Adding document to bucket: ${req.toString()}');

@@ -40,7 +40,7 @@ or
 
 ```yaml
 dependencies:
-  motor_flutter: ^0.8.4
+  motor_flutter: ^0.9.0
 ```
 
 Update your `ios/Podfile`:

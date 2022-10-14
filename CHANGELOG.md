@@ -1,3 +1,8 @@
+## 0.9.0
+* Document resolution within Buckets
+* Upgrade ios/mac frameworks to v0.6.6
+* Bump cocoapods to 21.0.0 (iOS) and 11.0.0 (macOS)
+
 ## 0.8.4
 * Push framework from CI/CD to production
 ## 0.8.3

@@ -9,7 +9,7 @@ import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
 import 'schema.pbjson.dart' as $5;
-import 'what_is.pbjson.dart' as $9;
+import 'what_is.pbjson.dart' as $7;
 
 @$core.Deprecated('Use msgCreateSchemaDescriptor instead')
 const MsgCreateSchema$json = const {
@@ -73,9 +73,9 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> MsgService
   '.sonrio.sonr.schema.SchemaFieldKind': $5.SchemaFieldKind$json,
   '.sonrio.sonr.schema.MetadataDefintion': $5.MetadataDefintion$json,
   '.sonrio.sonr.schema.MsgCreateSchemaResponse': MsgCreateSchemaResponse$json,
-  '.sonrio.sonr.schema.WhatIs': $9.WhatIs$json,
+  '.sonrio.sonr.schema.WhatIs': $7.WhatIs$json,
   '.sonrio.sonr.schema.Schema': $5.Schema$json,
-  '.sonrio.sonr.schema.WhatIs.MetadataEntry': $9.WhatIs_MetadataEntry$json,
+  '.sonrio.sonr.schema.WhatIs.MetadataEntry': $7.WhatIs_MetadataEntry$json,
   '.sonrio.sonr.schema.MsgDeprecateSchema': MsgDeprecateSchema$json,
   '.sonrio.sonr.schema.MsgDeprecateSchemaResponse': MsgDeprecateSchemaResponse$json,
 };

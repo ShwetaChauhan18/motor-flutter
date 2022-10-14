@@ -11,12 +11,12 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'params.pb.dart' as $16;
-import 'what_is.pb.dart' as $9;
+import 'what_is.pb.dart' as $7;
 
 class GenesisState extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GenesisState', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'sonrio.sonr.schema'), createEmptyInstance: create)
     ..aOM<$16.Params>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', subBuilder: $16.Params.create)
-    ..pc<$9.WhatIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whatIsList', $pb.PbFieldType.PM, subBuilder: $9.WhatIs.create)
+    ..pc<$7.WhatIs>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whatIsList', $pb.PbFieldType.PM, subBuilder: $7.WhatIs.create)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whatIsCount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
   ;
@@ -24,7 +24,7 @@ class GenesisState extends $pb.GeneratedMessage {
   GenesisState._() : super();
   factory GenesisState({
     $16.Params? params,
-    $core.Iterable<$9.WhatIs>? whatIsList,
+    $core.Iterable<$7.WhatIs>? whatIsList,
     $fixnum.Int64? whatIsCount,
   }) {
     final _result = create();
@@ -72,7 +72,7 @@ class GenesisState extends $pb.GeneratedMessage {
   $16.Params ensureParams() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$9.WhatIs> get whatIsList => $_getList(1);
+  $core.List<$7.WhatIs> get whatIsList => $_getList(1);
 
   @$pb.TagNumber(3)
   $fixnum.Int64 get whatIsCount => $_getI64(2);

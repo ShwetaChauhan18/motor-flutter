@@ -13,6 +13,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../common/v1/info.pb.dart' as $6;
 import '../../schema/v1/schema.pb.dart' as $5;
 import '../../cosmos/base/query/v1beta1/pagination.pb.dart' as $2;
+import '../../schema/v1/what_is.pb.dart' as $7;
 import '../../bucket/where_is.pb.dart' as $0;
 
 import 'request.pbenum.dart';
@@ -1037,6 +1038,7 @@ class UploadDocumentRequest extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'schemaDid')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
     ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'document', $pb.PbFieldType.OY)
+    ..aOM<$7.WhatIs>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'whatIsReference', subBuilder: $7.WhatIs.create)
     ..hasRequiredFields = false
   ;
 
@@ -1045,6 +1047,7 @@ class UploadDocumentRequest extends $pb.GeneratedMessage {
     $core.String? schemaDid,
     $core.String? label,
     $core.List<$core.int>? document,
+    $7.WhatIs? whatIsReference,
   }) {
     final _result = create();
     if (schemaDid != null) {
@@ -1055,6 +1058,9 @@ class UploadDocumentRequest extends $pb.GeneratedMessage {
     }
     if (document != null) {
       _result.document = document;
+    }
+    if (whatIsReference != null) {
+      _result.whatIsReference = whatIsReference;
     }
     return _result;
   }
@@ -1105,6 +1111,17 @@ class UploadDocumentRequest extends $pb.GeneratedMessage {
   $core.bool hasDocument() => $_has(2);
   @$pb.TagNumber(3)
   void clearDocument() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $7.WhatIs get whatIsReference => $_getN(3);
+  @$pb.TagNumber(4)
+  set whatIsReference($7.WhatIs v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasWhatIsReference() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearWhatIsReference() => clearField(4);
+  @$pb.TagNumber(4)
+  $7.WhatIs ensureWhatIsReference() => $_ensure(3);
 }
 
 class GetDocumentRequest extends $pb.GeneratedMessage {

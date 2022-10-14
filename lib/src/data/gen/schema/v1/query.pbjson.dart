@@ -10,7 +10,7 @@ import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
 import 'params.pbjson.dart' as $16;
 import 'schema.pbjson.dart' as $5;
-import 'what_is.pbjson.dart' as $9;
+import 'what_is.pbjson.dart' as $7;
 import '../../cosmos/base/query/v1beta1/pagination.pbjson.dart' as $2;
 
 @$core.Deprecated('Use queryParamsRequestDescriptor instead')
@@ -160,8 +160,8 @@ const $core.Map<$core.String, $core.Map<$core.String, $core.dynamic>> QueryServi
   '.sonrio.sonr.schema.MetadataDefintion': $5.MetadataDefintion$json,
   '.sonrio.sonr.schema.QueryWhatIsRequest': QueryWhatIsRequest$json,
   '.sonrio.sonr.schema.QueryWhatIsResponse': QueryWhatIsResponse$json,
-  '.sonrio.sonr.schema.WhatIs': $9.WhatIs$json,
-  '.sonrio.sonr.schema.WhatIs.MetadataEntry': $9.WhatIs_MetadataEntry$json,
+  '.sonrio.sonr.schema.WhatIs': $7.WhatIs$json,
+  '.sonrio.sonr.schema.WhatIs.MetadataEntry': $7.WhatIs_MetadataEntry$json,
   '.sonrio.sonr.schema.QueryWhatIsCreatorRequest': QueryWhatIsCreatorRequest$json,
   '.cosmos.base.query.v1beta1.PageRequest': $2.PageRequest$json,
   '.sonrio.sonr.schema.QueryWhatIsCreatorResponse': QueryWhatIsCreatorResponse$json,
