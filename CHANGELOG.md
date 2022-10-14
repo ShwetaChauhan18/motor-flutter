@@ -1,3 +1,7 @@
+## 0.8.3
+* Upgrade ios/mac frameworks to v0.6.4
+* Bump cocoapods to 19.0 (iOS) and 9.0 (macOS)
+* Make Bucket interface handle all documents
 ## 0.8.2
 * Fix Framework compilation to fit system architecture
 * Return CID from SchemaDocument

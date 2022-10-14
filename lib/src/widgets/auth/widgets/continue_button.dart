@@ -126,7 +126,9 @@ class ContinueOnSonrButton extends StatelessWidget {
   final ResponseCallback<AuthInfo>? onSuccess;
   final ErrorCallback? onError;
   final ButtonVariant variant;
-  const ContinueOnSonrButton({Key? key, this.variant = ButtonVariant.blue, this.onSuccess, this.onError}) : super(key: key);
+  final String label;
+  const ContinueOnSonrButton({Key? key, this.variant = ButtonVariant.blue, this.label = 'Continue on Sonr', this.onSuccess, this.onError})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -173,7 +175,7 @@ class ContinueOnSonrButton extends StatelessWidget {
                 color: variant.foregroundColor.withOpacity(0.4),
               ),
               Text(
-                'Continue on Sonr',
+                label,
                 style: variant.textStyle,
               ),
             ],

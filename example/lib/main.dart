@@ -127,7 +127,7 @@ class _MyAppState extends State<MyApp> {
                   return;
                 }
 
-                testDocument = testSchema?.newDocument();
+                testDocument = testSchema?.newDocument("Todds Profile");
                 testDocument!.set<String>("name", "Todd");
                 testDocument!.set<int>("age", 24);
                 testDocument!.set<double>("height", 5.11);
@@ -150,9 +150,8 @@ class _MyAppState extends State<MyApp> {
                   return;
                 }
 
-
-                final doc = await testDocument?.upload("hello-flutter");
-                if (doc == null) {
+                final res = await testDocument?.upload();
+                if (res == null) {
                   Get.snackbar(
                     "Error",
                     "Failed to Upload testDocument",
@@ -161,7 +160,7 @@ class _MyAppState extends State<MyApp> {
                   );
                   return;
                 }
-                Get.snackbar("Success", "Uploaded document to user encrypted IPFS Store. CID: ${doc.label}");
+                Get.snackbar("Success", "Uploaded document to user encrypted IPFS Store. CID: ${res.cid}");
               },
             ),
           ],

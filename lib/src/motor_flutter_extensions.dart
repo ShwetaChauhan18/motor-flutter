@@ -18,8 +18,9 @@ extension CreateAccountWithKeysResponseExt on CreateAccountWithKeysResponse {
 /// to work with the [SchemaDefinition] class.
 extension SchemaDefinitionExt on Schema {
   /// Converts a [SchemaDefinition] to a base [SchemaDocument] with its fields being set to the associated [SchemaKind] from the underlying definition.
-  SchemaDocument newDocument() {
+  SchemaDocument newDocument(String label) {
     return SchemaDocument(
+      label: label,
       schemaDid: did,
       fields: List<SchemaDocumentValue>.generate(fields.length, (index) {
         return SchemaDocumentValue(
@@ -133,7 +134,7 @@ extension SchemaDocumentExt on SchemaDocument {
   ///    print('Document saved successfully');
   /// }
   /// ```
-  Future<SchemaDocument?> upload(String label, {String? creator}) async {
+  Future<UploadDocumentResponse?> upload({String? creator}) async {
     if (!MotorFlutter.isReady) {
       Log.warn('MotorFlutter has not been initialized. Please call MotorFlutter.init() before using the SDK.');
       return null;
@@ -152,7 +153,7 @@ extension SchemaDocumentExt on SchemaDocument {
       return null;
     }
     resp.document.cid = resp.cid;
-    return resp.document;
+    return resp;
   }
 
   /// Fetches the [SchemaDocument] from the current accounts application-specific data store using the provided [cid]. The account then decrypts the data and
@@ -390,14 +391,17 @@ extension BucketItemExt on BucketItem {
     if (!MotorFlutter.isReady) {
       return null;
     }
+
     final whatIs = await MotorFlutter.query.whatIs(schemaDid);
     if (whatIs == null) {
       return null;
     }
-    final def = whatIs.schema;
-    final res = await MotorFlutter.to.getDocument(cid: uri);
-    if (!def.validate(res.document)) {
-      return null;
+
+    final res = await MotorFlutterPlatform.instance.getDocument(GetDocumentRequest(
+      cid: uri,
+    ));
+    if (res == null) {
+      throw UnmarshalException<GetDocumentResponse>();
     }
     return res.document;
   }
