@@ -405,8 +405,13 @@ class MotorFlutter extends GetxService {
   /// **Next Steps**
   /// - Build a SchemaDocument from a Definition with [SchemaDefinitionExt]
   /// - [ADR-3](https://github.com/sonr-io/sonr/blob/dev/docs/architecture/3.md)
-  Future<Bucket> createBucket(CreateBucketRequest req) async {
-    final resp = await MotorFlutterPlatform.instance.createBucket(req);
+  Future<Bucket> createBucket(String bucketName) async {
+    final resp = await MotorFlutterPlatform.instance.createBucket(CreateBucketRequest(
+      creator: address.value,
+      label: bucketName,
+      visibility: BucketVisibility.PUBLIC,
+      role: BucketRole.USER,
+    ));
     if (resp == null) {
       throw UnmarshalException<CreateBucketResponse>();
     }

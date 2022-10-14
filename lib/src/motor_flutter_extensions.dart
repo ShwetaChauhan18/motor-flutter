@@ -19,16 +19,26 @@ extension CreateAccountWithKeysResponseExt on CreateAccountWithKeysResponse {
 extension SchemaDefinitionExt on Schema {
   /// Converts a [SchemaDefinition] to a base [SchemaDocument] with its fields being set to the associated [SchemaKind] from the underlying definition.
   SchemaDocument newDocument(String label) {
+    var docFields = <SchemaDocumentValue>[];
+    for (SchemaField f in fields) {
+      final key = f.name;
+      final kind = f.fieldKind;
+      docFields.add(SchemaDocumentValue(key: key, kind: kind.kind));
+    }
     return SchemaDocument(
       label: label,
       schemaDid: did,
-      fields: List<SchemaDocumentValue>.generate(fields.length, (index) {
-        return SchemaDocumentValue(
-          key: fields[index].name,
-          kind: fields[index].fieldKind.kind,
-        );
-      }),
+      fields: docFields,
     );
+  }
+
+  /// Prints the [SchemaDefinition] to the console.
+  void printToConsole() {
+    print('Schema DID: $did');
+    print('Fields:');
+    for (SchemaField f in fields) {
+      print('└─ ${f.name}  =  (${f.fieldKind.kind})');
+    }
   }
 
   /// Validates if all fields of the provided [doc] match the [SchemaDefinition] fields.
@@ -68,7 +78,7 @@ extension SchemaDocumentExt on SchemaDocument {
   T? get<T>(String name) {
     final field = fields.firstWhereOrNull((e) => e.key == name);
     if (field == null) {
-      return null;
+      throw Exception('Field not found');
     }
     return field.getValue<T>();
   }
@@ -86,7 +96,7 @@ extension SchemaDocumentExt on SchemaDocument {
   List<T>? getList<T>(String name) {
     final field = fields.firstWhereOrNull((e) => e.key == name);
     if (field == null) {
-      return [];
+      throw Exception('Field not found');
     }
     return field.getList<T>();
   }
@@ -100,7 +110,7 @@ extension SchemaDocumentExt on SchemaDocument {
   T? set<T>(String name, T value) {
     final field = fields.firstWhereOrNull((e) => e.key == name);
     if (field == null) {
-      return null;
+      throw Exception('Field not found');
     }
     return field.setValue<T>(value);
   }
@@ -115,7 +125,7 @@ extension SchemaDocumentExt on SchemaDocument {
   List<T>? setList<T>(String name, List<T> value) {
     final field = fields.firstWhereOrNull((e) => e.key == name);
     if (field == null) {
-      return null;
+      throw Exception('Field not found');
     }
     return field.setList<T>(value);
   }
@@ -147,7 +157,7 @@ extension SchemaDocumentExt on SchemaDocument {
     final resp = await MotorFlutterPlatform.instance.uploadDocument(UploadDocumentRequest(
       schemaDid: schemaDid,
       label: label,
-      document: writeToBuffer(),
+      document: writeToJson().codeUnits,
     ));
     if (resp == null) {
       return null;

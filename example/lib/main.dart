@@ -21,8 +21,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late final WhoIs? whoIs;
-  late final Schema? testSchema;
-  late final SchemaDocument? testDocument;
+  Schema? testSchema;
+  String? testSchemaDid;
+  SchemaDocument? testDocument;
+  Bucket? testBucket;
   late final List<int>? dscKey;
   late final List<int>? pskKey;
   String titleMsg = "Unauthorized";
@@ -91,6 +93,7 @@ class _MyAppState extends State<MyApp> {
                 }
               },
             ),
+
             //
             // 3. Try creating a Schema
             //
@@ -102,15 +105,20 @@ class _MyAppState extends State<MyApp> {
                 final res = await MotorFlutter.to.publishSchema(
                     "Profile",
                     Map<String, SchemaFieldKind>.from({
-                      "name": Kind.STRING,
-                      "age": Kind.INT,
-                      "height": Kind.FLOAT,
+                      "name": SchemaFieldKind(kind: Kind.STRING),
+                      "age": SchemaFieldKind(kind: Kind.INT),
+                      "height": SchemaFieldKind(kind: Kind.FLOAT),
                     }));
                 if (kDebugMode) {
                   print(res.toString());
                 }
+                setState(() {
+                  testSchema = res.whatIs.schema;
+                  testSchemaDid = res.whatIs.did;
+                });
               },
             ),
+
             //
             // 4. Lets build a Document from that schema
             //
@@ -127,40 +135,38 @@ class _MyAppState extends State<MyApp> {
                   return;
                 }
 
-                testDocument = testSchema?.newDocument("Todds Profile");
-                testDocument!.set<String>("name", "Todd");
-                testDocument!.set<int>("age", 24);
-                testDocument!.set<double>("height", 5.11);
+                testSchema!.printToConsole();
+                final newDoc = testSchema!.newDocument("Todds Profile");
+                newDoc.set<String>("name", "Todd");
+                newDoc.set<int>("age", 24);
+                newDoc.set<double>("height", 5.11);
+                if (kDebugMode) {
+                  print(newDoc.toString());
+                }
+                setState(() {
+                  testDocument = newDoc;
+                });
               },
             ),
 
             //
-            // 5. Upload Document to App-Specific Data Store
+            // 5. Create a bucket and add the recently created document to it
             //
             MaterialButton(
-              child: const Text("Upload Document to User Data Store"),
+              child: const Text("Create Bucket"),
               onPressed: () async {
-                if (testDocument == null) {
+                testBucket = await MotorFlutter.to.createBucket("Test Bucket");
+                final item = await testBucket!.add(testDocument!);
+                if (item == null) {
                   Get.snackbar(
                     "Error",
-                    "Failed to find testDocument",
+                    "Failed to Upload testDocument to bucket",
                     backgroundColor: Colors.red,
                     colorText: Colors.white,
                   );
                   return;
                 }
-
-                final res = await testDocument?.upload();
-                if (res == null) {
-                  Get.snackbar(
-                    "Error",
-                    "Failed to Upload testDocument",
-                    backgroundColor: Colors.red,
-                    colorText: Colors.white,
-                  );
-                  return;
-                }
-                Get.snackbar("Success", "Uploaded document to user encrypted IPFS Store. CID: ${res.cid}");
+                Get.snackbar("Success", "Uploaded document to user encrypted IPFS Store. CID: ${item?.uri}");
               },
             ),
           ],

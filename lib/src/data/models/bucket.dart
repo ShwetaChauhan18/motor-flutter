@@ -36,25 +36,37 @@ class Bucket {
   }
 
   /// Adds a [SchemaDocument] into the Bucket and returns [bool] indicating success
-  Future<bool> addItem(String label, SchemaDocument doc) async {
+  Future<BucketItem?> add(SchemaDocument doc) async {
     await refresh();
-
-    final newDoc = await doc.upload();
-    if (newDoc == null) {
-      return false;
+    final label = doc.label;
+    final req = UploadDocumentRequest(
+      schemaDid: doc.schemaDid,
+      label: label,
+      document: doc.writeToJson().codeUnits,
+    );
+    if (isDebugMode) {
+      print('Adding document to bucket: ${req.toString()}');
+    }
+    final resp = await MotorFlutterPlatform.instance.uploadDocument(req);
+    if (resp == null) {
+      return null;
     }
 
     final item = BucketItem(
-      uri: newDoc.cid,
+      uri: resp.cid,
       name: label,
       type: ResourceIdentifier.CID,
       schemaDid: doc.schemaDid,
     );
-    return await MotorFlutterPlatform.instance.addBucketObject(did, item);
+    final ok = await MotorFlutterPlatform.instance.addBucketObject(did, item);
+    if (ok) {
+      return item;
+    }
+    return null;
   }
 
   /// Retrieves a [SchemaDocument] from the Bucket by [label]
-  Future<SchemaDocument?> getItem(String label) async {
+  Future<SchemaDocument?> get(String label) async {
     await refresh();
     final doc = _cachedDocs.firstWhere((element) => element.label == label, orElse: () => SchemaDocument());
     return doc.hasCid() ? doc : null;
@@ -67,7 +79,7 @@ class Bucket {
   }
 
   /// Deletes a [SchemaDocument] from the Bucket given its [label]
-  Future<bool> removeItem(String label) async {
+  Future<bool> remove(String label) async {
     await refresh();
     final doc = _cachedDocs.firstWhere((element) => element.label == label, orElse: () => SchemaDocument());
     if (!doc.hasCid()) {
@@ -88,7 +100,7 @@ class Bucket {
   /// ```
   /// **Next Steps**
   /// - Upload a document to IPFS with [MotorFlutter.uploadDocument]
-  Future<GetDocumentResponse> fetchDocument({required String cid}) async {
+  Future<GetDocumentResponse> fetch({required String cid}) async {
     final res = await MotorFlutterPlatform.instance.getDocument(GetDocumentRequest(
       cid: cid,
     ));
