@@ -75,7 +75,7 @@ final res = doc.setList&lt;String&gt;('names', ['John Doe', 'Jane Doe']); // set
   <pre class="language-dart"><code class="language-dart">List&lt;T&gt;? setList&lt;T&gt;(String name, List&lt;T&gt; value) {
   final field = fields.firstWhereOrNull((e) =&gt; e.key == name);
   if (field == null) {
-    return null;
+    throw Exception(&#39;Field not found&#39;);
   }
   return field.setList&lt;T&gt;(value);
 }</code></pre>
@@ -129,7 +129,7 @@ final res = doc.setList&lt;String&gt;('names', ['John Doe', 'Jane Doe']); // set
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.2
+      0.8.4
   </span>
 
   

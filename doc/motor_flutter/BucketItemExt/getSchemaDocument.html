@@ -67,14 +67,17 @@
   if (!MotorFlutter.isReady) {
     return null;
   }
+
   final whatIs = await MotorFlutter.query.whatIs(schemaDid);
   if (whatIs == null) {
     return null;
   }
-  final def = whatIs.schema;
-  final res = await MotorFlutter.to.getDocument(cid: uri);
-  if (!def.validate(res.document)) {
-    return null;
+
+  final res = await MotorFlutterPlatform.instance.getDocument(GetDocumentRequest(
+    cid: uri,
+  ));
+  if (res == null) {
+    throw UnmarshalException&lt;GetDocumentResponse&gt;();
   }
   return res.document;
 }</code></pre>
@@ -123,7 +126,7 @@
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.2
+      0.8.4
   </span>
 
   

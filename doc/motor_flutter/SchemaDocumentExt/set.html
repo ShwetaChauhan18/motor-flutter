@@ -74,7 +74,7 @@ final res = doc.set&lt;String&gt;('name', 'John Doe'); // sets the value of the 
   <pre class="language-dart"><code class="language-dart">T? set&lt;T&gt;(String name, T value) {
   final field = fields.firstWhereOrNull((e) =&gt; e.key == name);
   if (field == null) {
-    return null;
+    throw Exception(&#39;Field not found&#39;);
   }
   return field.setValue&lt;T&gt;(value);
 }</code></pre>
@@ -128,7 +128,7 @@ final res = doc.set&lt;String&gt;('name', 'John Doe'); // sets the value of the 
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.2
+      0.8.4
   </span>
 
   

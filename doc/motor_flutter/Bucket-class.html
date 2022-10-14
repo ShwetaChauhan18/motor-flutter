@@ -58,7 +58,7 @@
 
     <dl class="constructor-summary-list">
         <dt id="Bucket" class="callable">
-          <span class="name"><a href="../motor_flutter/Bucket/Bucket.html">Bucket</a></span><span class="signature">(<span class="parameter" id="-param-did"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">did</span>, </span><span class="parameter" id="-param-whereIs"><span class="type-annotation"><a href="../motor_flutter/WhereIs-class.html">WhereIs</a></span> <span class="parameter-name">whereIs</span></span>)</span>
+          <span class="name"><a href="../motor_flutter/Bucket/Bucket.html">Bucket</a></span><span class="signature">(<span class="parameter" id="-param-whereIs"><span class="type-annotation"><a href="../motor_flutter/WhereIs-class.html">WhereIs</a></span> <span class="parameter-name">whereIs</span></span>)</span>
         </dt>
         <dd>
           
@@ -90,8 +90,8 @@
 
 </dt>
 <dd>
-  <a href="../motor_flutter/Bucket/did.html">did</a> is the Unique identifier of the bucket
-  <div class="features">final</div>
+  
+  <div class="features">read-only</div>
 
 </dd>
 
@@ -137,34 +137,47 @@
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
-        <dt id="addDocument" class="callable">
-  <span class="name"><a href="../motor_flutter/Bucket/addDocument.html">addDocument</a></span><span class="signature">(<wbr><span class="parameter" id="addDocument-param-label"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">label</span>, </span><span class="parameter" id="addDocument-param-doc"><span class="type-annotation"><a href="../motor_flutter/SchemaDocument-class.html">SchemaDocument</a></span> <span class="parameter-name">doc</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>&gt;</span></span>
+        <dt id="add" class="callable">
+  <span class="name"><a href="../motor_flutter/Bucket/add.html">add</a></span><span class="signature">(<wbr><span class="parameter" id="add-param-doc"><span class="type-annotation"><a href="../motor_flutter/SchemaDocument-class.html">SchemaDocument</a></span> <span class="parameter-name">doc</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../motor_flutter/BucketItem-class.html">BucketItem</a>?</span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Adds a <a href="../motor_flutter/SchemaDocument-class.html">SchemaDocument</a> into the Bucket and returns <code>bool</code> indicating success
+  Adds a <a href="../motor_flutter/SchemaDocument-class.html">SchemaDocument</a> into the Bucket and returns <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a> indicating success
   
 
 </dd>
 
-        <dt id="getDocument" class="callable">
-  <span class="name"><a href="../motor_flutter/Bucket/getDocument.html">getDocument</a></span><span class="signature">(<wbr><span class="parameter" id="getDocument-param-cid"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">cid</span></span>)
+        <dt id="fetch" class="callable">
+  <span class="name"><a href="../motor_flutter/Bucket/fetch.html">fetch</a></span><span class="signature">(<wbr><span class="parameter" id="fetch-param-cid">{<span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">cid</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../motor_flutter/GetDocumentResponse-class.html">GetDocumentResponse</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Fetching a Document
+  
+
+</dd>
+
+        <dt id="get" class="callable">
+  <span class="name"><a href="../motor_flutter/Bucket/get.html">get</a></span><span class="signature">(<wbr><span class="parameter" id="get-param-label"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">label</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../motor_flutter/SchemaDocument-class.html">SchemaDocument</a>?</span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Retrieves a <code>SchemaDocument</code> from the Bucket
+  Retrieves a <code>SchemaDocument</code> from the Bucket by <code>label</code>
   
 
 </dd>
 
-        <dt id="listDocuments" class="callable">
-  <span class="name"><a href="../motor_flutter/Bucket/listDocuments.html">listDocuments</a></span><span class="signature">(<wbr>)
+        <dt id="listItems" class="callable">
+  <span class="name"><a href="../motor_flutter/Bucket/listItems.html">listItems</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../motor_flutter/SchemaDocument-class.html">SchemaDocument</a></span>&gt;</span></span>&gt;</span></span>
   </span>
   
@@ -189,15 +202,28 @@
 
 </dd>
 
-        <dt id="removeDocument" class="callable">
-  <span class="name"><a href="../motor_flutter/Bucket/removeDocument.html">removeDocument</a></span><span class="signature">(<wbr><span class="parameter" id="removeDocument-param-cid"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">cid</span></span>)
+        <dt id="refresh" class="callable">
+  <span class="name"><a href="../motor_flutter/Bucket/refresh.html">refresh</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Refreshing a Bucket
+  
+
+</dd>
+
+        <dt id="remove" class="callable">
+  <span class="name"><a href="../motor_flutter/Bucket/remove.html">remove</a></span><span class="signature">(<wbr><span class="parameter" id="remove-param-label"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">label</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Deletes a <a href="../motor_flutter/SchemaDocument-class.html">SchemaDocument</a> from the Bucket given its <code>cid</code>
+  Deletes a <a href="../motor_flutter/SchemaDocument-class.html">SchemaDocument</a> from the Bucket given its <code>label</code>
   
 
 </dd>
@@ -445,11 +471,13 @@
     <li><a href="../motor_flutter/Bucket/whereIs.html">whereIs</a></li>
 
     <li class="section-title"><a href="../motor_flutter/Bucket-class.html#instance-methods">Methods</a></li>
-    <li><a href="../motor_flutter/Bucket/addDocument.html">addDocument</a></li>
-    <li><a href="../motor_flutter/Bucket/getDocument.html">getDocument</a></li>
-    <li><a href="../motor_flutter/Bucket/listDocuments.html">listDocuments</a></li>
+    <li><a href="../motor_flutter/Bucket/add.html">add</a></li>
+    <li><a href="../motor_flutter/Bucket/fetch.html">fetch</a></li>
+    <li><a href="../motor_flutter/Bucket/get.html">get</a></li>
+    <li><a href="../motor_flutter/Bucket/listItems.html">listItems</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-    <li><a href="../motor_flutter/Bucket/removeDocument.html">removeDocument</a></li>
+    <li><a href="../motor_flutter/Bucket/refresh.html">refresh</a></li>
+    <li><a href="../motor_flutter/Bucket/remove.html">remove</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></li>
 
     <li class="section-title inherited"><a href="../motor_flutter/Bucket-class.html#operators">Operators</a></li>
@@ -469,7 +497,7 @@
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.2
+      0.8.4
   </span>
 
   

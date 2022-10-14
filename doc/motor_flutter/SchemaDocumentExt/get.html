@@ -77,7 +77,7 @@ throw Exception('Field not found'); // The field with the key 'name' was not fou
   <pre class="language-dart"><code class="language-dart">T? get&lt;T&gt;(String name) {
   final field = fields.firstWhereOrNull((e) =&gt; e.key == name);
   if (field == null) {
-    return null;
+    throw Exception(&#39;Field not found&#39;);
   }
   return field.getValue&lt;T&gt;();
 }</code></pre>
@@ -131,7 +131,7 @@ throw Exception('Field not found'); // The field with the key 'name' was not fou
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.2
+      0.8.4
   </span>
 
   

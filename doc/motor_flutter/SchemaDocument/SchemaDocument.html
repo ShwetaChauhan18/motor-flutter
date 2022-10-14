@@ -50,6 +50,7 @@
 
     <section class="multi-line-signature">
       <span class="name ">SchemaDocument</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-schemaDid">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">schemaDid</span>, </span></li>
+<li><span class="parameter" id="-param-cid"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">cid</span>, </span></li>
 <li><span class="parameter" id="-param-label"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">label</span>, </span></li>
 <li><span class="parameter" id="-param-fields"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../motor_flutter/SchemaDocumentValue-class.html">SchemaDocumentValue</a></span>&gt;</span>?</span> <span class="parameter-name">fields</span>}</span></li>
 </ol>)
@@ -63,12 +64,16 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory SchemaDocument({
   $core.String? schemaDid,
+  $core.String? cid,
   $core.String? label,
   $core.Iterable&lt;SchemaDocumentValue&gt;? fields,
 }) {
   final _result = create();
   if (schemaDid != null) {
     _result.schemaDid = schemaDid;
+  }
+  if (cid != null) {
+    _result.cid = cid;
   }
   if (label != null) {
     _result.label = label;
@@ -110,6 +115,7 @@
     <li class="section-title">
       <a href="../../motor_flutter/SchemaDocument-class.html#instance-properties">Properties</a>
     </li>
+    <li><a href="../../motor_flutter/SchemaDocument/cid.html">cid</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/eventPlugin.html">eventPlugin</a></li>
     <li><a href="../../motor_flutter/SchemaDocument/fields.html">fields</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/hashCode.html">hashCode</a></li>
@@ -146,6 +152,7 @@
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/addExtension.html">addExtension</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/check.html">check</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/clear.html">clear</a></li>
+    <li><a href="../../motor_flutter/SchemaDocument/clearCid.html">clearCid</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/clearExtension.html">clearExtension</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/clearField.html">clearField</a></li>
     <li><a href="../../motor_flutter/SchemaDocument/clearLabel.html">clearLabel</a></li>
@@ -162,6 +169,7 @@
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/getField.html">getField</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/getFieldOrNull.html">getFieldOrNull</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/getTagNumber.html">getTagNumber</a></li>
+    <li><a href="../../motor_flutter/SchemaDocument/hasCid.html">hasCid</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/hasExtension.html">hasExtension</a></li>
     <li class="inherited"><a href="https://pub.dev/documentation/protobuf/2.1.0/protobuf/GeneratedMessage/hasField.html">hasField</a></li>
     <li><a href="../../motor_flutter/SchemaDocument/hasLabel.html">hasLabel</a></li>
@@ -209,7 +217,7 @@
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.2
+      0.8.4
   </span>
 
   

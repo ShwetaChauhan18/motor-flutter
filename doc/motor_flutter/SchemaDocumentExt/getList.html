@@ -82,7 +82,7 @@ throw Exception('Field not found'); // The field with the key 'names' was not fo
 List&lt;T&gt;? getList&lt;T&gt;(String name) {
   final field = fields.firstWhereOrNull((e) =&gt; e.key == name);
   if (field == null) {
-    return [];
+    throw Exception(&#39;Field not found&#39;);
   }
   return field.getList&lt;T&gt;();
 }</code></pre>
@@ -136,7 +136,7 @@ List&lt;T&gt;? getList&lt;T&gt;(String name) {
 <footer>
   <span class="no-break">
     motor_flutter
-      0.8.2
+      0.8.4
   </span>
 
   

@@ -166,7 +166,7 @@ class _MyAppState extends State<MyApp> {
                   );
                   return;
                 }
-                Get.snackbar("Success", "Uploaded document to user encrypted IPFS Store. CID: ${item?.uri}");
+                Get.snackbar("Success", "Uploaded document to user encrypted IPFS Store. CID: ${item.uri}");
               },
             ),
           ],
